@@ -1,0 +1,18 @@
+{
+	"name": "Roads",
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"Monolith": {
+				"$path": "lib"
+			},
+			"Tests": {
+				"$path": "tests",
+				"TestEZ": {
+					"$path": "modules/testez/src"
+				}
+			}
+		}
+	}
+}
