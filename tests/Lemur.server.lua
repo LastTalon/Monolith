@@ -2,7 +2,7 @@
 -- This script can run with Lemur to perform automated tests.
 --
 -- @module LemurTestRunner
--- @version 0.1.1, 2020-11-03
+-- @version 0.1.2, 2020-11-24
 -- @since 0.1
 --
 -- @throws when the tests fail
@@ -15,7 +15,7 @@ local Habitat = Lemur.Habitat.new()
 
 --- The source locations to load in lemur
 local Source = { -- This can potentially be loaded from a project.json
-	{"lib", "ReplicatedStorage.Roads"},
+	{"lib", "ReplicatedStorage.Monolith"},
 	{"tests", "ReplicatedStorage.Tests"},
 	{"modules/testez/src", "ReplicatedStorage.Tests.TestEZ"}
 }
