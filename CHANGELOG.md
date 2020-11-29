@@ -17,3 +17,4 @@ This project uses [semantic versioning](https://semver.org/).
 * Added CI testing and coverage reporting.
 * Added library interface.
 * Added Enumerable interface.
+* Added Collection interface.
