@@ -6,6 +6,7 @@
 -- @since 0.1
 
 local Enumerable = require(script:WaitForChild("Enumerable"))
+local Collection = require(script:WaitForChild("Collection"))
 
 local Monolith = {}
 local instance
@@ -13,6 +14,7 @@ local instance
 Monolith.__index = Monolith
 
 Monolith.Enumerable = Enumerable
+Monolith.Collection = Collection
 
 function Monolith.new()
 	if instance == nil then
