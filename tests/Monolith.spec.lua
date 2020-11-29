@@ -7,6 +7,7 @@ return function()
 	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
 	local Monolith = require(module)
 	local Enumerable = require(module:WaitForChild("Enumerable"))
+	local Collection = require(module:WaitForChild("Collection"))
 
 	describe("Monolith", function()
 		it("should be able to be instantiated", function()
@@ -21,6 +22,10 @@ return function()
 
 		it("should expose the Enumerable interface", function()
 			expect(Monolith.Enumerable).to.equal(Enumerable)
+		end)
+
+		it("should expose the Collection interface", function()
+			expect(Monolith.Collection).to.equal(Collection)
 		end)
 	end)
 end

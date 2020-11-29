@@ -2,10 +2,11 @@
 -- Provides access to all library classes and features.
 --
 -- @module Monolith
--- @version 0.1.0, 2020-11-24
+-- @version 0.1.0, 2020-11-28
 -- @since 0.1
 
 local Enumerable = require(script:WaitForChild("Enumerable"))
+local Collection = require(script:WaitForChild("Collection"))
 
 local Monolith = {}
 local instance
@@ -13,6 +14,7 @@ local instance
 Monolith.__index = Monolith
 
 Monolith.Enumerable = Enumerable
+Monolith.Collection = Collection
 
 function Monolith.new()
 	if instance == nil then
