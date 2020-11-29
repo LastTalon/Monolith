@@ -5,10 +5,14 @@
 -- @version 0.1.0, 2020-11-24
 -- @since 0.1
 
+local Enumerable = require(script:WaitForChild("Enumerable"))
+
 local Monolith = {}
 local instance
 
 Monolith.__index = Monolith
+
+Monolith.Enumerable = Enumerable
 
 function Monolith.new()
 	if instance == nil then

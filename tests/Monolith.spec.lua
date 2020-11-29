@@ -19,7 +19,7 @@ return function()
 			expect(monolith).to.equal(Monolith)
 		end)
 
-		it("should expose the Wait function", function()
+		it("should expose the Enumerable interface", function()
 			expect(Monolith.Enumerable).to.equal(Enumerable)
 		end)
 	end)
