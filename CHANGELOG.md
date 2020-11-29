@@ -16,3 +16,4 @@ This project uses [semantic versioning](https://semver.org/).
 * Added Rojo project.
 * Added CI testing and coverage reporting.
 * Added library interface.
+* Added Enumerable interface.
