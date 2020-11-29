@@ -2,7 +2,7 @@
 -- Provides access to all library classes and features.
 --
 -- @module Monolith
--- @version 0.1.0, 2020-11-24
+-- @version 0.1.0, 2020-11-28
 -- @since 0.1
 
 local Enumerable = require(script:WaitForChild("Enumerable"))
