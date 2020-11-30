@@ -11,7 +11,9 @@
 </div>
 <br>
 
-**Monolith** is is a free software *Roblox* concurrency library.
+**Monolith** is is a Lua collections library targeting
+*[Lemur](https://github.com/LPGhatguy/lemur)* and
+*[Roblox](https://www.roblox.com/)*.
 
 ## Usage
 Monolith uses [Rojo](https://rojo.space/) as a bridge between the filesystem
