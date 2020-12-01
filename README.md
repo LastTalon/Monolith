@@ -11,15 +11,19 @@
 </div>
 <br>
 
-**Monolith** is is a Lua collections library targeting
+**Monolith** is a Lua collections library targeting
 *[Lemur](https://github.com/LPGhatguy/lemur)* and
 *[Roblox](https://www.roblox.com/)*.
 
-## Usage
+## Installation
 Monolith uses [Rojo](https://rojo.space/) as a bridge between the filesystem
 and Roblox Studio. If you want to contribute or use Monolith for development,
 install both to get started. The project contains a `default.project.json` that
 can be used by Rojo to generate or sync with a Roblox save file.
+
+Once the module has been included, simply require the module or individual
+classes from within it. Requiring the module provides an interface to all
+data types and data structures.
 
 ## Documentation
 The only documentation is currently in the source. This will be changing soon.
