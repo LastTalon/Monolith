@@ -15,6 +15,14 @@
 *[Lemur](https://github.com/LPGhatguy/lemur)* and
 *[Roblox](https://www.roblox.com/)*.
 
+Monolith provides data structures and abstract data types to collect and manage
+data.
+* Create collections of data like Sets, Lists, Maps, Stacks, Multisets, and
+	Arrays
+* Enumerate collections of data easily using for loops
+* Build, transform, and convert data between types to operate efficiently
+* Focus on the important parts of your code rather than the plumbing
+
 ## Installation
 Monolith uses [Rojo](https://rojo.space/) as a bridge between the filesystem
 and Roblox Studio. If you want to contribute or use Monolith for development,
