@@ -342,3 +342,5 @@ end
 function List:Unshift()
 	error(string.format(ErrorOverride, "Unshift"))
 end
+
+return List
