@@ -17,7 +17,7 @@ function Enumerable.new()
 	return self
 end
 
--- Creates an enumerator for the object.
+--- Creates an enumerator for the object.
 -- The enumerator can be used directly in a generic for loop similar to pairs
 -- or ipairs.
 --
