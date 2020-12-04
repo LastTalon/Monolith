@@ -35,8 +35,8 @@ function Collection.new()
 end
 
 -- Creates an enumerator for the Collection.
--- The enumerator can be used directly in a for loop similar to others such as
--- pairs or ipairs.
+-- The enumerator can be used directly in a generic for loop similar to pairs
+-- or ipairs.
 --
 -- @return the enumerator generator
 -- @return the invariant state
