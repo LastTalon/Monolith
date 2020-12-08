@@ -1,6 +1,6 @@
 --- Tests for the LinkedList class.
 --
--- @version 0.1.0, 2020-12-06
+-- @version 0.1.0, 2020-12-08
 -- @since 0.1
 
 return function()
@@ -10,7 +10,7 @@ return function()
 	describe("Constructor", function()
 		it("should create an empty LinkedList", function()
 			local list = LinkedList.new()
-			expect(list:Emtpy()).to.equal(true)
+			expect(list:Empty()).to.equal(true)
 		end)
 
 		it("should create a LinkedList from a table", function()
@@ -26,7 +26,7 @@ return function()
 			local items = LinkedList.new({1, 2, 3, 4, 5})
 			local list = LinkedList.new(items)
 			expect(list:Count()).to.equal(items:Count())
-			for i, v in items:Enumerate() do
+			for i, v in items:Enumerator() do
 				expect(list:Get(i)).to.equal(v)
 			end
 		end)

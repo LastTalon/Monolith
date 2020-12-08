@@ -13,7 +13,7 @@
 -- read-only data types that cannot change their contents after being created.
 -- These methods will be marked optional in the method documentation.
 --
--- @version 0.1.0, 2020-12-08
+-- @version 0.1.1, 2020-12-08
 -- @since 0.1
 
 local module = script.Parent
@@ -26,11 +26,76 @@ local LinkedList = List.new()
 LinkedList.__index = LinkedList
 
 --- Creates a new LinkedList interface instance.
+-- Creates a LinkedList copy of the provided collection or array indexed table
+-- if one is provided, otherwise creates an empty LinkedList.
 --
+-- @param collection the Collection or table to copy
 -- @return the new LinkedList interface
-function LinkedList.new()
+function LinkedList.new(collection)
 	local self = setmetatable({}, LinkedList)
+	self.count = 0
+	if collection ~= nil then
+		if type(collection.Enumerator) == "function" then -- If there's an Enumerator, assume it acts as a collection.
+			for _, v in collection:Enumerator() do
+				self:addNode(v)
+			end
+		elseif type(collection) == "table" then
+			for _, v in ipairs(collection) do
+				self:addNode(v)
+			end
+		else
+			error(string.format("Cannot construct LinkedList from type %s.",
+				type(collection)))
+		end
+	end
 	return self
+end
+
+--- Adds a new node to the LinkedList.
+-- Inserts the node infront of the node provided or at the end of the
+-- LinkedList if one is provided, otherwise adds it to the end.
+--
+-- @param value the value to add a new node for
+-- @param node the node to insert before
+function LinkedList:addNode(value, node)
+	self.count = self.count + 1
+	if node ~= nil then
+		local new = {value = value, next = node}
+		if node == self.first then
+			self.first = new
+		else
+			node.previous.next = new
+		end
+		node.previous = new
+	else
+		if self.first == nil then -- if the list is empty (first not set)
+			self.first = {value = value}
+			self.last = self.first
+		else
+			local last = self.last -- otherwise capture the previous last
+			self.last = {value = value, previous = last}
+			last.next = self.last -- point forward from previous last
+		end
+	end
+end
+
+--- Remove a node from the LinkedList.
+--
+-- @param node the node to remove
+function LinkedList:removeNode(node)
+	self.count = self.count - 1
+	if node == self.first then
+		self.first = node.next
+	end
+	if node == self.last then
+		self.last = node.previous
+	end
+	if node.previous ~= nil then
+		node.previous.next = node.next
+	end
+	if node.next ~= nil then
+		node.next.previous = node.previous
+	end
 end
 
 --- Creates an enumerator for the LinkedList.
@@ -41,7 +106,16 @@ end
 -- @return the invariant state
 -- @return the control variable state
 function LinkedList:Enumerator()
-	error(string.format(ErrorOverride, "Enumerator"))
+	local index = 0
+	local node = self.first
+	return function()
+		if node ~= nil then
+			index = index + 1
+			local value = node.value
+			node = node.next
+			return index, value
+		end
+	end
 end
 
 --- Determines whether the LinkedList contains an item.
@@ -74,14 +148,14 @@ end
 --
 -- @return the number of items
 function LinkedList:Count()
-	error(string.format(ErrorOverride, "Count"))
+	return self.count
 end
 
 --- Determines whether the LinkedList has no elements.
 --
 -- @return true if the LinkedList empty, false otherwise
 function LinkedList:Empty()
-	error(string.format(ErrorOverride, "Empty"))
+	return self.count == 0
 end
 
 --- Creates a new array indexed table of this LinkedList.
@@ -194,8 +268,15 @@ end
 -- @param index the index to get
 -- @return the item in the LinkedList at the specified index
 -- @throw if the index is out of bounds of the LinkedList
-function LinkedList:Get()
-	error(string.format(ErrorOverride, "Get"))
+function LinkedList:Get(index)
+	if index < 1 or index > self.count then
+		error("Index out of bounds.")
+	end
+	local node = self.first
+	for _ = 2, index do
+		node = node.next
+	end
+	return node.value
 end
 
 --- Determines the index of the first occurrence of an item in the LinkedList.
