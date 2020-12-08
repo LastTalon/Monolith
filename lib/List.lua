@@ -12,7 +12,7 @@
 -- read-only data types that cannot change their contents after being created.
 -- These methods will be marked optional in the method documentation.
 --
--- @version 0.1.0, 2020-12-04
+-- @version 0.1.0, 2020-12-08
 -- @since 0.1
 
 local module = script.Parent
@@ -202,7 +202,7 @@ end
 --
 -- @param item the item to locate
 -- @param index the index to start looking from
--- @return the index of the item in the List if found, -1 otherwise
+-- @return the index of the item in the List if found, 0 otherwise
 -- @throw if the index is out of bounds of the List
 function List:IndexOf()
 	error(string.format(ErrorOverride, "IndexOf"))
@@ -220,7 +220,7 @@ end
 -- Only returns the very last occurrence of the item in the List.
 --
 -- @param item the item to locate
--- @return the index of the item in the List if found, -1 otherwise
+-- @return the index of the item in the List if found, 0 otherwise
 function List:LastIndexOf()
 	error(string.format(ErrorOverride, "LastIndexOf"))
 end
