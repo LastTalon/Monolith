@@ -220,8 +220,11 @@ end
 --
 -- @param items the Collection of items to add to this LinkedList
 -- @return true if the LinkedList changed as a result, false otherwise
-function LinkedList:AddAll()
-	error(string.format(ErrorOverride, "AddAll"))
+function LinkedList:AddAll(items)
+	for _, value in items:Enumerator() do
+		self:Add(value)
+	end
+	return true
 end
 
 --- Removes everything from the LinkedList.
@@ -268,8 +271,12 @@ end
 --
 -- @param items the Collection of items to remove from this LinkedList
 -- @return true if the LinkedList changed as a result, false otherwise
-function LinkedList:RemoveAll()
-	error(string.format(ErrorOverride, "RemoveAll"))
+function LinkedList:RemoveAll(items)
+	local changed = false
+	for _, value in items:Enumerator() do
+		changed = self:Remove(value) or changed
+	end
+	return changed
 end
 
 --- Removes all items except those provided from the LinkedList.
@@ -281,8 +288,17 @@ end
 --
 -- @param items the Collection of items to retain in this LinkedList
 -- @return true if the LinkedList changed as a result, false otherwise
-function LinkedList:RetainAll()
-	error(string.format(ErrorOverride, "RetainAll"))
+function LinkedList:RetainAll(items)
+	local node = self.first
+	local changed = false
+	while node ~= nil do
+		if not items:Contains(node.value) then
+			self:removeNode(node)
+			changed = true
+		end
+		node = node.next
+	end
+	return changed
 end
 
 --- Gets the item at the beginning of the LinkedList.
