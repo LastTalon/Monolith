@@ -35,13 +35,15 @@ function LinkedList.new(collection)
 	local self = setmetatable({}, LinkedList)
 	self.count = 0
 	if collection ~= nil then
-		if type(collection.Enumerator) == "function" then -- If there's an Enumerator, assume it acts as a collection.
-			for _, v in collection:Enumerator() do
-				self:addNode(v)
-			end
-		elseif type(collection) == "table" then
-			for _, v in ipairs(collection) do
-				self:addNode(v)
+		if type(collection) == "table" then
+			if type(collection.Enumerator) == "function" then -- If there's an Enumerator, assume it acts as a collection.
+				for _, v in collection:Enumerator() do
+					self:addNode(v)
+				end
+			else
+				for _, v in ipairs(collection) do
+					self:addNode(v)
+				end
 			end
 		else
 			error(string.format("Cannot construct LinkedList from type %s.",
@@ -445,7 +447,6 @@ function LinkedList:Delete(index)
 		currentIndex = currentIndex + 1
 		node = node.next
 	end
-	error("Malformed LinkedList.")
 end
 
 --- Inserts the item to the LinkedList at the specified index.
@@ -477,7 +478,6 @@ function LinkedList:Insert(index, item)
 		currentIndex = currentIndex + 1
 		node = node.next
 	end
-	error("Malformed LinkedList.")
 end
 
 --- Inserts all items into the LinkedList at the specified index.
@@ -514,7 +514,6 @@ function LinkedList:InsertAll(index, items)
 		currentIndex = currentIndex + 1
 		node = node.next
 	end
-	error("Malformed LinkedList.")
 end
 
 --- Gets an item from the end and removes that item from the LinkedList.
@@ -569,7 +568,6 @@ function LinkedList:Set(index, item)
 		currentIndex = currentIndex + 1
 		node = node.next
 	end
-	error("Malformed LinkedList.")
 end
 
 --- Gets an item from the beginning and removes that item from the LinkedList.

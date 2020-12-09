@@ -30,6 +30,23 @@ return function()
 				expect(list:Get(i)).to.equal(v)
 			end
 		end)
+
+		it("should error when attempting to create a list from a non-table", function()
+			expect(function() LinkedList.new(true) end).to.throw(
+				"Cannot construct LinkedList from type boolean.")
+			expect(function() LinkedList.new(1) end).to.throw(
+				"Cannot construct LinkedList from type number.")
+			expect(function() LinkedList.new("string") end).to.throw(
+				"Cannot construct LinkedList from type string.")
+			expect(function() LinkedList.new(function() end) end).to.throw(
+				"Cannot construct LinkedList from type function.")
+			expect(function() LinkedList.new(Instance.new("Folder")) end).to.throw(
+				"Cannot construct LinkedList from type userdata.")
+			expect(function() LinkedList.new(
+				coroutine.create(function() end)
+			) end).to.throw(
+				"Cannot construct LinkedList from type thread.")
+		end)
 	end)
 
 	describe("Enumerable Interface", function()
