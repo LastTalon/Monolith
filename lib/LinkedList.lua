@@ -122,8 +122,13 @@ end
 --
 -- @param item the item to locate in the LinkedList
 -- @return true if the item is in the LinkedList, false otherwise
-function LinkedList:Contains()
-	error(string.format(ErrorOverride, "Contains"))
+function LinkedList:Contains(item)
+	for _, value in self:Enumerator() do
+		if item == value then
+			return true
+		end
+	end
+	return false
 end
 
 --- Determines whether the LinkedList contains all of the items.
@@ -131,8 +136,13 @@ end
 --
 -- @param items the Collection of items to locate in this LinkedList
 -- @return true if all items are in the LinkedList, false otherwise
-function LinkedList:ContainsAll()
-	error(string.format(ErrorOverride, "ContainsAll"))
+function LinkedList:ContainsAll(items)
+	for _, value in items:Enumerator() do
+		if not self:Contains(value) then
+			return false
+		end
+	end
+	return true
 end
 
 --- Determines whether the LinkedList contains any of the provided items.
@@ -140,8 +150,13 @@ end
 --
 -- @param items the Collection of items to locate in this LinkedList
 -- @return true if any items are in the LinkedList, false otherwise
-function LinkedList:ContainsAny()
-	error(string.format(ErrorOverride, "ContainsAny"))
+function LinkedList:ContainsAny(items)
+	for _, value in items:Enumerator() do
+		if self:Contains(value) then
+			return true
+		end
+	end
+	return false
 end
 
 --- Gets the number of items in the LinkedList.
@@ -165,7 +180,11 @@ end
 --
 -- @return the array indexed table
 function LinkedList:ToArray()
-	error(string.format(ErrorOverride, "ToArray"))
+	local array = {}
+	for index, value in self:Enumerator() do
+		array[index] = value
+	end
+	return array
 end
 
 --- Creates a new table of this LinkedList.
@@ -177,7 +196,7 @@ end
 --
 -- @return the table
 function LinkedList:ToTable()
-	error(string.format(ErrorOverride, "ToTable"))
+	return self:ToArray()
 end
 
 --- Adds an item to the LinkedList.
@@ -210,7 +229,9 @@ end
 -- implement this method, but some may be unable to do so or may need to
 -- impose additional conditions to do so.
 function LinkedList:Clear()
-	error(string.format(ErrorOverride, "Clear"))
+	self.first = nil
+	self.last = nil
+	self.count = 0
 end
 
 --- Removes the specified item from the LinkedList.
@@ -224,8 +245,16 @@ end
 --
 -- @param item the item to remove from the LinkedList
 -- @return true if the LinkedList changed as a result, false otherwise
-function LinkedList:Remove()
-	error(string.format(ErrorOverride, "Remove"))
+function LinkedList:Remove(item)
+	local node = self.first
+	while node ~= nil do
+		if node.value == item then
+			self:removeNode(node)
+			return true
+		end
+		node = node.next
+	end
+	return false
 end
 
 --- Removes all provided items from the LinkedList.
@@ -296,7 +325,10 @@ end
 -- @return the last item in the LinkedList
 -- @throw if the LinkedList is empty
 function LinkedList:Last()
-	error(string.format(ErrorOverride, "Last"))
+	if self.last == nil then
+		error("No last element exists.")
+	end
+	return self.last.value
 end
 
 --- Determines the index of the last occurrence of an item in the LinkedList.
@@ -374,7 +406,12 @@ end
 -- @return the item in the LinkedList
 -- @throw if the LinkedList is empty
 function LinkedList:Pop()
-	error(string.format(ErrorOverride, "Pop"))
+	if self.last == nil then
+		error("No last element exists.")
+	end
+	local last = self.last.value
+	self:removeNode(self.last)
+	return last
 end
 
 --- Adds an item to the end of the LinkedList.
