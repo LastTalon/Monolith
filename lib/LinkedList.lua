@@ -13,7 +13,7 @@
 -- read-only data types that cannot change their contents after being created.
 -- These methods will be marked optional in the method documentation.
 --
--- @version 0.1.1, 2020-12-08
+-- @version 0.1.0, 2020-12-08
 -- @since 0.1
 
 local module = script.Parent
@@ -187,8 +187,9 @@ end
 --
 -- @param item the item to add
 -- @return true if the LinkedList changed as a result, false otherwise
-function LinkedList:Add()
-	error(string.format(ErrorOverride, "Add"))
+function LinkedList:Add(item)
+	self:addNode(item)
+	return true
 end
 
 --- Adds all provided items to the LinkedList.

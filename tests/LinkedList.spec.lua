@@ -357,7 +357,7 @@ return function()
 					expect(list:Last()).to.equal(1)
 				end)
 
-				it("should return true when adding an element (as per Collection)", function()
+				it("should return true (per Collection)", function()
 					local list = LinkedList.new()
 					expect(list:Add(1)).to.equal(true)
 				end)
