@@ -306,7 +306,10 @@ end
 -- @return the first item in the LinkedList
 -- @throw if the LinkedList is empty
 function LinkedList:First()
-	error(string.format(ErrorOverride, "First"))
+	if self.first == nil then
+		error("No first element exists.")
+	end
+	return self.first.value
 end
 
 --- Gets the item at the specified index in the LinkedList.
@@ -332,8 +335,25 @@ end
 -- @param index the index to start looking from
 -- @return the index of the item in the LinkedList if found, 0 otherwise
 -- @throw if the index is out of bounds of the LinkedList
-function LinkedList:IndexOf()
-	error(string.format(ErrorOverride, "IndexOf"))
+function LinkedList:IndexOf(item, index)
+	if index == nil then
+		index = 1
+	elseif index < 1 or index > self.count then
+		error("Index out of bounds.")
+	end
+	if self.count == 0 then
+		return 0
+	end
+	local currentIndex = 1
+	local node = self.first
+	while node ~= nil do
+		if node.value == item and currentIndex >= index then
+			return currentIndex
+		end
+		currentIndex = currentIndex + 1
+		node = node.next
+	end
+	return 0
 end
 
 --- Gets the item at the end of the LinkedList.
@@ -352,21 +372,53 @@ end
 --
 -- @param item the item to locate
 -- @return the index of the item in the LinkedList if found, 0 otherwise
-function LinkedList:LastIndexOf()
-	error(string.format(ErrorOverride, "LastIndexOf"))
+function LinkedList:LastIndexOf(item)
+	local currentIndex = self.count
+	local node = self.last
+	while node ~= nil do
+		if node.value == item then
+			return currentIndex
+		end
+		currentIndex = currentIndex - 1
+		node = node.previous
+	end
+	return 0
 end
 
 --- Creates a new sub-list of this LinkedList.
 -- Creates the list that is the portion of this LinkedList between the specified
--- indices or from the first sepecified index to the end if only one index is
+-- indices or from the first specified index to the end if only one index is
 -- specified.
 --
 -- @param first the index to start at
 -- @param last the index to end at
 -- @return the new LinkedList
 -- @throw if either index is out of bounds of the LinkedList
-function LinkedList:Sub()
-	error(string.format(ErrorOverride, "Sub"))
+function LinkedList:Sub(first, last)
+	last = last or self.count
+	if first < 1 or first > self.count then
+		error("First index out of bounds.")
+	end
+	if last < 1 or last > self.count then
+		error("Last index out of bounds.")
+	end
+	if last < first then
+		error("Last index less than first index.")
+	end
+	local sub = LinkedList.new()
+	local index = 1
+	local node = self.first
+	while node ~= nil do
+		if index >= first then
+			sub:Push(node.value)
+		end
+		if index >= last then
+			break
+		end
+		index = index + 1
+		node = node.next
+	end
+	return sub
 end
 
 --- Removes the item from the LinkedList at the specified index.
@@ -437,8 +489,9 @@ end
 --
 -- @param item the item to add
 -- @return true if the LinkedList changed as a result, false otherwise
-function LinkedList:Push()
-	error(string.format(ErrorOverride, "Push"))
+function LinkedList:Push(item)
+	self:addNode(item)
+	return true
 end
 
 --- Sets the element at the specified index.
@@ -463,7 +516,12 @@ end
 -- @return the item in the LinkedList
 -- @throw if the LinkedList is empty
 function LinkedList:Shift()
-	error(string.format(ErrorOverride, "Shift"))
+	if self.first == nil then
+		error("No first element exists.")
+	end
+	local first = self.first.value
+	self:removeNode(self.first)
+	return first
 end
 
 --- Adds an item to the beginning of the LinkedList.

@@ -993,7 +993,7 @@ return function()
 						"First index out of bounds.")
 				end)
 
-				it("should error when the first index is out of bounds with only one element", function()
+				it("should error when the last index is out of bounds with only one element", function()
 					local list = LinkedList.new({1})
 					expect(function() list:Sub(1, 2) end).to.throw(
 						"Last index out of bounds.")
@@ -1031,7 +1031,7 @@ return function()
 
 				it("should error when providing a last index less than the first index", function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
-					expect(function() list:Sub(1, 6) end).to.throw(
+					expect(function() list:Sub(4, 2) end).to.throw(
 						"Last index less than first index.")
 				end)
 			end)
