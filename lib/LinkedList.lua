@@ -431,8 +431,21 @@ end
 -- @param index the index of the item to remove from the LinkedList
 -- @return true if the LinkedList changed as a result, false otherwise
 -- @throw if the index is out of bounds of the LinkedList
-function LinkedList:Delete()
-	error(string.format(ErrorOverride, "Delete"))
+function LinkedList:Delete(index)
+	if index < 1 or index > self.count then
+		error("Index out of bounds.")
+	end
+	local currentIndex = 1
+	local node = self.first
+	while node ~= nil do
+		if currentIndex == index then
+			self:removeNode(node)
+			return true
+		end
+		currentIndex = currentIndex + 1
+		node = node.next
+	end
+	error("Malformed LinkedList.")
 end
 
 --- Inserts the item to the LinkedList at the specified index.
@@ -446,8 +459,25 @@ end
 -- @param item the item to add
 -- @return true if the LinkedList changed as a result, false otherwise
 -- @throw if the index is out of bounds of the LinkedList
-function LinkedList:Insert()
-	error(string.format(ErrorOverride, "Insert"))
+function LinkedList:Insert(index, item)
+	if index == self.count + 1 then
+		self:addNode(item)
+		return true
+	end
+	if index < 1 or index > self.count then
+		error("Index out of bounds.")
+	end
+	local currentIndex = 1
+	local node = self.first
+	while node ~= nil do
+		if currentIndex == index then
+			self:addNode(item, node)
+			return true
+		end
+		currentIndex = currentIndex + 1
+		node = node.next
+	end
+	error("Malformed LinkedList.")
 end
 
 --- Inserts all items into the LinkedList at the specified index.
@@ -462,8 +492,29 @@ end
 -- @param items the Collection of items to add to this LinkedList
 -- @return true if the LinkedList changed as a result, false otherwise
 -- @throw if the index is out of bounds of the LinkedList
-function LinkedList:InsertAll()
-	error(string.format(ErrorOverride, "InsertAll"))
+function LinkedList:InsertAll(index, items)
+	if index == self.count + 1 then
+		for _, value in items:Enumerator() do
+			self:addNode(value)
+		end
+		return true
+	end
+	if index < 1 or index > self.count then
+		error("Index out of bounds.")
+	end
+	local currentIndex = 1
+	local node = self.first
+	while node ~= nil do
+		if currentIndex == index then
+			for _, value in items:Enumerator() do
+				self:addNode(value, node)
+			end
+			return true
+		end
+		currentIndex = currentIndex + 1
+		node = node.next
+	end
+	error("Malformed LinkedList.")
 end
 
 --- Gets an item from the end and removes that item from the LinkedList.
@@ -500,10 +551,25 @@ end
 -- impose additional conditions to do so.
 --
 -- @param index the index to set
+-- @param	item the item to set at the index
 -- @return true if the LinkedList changed as a result, false otherwise
 -- @throw if the index is out of bounds of the LinkedList
-function LinkedList:Set()
-	error(string.format(ErrorOverride, "Set"))
+function LinkedList:Set(index, item)
+	if index < 1 or index > self.count then
+		error("Index out of bounds.")
+	end
+	local currentIndex = 1
+	local node = self.first
+	while node ~= nil do
+		if currentIndex == index then
+			local same = node.value == item
+			node.value = item
+			return not same
+		end
+		currentIndex = currentIndex + 1
+		node = node.next
+	end
+	error("Malformed LinkedList.")
 end
 
 --- Gets an item from the beginning and removes that item from the LinkedList.
@@ -533,8 +599,9 @@ end
 --
 -- @param item the item to add
 -- @return true if the LinkedList changed as a result, false otherwise
-function LinkedList:Unshift()
-	error(string.format(ErrorOverride, "Unshift"))
+function LinkedList:Unshift(item)
+	self:addNode(item, self.first)
+	return true
 end
 
 return LinkedList

@@ -1171,7 +1171,7 @@ return function()
 				it("should error when out of bounds when empty", function()
 					local list = LinkedList.new()
 					local insert = LinkedList.new({6, 7, 8, 9, 10})
-					expect(function() list:InsertAll(1, insert) end).to.throw(
+					expect(function() list:InsertAll(0, insert) end).to.throw(
 						"Index out of bounds.")
 				end)
 
