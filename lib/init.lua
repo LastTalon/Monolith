@@ -1,5 +1,5 @@
---- The Monolith data structure library.
--- Provides access to all library classes and features.
+--- The Monolith collections API.
+-- Provides access to all library classes, and interfaces as a singleton.
 --
 -- @module Monolith
 -- @version 0.1.0, 2020-12-04
@@ -20,6 +20,9 @@ Monolith.Collection = Collection
 Monolith.List = List
 Monolith.LinkedList = LinkedList
 
+--- Creates the Monolith API singleton.
+--
+-- @return the new Monolith API
 function Monolith.new()
 	if instance == nil then
 		local self = setmetatable({}, Monolith)
