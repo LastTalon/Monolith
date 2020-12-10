@@ -1,6 +1,6 @@
 --- Tests for the LinkedList class.
 --
--- @version 0.1.0, 2020-12-08
+-- @version 0.1.0, 2020-12-09
 -- @since 0.1
 
 return function()
@@ -40,12 +40,11 @@ return function()
 				"Cannot construct LinkedList from type string.")
 			expect(function() LinkedList.new(function() end) end).to.throw(
 				"Cannot construct LinkedList from type function.")
-			expect(function() LinkedList.new(Instance.new("Folder")) end).to.throw(
-				"Cannot construct LinkedList from type userdata.")
+			expect(function() LinkedList.new(Instance.new("Folder")) end)
+				.to.throw("Cannot construct LinkedList from type userdata.")
 			expect(function() LinkedList.new(
 				coroutine.create(function() end)
-			) end).to.throw(
-				"Cannot construct LinkedList from type thread.")
+			) end).to.throw("Cannot construct LinkedList from type thread.")
 		end)
 	end)
 
@@ -553,7 +552,9 @@ return function()
 				it("should successfully attempt to remove when empty", function()
 					local list = LinkedList.new()
 					local remove = LinkedList.new({1, 2, 3, 4, 5})
-					expect(function() list:RemoveAll(remove) end).never.to.throw()
+					expect(function()
+						list:RemoveAll(remove)
+					end).never.to.throw()
 				end)
 
 				it("should return false when attempting to remove when empty", function()
@@ -839,7 +840,7 @@ return function()
 				it("should error when attempting get an element when empty", function()
 					local list = LinkedList.new()
 					expect(function() list:Get(1) end).to.throw(
-						"Index out of bounds.")
+						"Index '1' is out of bounds.")
 				end)
 
 				it("should get an element with only one element", function()
@@ -850,7 +851,7 @@ return function()
 				it("should error when out of bounds with only one element", function()
 					local list = LinkedList.new({1})
 					expect(function() list:Get(2) end).to.throw(
-						"Index out of bounds.")
+						"Index '2' is out of bounds.")
 				end)
 
 				it("should get an element with many elements", function()
@@ -863,7 +864,7 @@ return function()
 				it("should error when out of bounds with many elements", function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
 					expect(function() list:Get(6) end).to.throw(
-						"Index out of bounds.")
+						"Index '6' is out of bounds.")
 				end)
 			end)
 
@@ -876,7 +877,7 @@ return function()
 				it("should error when providing an index on an empty list", function()
 					local list = LinkedList.new()
 					expect(function() list:IndexOf(1, 1) end).to.throw(
-						"Index out of bounds.")
+						"Index '1' is out of bounds.")
 				end)
 
 				it("should find the index when only one element exists", function()
@@ -897,7 +898,7 @@ return function()
 				it("should error when the index is out of bounds when only one element exists", function()
 					local list = LinkedList.new({1})
 					expect(function() list:IndexOf(1, 2) end).to.throw(
-						"Index out of bounds.")
+						"Index '2' is out of bounds.")
 				end)
 
 				it("should find the index with many elements", function()
@@ -923,7 +924,7 @@ return function()
 				it("should error when the index is out of bounds with many elements", function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
 					expect(function() list:IndexOf(1, 6) end).to.throw(
-						"Index out of bounds.")
+						"Index '6' is out of bounds.")
 				end)
 			end)
 
@@ -996,7 +997,7 @@ return function()
 				it("should error when providing the first index on an empty list", function()
 					local list = LinkedList.new()
 					expect(function() list:Sub(1) end).to.throw(
-						"First index out of bounds.")
+						"Index '1' is out of bounds.")
 				end)
 
 				it("should create a sub-list with only one element", function()
@@ -1007,13 +1008,13 @@ return function()
 				it("should error when the first index is out of bounds with only one element", function()
 					local list = LinkedList.new({1})
 					expect(function() list:Sub(2) end).to.throw(
-						"First index out of bounds.")
+						"Index '2' is out of bounds.")
 				end)
 
 				it("should error when the last index is out of bounds with only one element", function()
 					local list = LinkedList.new({1})
 					expect(function() list:Sub(1, 2) end).to.throw(
-						"Last index out of bounds.")
+						"Index '2' is out of bounds.")
 				end)
 
 				it("should create a sub-list with many elements", function()
@@ -1037,19 +1038,19 @@ return function()
 				it("should error if the first index is out of bounds with many elements", function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
 					expect(function() list:Sub(0) end).to.throw(
-						"First index out of bounds.")
+						"Index '0' is out of bounds.")
 				end)
 
 				it("should error if the last index is out of bounds with many elements", function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
 					expect(function() list:Sub(1, 6) end).to.throw(
-						"Last index out of bounds.")
+						"Index '6' is out of bounds.")
 				end)
 
-				it("should error when providing a last index less than the first index", function()
+				it("should error when providing a last index smaller than the first index", function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
 					expect(function() list:Sub(4, 2) end).to.throw(
-						"Last index less than first index.")
+						"Last index is smaller than first index.")
 				end)
 			end)
 		end)
@@ -1059,7 +1060,7 @@ return function()
 				it("should error when empty", function()
 					local list = LinkedList.new()
 					expect(function() list:Delete(1) end).to.throw(
-						"Index out of bounds.")
+						"Index '1' is out of bounds.")
 				end)
 
 				it("should delete when there is only one element", function()
@@ -1076,7 +1077,7 @@ return function()
 				it("should error when out of bounds and there is only one element", function()
 					local list = LinkedList.new({1})
 					expect(function() list:Delete(0) end).to.throw(
-						"Index out of bounds.")
+						"Index '0' is out of bounds.")
 				end)
 
 				it("should delete when there are many elements", function()
@@ -1092,7 +1093,7 @@ return function()
 				it("should error when out of bounds and there are many elements", function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
 					expect(function() list:Delete(6) end).to.throw(
-						"Index out of bounds.")
+						"Index '6' is out of bounds.")
 				end)
 			end)
 
@@ -1106,7 +1107,7 @@ return function()
 				it("should error when out of bounds when empty", function()
 					local list = LinkedList.new()
 					expect(function() list:Insert(0, 1) end).to.throw(
-						"Index out of bounds.")
+						"Index '0' is out of bounds.")
 				end)
 
 				it("should insert an item at the front with only one element", function()
@@ -1126,7 +1127,7 @@ return function()
 				it("should error when out of bounds with only one element", function()
 					local list = LinkedList.new({1})
 					expect(function() list:Insert(3, 2) end).to.throw(
-						"Index out of bounds.")
+						"Index '3' is out of bounds.")
 				end)
 
 				it("should insert an item at the front with many elements", function()
@@ -1157,7 +1158,7 @@ return function()
 				it("should error when out of bounds with many elements", function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
 					expect(function() list:Insert(7, 6) end).to.throw(
-						"Index out of bounds.")
+						"Index '7' is out of bounds.")
 				end)
 
 				it("should return true (per List)", function()
@@ -1189,7 +1190,7 @@ return function()
 					local list = LinkedList.new()
 					local insert = LinkedList.new({6, 7, 8, 9, 10})
 					expect(function() list:InsertAll(0, insert) end).to.throw(
-						"Index out of bounds.")
+						"Index '0' is out of bounds.")
 				end)
 
 				it("should insert a single item at the front with only one element", function()
@@ -1236,7 +1237,7 @@ return function()
 					local list = LinkedList.new({1})
 					local insert = LinkedList.new({6, 7, 8, 9, 10})
 					expect(function() list:InsertAll(3, insert) end).to.throw(
-						"Index out of bounds.")
+						"Index '3' is out of bounds.")
 				end)
 
 				it("should insert a single item at the front with many elements", function()
@@ -1311,7 +1312,7 @@ return function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
 					local insert = LinkedList.new({6, 7, 8, 9, 10})
 					expect(function() list:InsertAll(7, insert) end).to.throw(
-						"Index out of bounds.")
+						"Index '7' is out of bounds.")
 				end)
 
 				it("should return true (per List)", function()
@@ -1384,7 +1385,7 @@ return function()
 				it("should error when setting on an empty list", function()
 					local list = LinkedList.new()
 					expect(function() list:Set(1, 1) end).to.throw(
-						"Index out of bounds.")
+						"Index '1' is out of bounds.")
 				end)
 
 				it("should set an item with a single element", function()
@@ -1407,7 +1408,7 @@ return function()
 				it("should error when out of bounds with a single element", function()
 					local list = LinkedList.new({1})
 					expect(function() list:Set(2, 2) end).to.throw(
-						"Index out of bounds.")
+						"Index '2' is out of bounds.")
 				end)
 
 				it("should set an item with many elements", function()
@@ -1430,7 +1431,7 @@ return function()
 				it("should error when out of bounds with many", function()
 					local list = LinkedList.new({1, 2, 3, 4, 5})
 					expect(function() list:Set(6, 6) end).to.throw(
-						"Index out of bounds.")
+						"Index '6' is out of bounds.")
 				end)
 			end)
 
