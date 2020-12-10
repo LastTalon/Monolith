@@ -1,4 +1,4 @@
-# How to Contribute to Roads
+# How to Contribute to Monolith
 Contributions to Monolith are always welcome!
 
 We welcome bug reports, suggestions, and code contributions. We want Monolith
