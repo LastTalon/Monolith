@@ -202,11 +202,7 @@ end
 --
 -- @param item the item to locate
 -- @param index the index to start looking from
-<<<<<<< HEAD
 -- @return the index of the item in the List if found, 0 otherwise
-=======
--- @return the index of the item in the List if found, -1 otherwise
->>>>>>> master
 -- @throw if the index is out of bounds of the List
 function List:IndexOf()
 	error(string.format(ErrorOverride, "IndexOf"))
@@ -224,11 +220,7 @@ end
 -- Only returns the very last occurrence of the item in the List.
 --
 -- @param item the item to locate
-<<<<<<< HEAD
 -- @return the index of the item in the List if found, 0 otherwise
-=======
--- @return the index of the item in the List if found, -1 otherwise
->>>>>>> master
 function List:LastIndexOf()
 	error(string.format(ErrorOverride, "LastIndexOf"))
 end
