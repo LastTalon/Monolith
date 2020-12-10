@@ -9,6 +9,7 @@ return function()
 	local Enumerable = require(module:WaitForChild("Enumerable"))
 	local Collection = require(module:WaitForChild("Collection"))
 	local List = require(module:WaitForChild("List"))
+	local LinkedList = require(module:WaitForChild("LinkedList"))
 
 	describe("Monolith", function()
 		it("should be able to be instantiated", function()
@@ -31,6 +32,10 @@ return function()
 
 		it("should expose the List interface", function()
 			expect(Monolith.List).to.equal(List)
+		end)
+
+		it("should expose LinkedList", function()
+			expect(Monolith.LinkedList).to.equal(LinkedList)
 		end)
 	end)
 end
