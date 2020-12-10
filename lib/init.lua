@@ -8,6 +8,7 @@
 local Enumerable = require(script:WaitForChild("Enumerable"))
 local Collection = require(script:WaitForChild("Collection"))
 local List = require(script:WaitForChild("List"))
+local LinkedList = require(script:WaitForChild("LinkedList"))
 
 local Monolith = {}
 local instance
@@ -17,6 +18,7 @@ Monolith.__index = Monolith
 Monolith.Enumerable = Enumerable
 Monolith.Collection = Collection
 Monolith.List = List
+Monolith.LinkedList = LinkedList
 
 function Monolith.new()
 	if instance == nil then
