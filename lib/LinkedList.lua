@@ -7,11 +7,11 @@
 -- LinkedList implements all optional Collection methods as well as all
 -- optional List methods with the exception that List methods.
 --
--- @version 0.1.0, 2020-12-09
+-- @version 0.1.0, 2020-12-11
 -- @since 0.1
 
 local module = script.Parent
-local List = require(module:WaitForChild("List"))
+local AbstractList = require(module:WaitForChild("AbstractList"))
 
 local ErrorConstruct = "Cannot construct LinkedList from type %s."
 local ErrorFirst = "No first element exists."
@@ -19,7 +19,7 @@ local ErrorLast = "No last element exists."
 local ErrorBounds = "Index '%s' is out of bounds."
 local ErrorOrder = "Last index is smaller than first index."
 
-local LinkedList = List.new()
+local LinkedList = AbstractList.new()
 
 LinkedList.__index = LinkedList
 
@@ -117,102 +117,11 @@ function LinkedList:Enumerator()
 	end
 end
 
---- Determines whether the LinkedList contains an item.
---
--- @param item the item to locate in the LinkedList
--- @return true if the item is in the LinkedList, false otherwise
-function LinkedList:Contains(item)
-	for _, value in self:Enumerator() do
-		if item == value then
-			return true
-		end
-	end
-	return false -- We're only sure its not there once we've checked everything
-end
-
---- Determines whether the LinkedList contains multiple items.
--- Checks for items in another Collection in no guaranteed order.
---
--- @param items the Collection of items to locate in this LinkedList
--- @return true if all items are in the LinkedList, false otherwise
-function LinkedList:ContainsAll(items)
-	for _, value in items:Enumerator() do
-		if not self:Contains(value) then
-			return false -- As soon as one is not contained all cannot be
-		end
-	end
-	return true -- We're only sure all are contained when we're done
-end
-
---- Determines whether the LinkedList contains any of the provided items.
--- Checks for items in another Collection in no guaranteed order.
---
--- @param items the Collection of items to locate in this LinkedList
--- @return true if any items are in the LinkedList, false otherwise
-function LinkedList:ContainsAny(items)
-	for _, value in items:Enumerator() do
-		if self:Contains(value) then
-			return true -- As soon as we find one we're good
-		end
-	end
-	return false -- We only know none are contained once we're done
-end
-
 --- Gets the number of items in the LinkedList.
 --
 -- @return the number of items
 function LinkedList:Count()
 	return self.count
-end
-
---- Determines whether the LinkedList has no elements.
---
--- @return true if the LinkedList empty, false otherwise
-function LinkedList:Empty()
-	return self.count == 0
-end
-
---- Creates a new array indexed table of this LinkedList.
--- The indices of the table are the same as the indices of the LinkedList, and
--- all elements of the LinkedList are guaranteed to exist in the array indices
--- of the table (all elements can be traversed with ipairs).
---
--- @return the array indexed table
-function LinkedList:ToArray()
-	local array = {}
-	for index, value in self:Enumerator() do
-		array[index] = value
-	end
-	return array
-end
-
---- Creates a new table of this LinkedList.
--- LinkedLists use no indices that are not array indices, so this provides the
--- same table as ToArray.
---
--- @return the table
-LinkedList.ToTable = LinkedList.ToArray -- They should be identical
-
---- Adds an item to the LinkedList.
---
--- @param item the item to add
--- @return true always since the LinkedList is always changed
-function LinkedList:Add(item)
-	self:addNode(item) -- Add to the end (no node needed)
-	return true -- The LinkedList is always changed
-end
-
---- Adds multiple items to the LinkedList.
--- Adds items provided in another Collection in the order the Collection
--- enumerates them.
---
--- @param items the Collection of items to add to this LinkedList
--- @return true always since the LinkedList is always changed
-function LinkedList:AddAll(items)
-	for _, value in items:Enumerator() do
-		self:Add(value)
-	end
-	return true -- The LinkedList is always changed
 end
 
 --- Removes everything from the LinkedList.
@@ -240,22 +149,6 @@ function LinkedList:Remove(item)
 		node = node.next
 	end
 	return false -- Nothing changed
-end
-
---- Removes all provided items from the LinkedList.
--- Removes each instance of a provided item only once for each time provided.
--- If there are multiple of the same item in this LinkedList, it removes only
--- the first encountered when traversing the list from the first element to the
--- last element each time one is provided.
---
--- @param items the Collection of items to remove from this LinkedList
--- @return true if the LinkedList changed as a result, false otherwise
-function LinkedList:RemoveAll(items)
-	local changed = false -- We can't report a change immediately
-	for _, value in items:Enumerator() do
-		changed = self:Remove(value) or changed -- Changed now or before
-	end
-	return changed
 end
 
 --- Removes all items except those provided from the LinkedList.
@@ -505,6 +398,12 @@ function LinkedList:Push(item)
 	self:addNode(item)
 	return true -- The LinkedList changed
 end
+
+--- Adds an item to the LinkedList.
+--
+-- @param item the item to add
+-- @return true always since the LinkedList is always changed
+LinkedList.Add = LinkedList.Push
 
 --- Sets the element at the specified index.
 --
