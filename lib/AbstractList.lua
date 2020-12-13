@@ -1,6 +1,17 @@
 --- An partial list implementation.
+-- This partial implementation can be used to create concrete Lists. This
+-- implementation implements all Collection methods save Add and Remove. It
+-- doesn't implement Enumerable methods or List methods as it has no knowledge
+-- of the specific concrete implementation. Due to the lack of knowledge of the
+-- specific implementation method, some methods may be naive implementations
+-- for any particular implementation and can be overridden.
 --
--- @version 0.1.0 2020-12-11
+-- AbstractList has the same optional and required methods of Collection and
+-- List. AbstractList assumes all optional methods are intended to be
+-- implemented, however, they can be overridden if they should not in a
+-- particular concrete implementation.Instance.new("Accessory")
+--
+-- @version 0.1.0 2020-12-12
 -- @since 1.0
 
 local module = script.Parent
@@ -45,7 +56,7 @@ function AbstractList:Contains(item)
 end
 
 --- Determines whether the AbstractList contains multiple items.
--- Checks for items in another Collection in no guaranteed order.
+-- Checks for items in another Collection in the order they are enumerated.
 --
 -- @param items the Collection of items to locate in this AbstractList
 -- @return true if all items are in the AbstractList, false otherwise
@@ -59,7 +70,7 @@ function AbstractList:ContainsAll(items)
 end
 
 --- Determines whether the AbstractList contains any of the provided items.
--- Checks for items in another Collection in no guaranteed order.
+-- Checks for items in another Collection in the order they are enumerated.
 --
 -- @param items the Collection of items to locate in this AbstractList
 -- @return true if any items are in the AbstractList, false otherwise
@@ -136,9 +147,6 @@ function AbstractList:AddAll(items)
 end
 
 --- Removes everything from the AbstractList.
--- This method is optional. All AbstractList implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
 function AbstractList:Clear()
 	for i = self:Count(), 1, -1 do -- We go backward for less shuffling
 		self:Delete(i)
@@ -177,11 +185,8 @@ function AbstractList:RemoveAll(items)
 end
 
 --- Removes all items except those provided from the AbstractList.
--- Retains only the items contained in the specified Collection.
---
--- This method is optional. All AbstractList implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
+-- Retains only the items contained in the specified Collection regardless
+-- of duplicates. If there are duplicates they are all kept.
 --
 -- @param items the Collection of items to retain in this AbstractList
 -- @return true if the AbstractList changed as a result, false otherwise

@@ -1,4 +1,7 @@
 --- An array based list of items.
+-- A List implementation that stores items using an array. This provides random
+-- access to any index, however does so at the expense of insertion and
+-- deletion except at the end of the list.
 --
 -- ArrayList implements all optional Collection methods as well as all
 -- optional List methods.
