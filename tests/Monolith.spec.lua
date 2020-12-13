@@ -10,6 +10,8 @@ return function()
 	local Collection = require(module:WaitForChild("Collection"))
 	local List = require(module:WaitForChild("List"))
 	local LinkedList = require(module:WaitForChild("LinkedList"))
+	local Queue = require(module:WaitForChild("Queue"))
+	local LinkedQueue = require(module:WaitForChild("LinkedQueue"))
 
 	describe("Monolith", function()
 		it("should be able to be instantiated", function()
@@ -36,6 +38,14 @@ return function()
 
 		it("should expose LinkedList", function()
 			expect(Monolith.LinkedList).to.equal(LinkedList)
+		end)
+
+		it("should expose Queue", function()
+			expect(Monolith.Queue).to.equal(Queue)
+		end)
+
+		it("should expose LinkedQueue", function()
+			expect(Monolith.LinkedQueue).to.equal(LinkedQueue)
 		end)
 	end)
 end
