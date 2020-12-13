@@ -1,4 +1,12 @@
 --- An ordered, linear first in first out data structure.
+-- Queues have a distinct ordering of their elements and can be added to at the
+-- back and removed from in the front. The combination of these ensures that
+-- the first elements added are the first ones out of the Queue.
+--
+-- All queues are guaranteed to provide a required set of behaviors without
+-- exception. Unless otherwise noted in a method's documentation, a method is
+-- equired and can be used freely. Some queues may not be able to provide full
+-- functionality for some optional methods.
 --
 -- @version 0.1.0, 2020-12-12
 -- @since 0.1
@@ -82,11 +90,8 @@ function Queue:ToArray()
 end
 
 --- Creates a new table of this Queue.
--- This is a more generalized form of ToArray, able to use any indices of the
--- table provided. The particular Queue implementation may or may not use
--- non-array indices of the table (some elements of the table may need to be
--- traversed with pairs rather than ipairs). This may preserve the structure of
--- the particular Queue implementation better than ToArray.
+-- All Queues are linear collections with a beginning and an end, so this is
+-- identical to ToArray.
 --
 -- @return the table
 function Queue:ToTable()

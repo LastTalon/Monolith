@@ -1,4 +1,9 @@
 --- A doubly-linked first in first out data structure.
+-- Implements a Queue as a LinkedList, providing the same performance
+-- characteristics as the LinkedList.
+--
+-- LinkedQueue implements all optional Collection methods as well as all
+-- optional Queue methods.
 --
 -- @version 0.1.0, 2020-12-12
 -- @since 0.1
@@ -13,6 +18,12 @@ local LinkedQueue = Queue.new()
 
 LinkedQueue.__index = LinkedQueue
 
+--- Creates a new LinkedQueue.
+-- Creates a LinkedQueue copy of the provided collection or array indexed table
+-- if one is provided, otherwise creates an empty LinkedQueue.
+--
+-- @param collection the Collection or table to copy
+-- @return the new LinkedQueue
 function LinkedQueue.new(collection)
 	local self = setmetatable({}, LinkedQueue)
 	self.list = LinkedList.new()
@@ -41,8 +52,6 @@ end
 -- or ipairs.
 --
 -- @return the enumerator generator
--- @return the invariant state
--- @return the control variable state
 function LinkedQueue:Enumerator()
 	return self.list:Enumerator()
 end
@@ -56,7 +65,8 @@ function LinkedQueue:Contains(item)
 end
 
 --- Determines whether the LinkedQueue contains all of the items.
--- Checks for items provided in another Collection in no guaranteed order.
+-- Checks for items provided in another Collection in the order they are
+-- enumerated.
 --
 -- @param items the Collection of items to locate in this LinkedQueue
 -- @return true if all items are in the LinkedQueue, false otherwise
@@ -65,7 +75,8 @@ function LinkedQueue:ContainsAll(items)
 end
 
 --- Determines whether the LinkedQueue contains any of the provided items.
--- Checks for items provided in another Collection in no guaranteed order.
+-- Checks for items provided in another Collection in the order they are
+-- enumerated.
 --
 -- @param items the Collection of items to locate in this LinkedQueue
 -- @return true if any items are in the LinkedQueue, false otherwise
@@ -88,9 +99,9 @@ function LinkedQueue:Empty()
 end
 
 --- Creates a new array indexed table of this LinkedQueue.
--- There is no guaranteed order of the array, but all elements of the
--- LinkedQueue are guaranteed to exist in the array indices of the table (all
--- elements can be traversed with ipairs).
+-- The order of the array is the same as the order of the LinkedQueue, and all
+-- elements of the LinkedQueue are guaranteed to exist in the array indices of
+-- the table (all elements can be traversed with ipairs).
 --
 -- @return the array indexed table
 function LinkedQueue:ToArray()
@@ -98,11 +109,8 @@ function LinkedQueue:ToArray()
 end
 
 --- Creates a new table of this LinkedQueue.
--- This is a more generalized form of ToArray, able to use any indices of the
--- table provided. The particular LinkedQueue implementation may or may not use
--- non-array indices of the table (some elements of the table may need to be
--- traversed with pairs rather than ipairs). This may preserve the structure of
--- the particular LinkedQueue implementation better than ToArray.
+-- LinkedQueues are linear collections with a beginning and an end, so this is
+-- identical to ToArray.
 --
 -- @return the table
 function LinkedQueue:ToTable()
@@ -110,45 +118,33 @@ function LinkedQueue:ToTable()
 end
 
 --- Adds an item to the LinkedQueue.
--- This method is optional. All LinkedQueue implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
 --
 -- @param item the item to add
--- @return true if the LinkedQueue changed as a result, false otherwise
+-- @return true always since the LinkedQueue is always changed
 function LinkedQueue:Add(item)
 	return self.list:Add(item)
 end
 
 --- Adds all provided items to the LinkedQueue.
--- Adds items provided in another Collection in no guaranteed order.
---
--- This method is optional. All LinkedQueue implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
+-- Adds items provided in another Collection in the order the Collection
+-- enumerates them.
 --
 -- @param items the Collection of items to add to this LinkedQueue
--- @return true if the LinkedQueue changed as a result, false otherwise
+-- @return true always since the LinkedQueue is always changed
 function LinkedQueue:AddAll(items)
 	return self.list:AddAll(items)
 end
 
 --- Removes everything from the LinkedQueue.
--- This method is optional. All LinkedQueue implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
 function LinkedQueue:Clear()
 	self.list:Clear()
 end
 
 --- Removes the specified item from the LinkedQueue.
 -- Removes only a single item. If there are multiple of the same item, it
--- removes only the first encountered in no guaranteed order. Shifts other
--- elements to fill the gap left at the index of removal.
---
--- This method is optional. All LinkedQueue implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
+-- removes only the first encountered when traversing the list from the first
+-- element to the last element. Shifts other elements to fill the gap left at
+-- the index of removal.
 --
 -- @param item the item to remove from the LinkedQueue
 -- @return true if the LinkedQueue changed as a result, false otherwise
@@ -159,11 +155,8 @@ end
 --- Removes all provided items from the LinkedQueue.
 -- Removes each instance of a provided item only once for each time provided.
 -- If there are multiple of the same item in this LinkedQueue, it removes only
--- the first encountered in no guaranteed order each time one is provided.
---
--- This method is optional. All LinkedQueue implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
+-- the first encountered when traversing the list from the first element to the
+-- last element each time one is provided.
 --
 -- @param items the Collection of items to remove from this LinkedQueue
 -- @return true if the LinkedQueue changed as a result, false otherwise
@@ -172,11 +165,8 @@ function LinkedQueue:RemoveAll(items)
 end
 
 --- Removes all items except those provided from the LinkedQueue.
--- Retains only the items contained in the specified Collection.
---
--- This method is optional. All LinkedQueue implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
+-- Retains only the items contained in the specified Collection regardless
+-- of duplicates. If there are duplicates they are all kept.
 --
 -- @param items the Collection of items to retain in this LinkedQueue
 -- @return true if the LinkedQueue changed as a result, false otherwise
@@ -193,22 +183,15 @@ function LinkedQueue:First()
 end
 
 --- Adds an item to the end of the LinkedQueue.
--- This method is optional. All LinkedQueue implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
 --
 -- @param item the item to add
--- @return true if the LinkedQueue changed as a result, false otherwise
+-- @return true always since the LinkedQueue is always changed
 function LinkedQueue:Push(item)
 	return self.list:Push(item)
 end
 
 --- Gets an item from the beginning and removes that item from the LinkedQueue.
 -- Shifts other elements to fill the gap left.
---
--- This method is optional. All LinkedQueue implementations should attempt to
--- implement this method, but some may be unable to do so or may need to
--- impose additional conditions to do so.
 --
 -- @return the item in the LinkedQueue
 -- @throw if the LinkedQueue is empty
