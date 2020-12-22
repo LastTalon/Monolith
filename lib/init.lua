@@ -9,6 +9,8 @@ local Enumerable = require(script:WaitForChild("Enumerable"))
 local Collection = require(script:WaitForChild("Collection"))
 local List = require(script:WaitForChild("List"))
 local LinkedList = require(script:WaitForChild("LinkedList"))
+local Queue = require(script:WaitForChild("Queue"))
+local LinkedQueue = require(script:WaitForChild("LinkedQueue"))
 
 local Monolith = {}
 local instance
@@ -19,6 +21,8 @@ Monolith.Enumerable = Enumerable
 Monolith.Collection = Collection
 Monolith.List = List
 Monolith.LinkedList = LinkedList
+Monolith.Queue = Queue
+Monolith.LinkedQueue = LinkedQueue
 
 --- Creates the Monolith API singleton.
 --
