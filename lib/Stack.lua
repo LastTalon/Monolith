@@ -1,4 +1,4 @@
---- An ordered, linear last in first out data structure.
+--- An ordered, linear, last in first out data structure.
 -- Stacks have a distinct ordering of their elements and can be added to at the
 -- back and removed from in the back. The combination of these ensures that
 -- the last elements added are the first ones out of the Stack.
