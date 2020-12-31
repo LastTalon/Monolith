@@ -1,1 +1,1 @@
-tests/
+**/*.spec.lua
