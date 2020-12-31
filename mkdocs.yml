@@ -1,0 +1,22 @@
+site_name: Monolith
+site_url: https://lasttalon.github.io/Monolith/
+repo_url: https://github.com/LastTalon/Monolith/
+edit_uri: ''
+
+theme:
+  name: readthedocs
+  hljs_languages:
+    - lua
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - User Guide:
+    - Introduction: user-guide/index.md
+  - Reference:
+    - API Reference: api/
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
