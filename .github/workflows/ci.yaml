@@ -20,7 +20,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Check Formatting
-      run: stylua --check -g '**/*.lua' .
+      run: stylua --check .
 
   lemur:
     name: Lemur Testing
