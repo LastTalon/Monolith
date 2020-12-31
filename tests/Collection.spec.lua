@@ -20,8 +20,9 @@ return function()
 
 		it("should error when Enumerator is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.Enumerator() end).to.throw(
-				"Abstract method Enumerator must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.Enumerator()
+			end).to.throw("Abstract method Enumerator must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a Contains method", function()
@@ -31,8 +32,9 @@ return function()
 
 		it("should error when Contains is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.Contains() end).to.throw(
-				"Abstract method Contains must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.Contains()
+			end).to.throw("Abstract method Contains must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a ContainsAll method", function()
@@ -42,8 +44,9 @@ return function()
 
 		it("should error when ContainsAll is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.ContainsAll() end).to.throw(
-				"Abstract method ContainsAll must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.ContainsAll()
+			end).to.throw("Abstract method ContainsAll must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a ContainsAny method", function()
@@ -53,8 +56,9 @@ return function()
 
 		it("should error when ContainsAny is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.ContainsAny() end).to.throw(
-				"Abstract method ContainsAny must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.ContainsAny()
+			end).to.throw("Abstract method ContainsAny must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a Count method", function()
@@ -64,8 +68,9 @@ return function()
 
 		it("should error when Count is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.Count() end).to.throw(
-				"Abstract method Count must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.Count()
+			end).to.throw("Abstract method Count must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a Empty method", function()
@@ -75,8 +80,9 @@ return function()
 
 		it("should error when Empty is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.Empty() end).to.throw(
-				"Abstract method Empty must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.Empty()
+			end).to.throw("Abstract method Empty must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a ToArray method", function()
@@ -86,8 +92,9 @@ return function()
 
 		it("should error when ToArray is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.ToArray() end).to.throw(
-				"Abstract method ToArray must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.ToArray()
+			end).to.throw("Abstract method ToArray must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a ToTable method", function()
@@ -97,8 +104,9 @@ return function()
 
 		it("should error when ToTable is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.ToTable() end).to.throw(
-				"Abstract method ToTable must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.ToTable()
+			end).to.throw("Abstract method ToTable must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have an Add method", function()
@@ -108,8 +116,9 @@ return function()
 
 		it("should error when Add is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.Add() end).to.throw(
-				"Abstract method Add must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.Add()
+			end).to.throw("Abstract method Add must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have an AddAll method", function()
@@ -119,8 +128,9 @@ return function()
 
 		it("should error when AddAll is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.AddAll() end).to.throw(
-				"Abstract method AddAll must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.AddAll()
+			end).to.throw("Abstract method AddAll must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a Clear method", function()
@@ -130,8 +140,9 @@ return function()
 
 		it("should error when Clear is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.Clear() end).to.throw(
-				"Abstract method Clear must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.Clear()
+			end).to.throw("Abstract method Clear must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a Remove method", function()
@@ -141,8 +152,9 @@ return function()
 
 		it("should error when Remove is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.Remove() end).to.throw(
-				"Abstract method Remove must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.Remove()
+			end).to.throw("Abstract method Remove must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a RemoveAll method", function()
@@ -152,8 +164,9 @@ return function()
 
 		it("should error when RemoveAll is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.RemoveAll() end).to.throw(
-				"Abstract method RemoveAll must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.RemoveAll()
+			end).to.throw("Abstract method RemoveAll must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 
 		it("should have a RetainAll method", function()
@@ -163,8 +176,9 @@ return function()
 
 		it("should error when RetainAll is not overridden", function()
 			local collection = Collection.new()
-			expect(function() collection.RetainAll() end).to.throw(
-				"Abstract method RetainAll must be overridden in first concrete subclass. Called directly from Collection.")
+			expect(function()
+				collection.RetainAll()
+			end).to.throw("Abstract method RetainAll must be overridden in first concrete subclass. Called directly from Collection.")
 		end)
 	end)
 end
