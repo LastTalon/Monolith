@@ -15,9 +15,9 @@ local Habitat = Lemur.Habitat.new()
 
 --- The source locations to load in lemur
 local Source = { -- This can potentially be loaded from a project.json
-	{"lib", "ReplicatedStorage.Monolith"},
-	{"tests", "ReplicatedStorage.Tests"},
-	{"modules/testez/src", "ReplicatedStorage.Tests.TestEZ"}
+	{ "lib", "ReplicatedStorage.Monolith" },
+	{ "tests", "ReplicatedStorage.Tests" },
+	{ "modules/testez/src", "ReplicatedStorage.Tests.TestEZ" },
 }
 
 --- Tokenizes a habitat path.
@@ -66,9 +66,8 @@ end
 
 -- Load variables dependent on the build
 local ReplicatedStorage = Habitat.game:GetService("ReplicatedStorage")
-local Tests = Habitat:require(ReplicatedStorage:WaitForChild("Tests")
-	:WaitForChild("Tests"))
-local Roots = {ReplicatedStorage.Tests}
+local Tests = Habitat:require(ReplicatedStorage:WaitForChild("Tests"):WaitForChild("Tests"))
+local Roots = { ReplicatedStorage.Tests }
 
 -- Run tests and set up exit status
 local completed, result = Tests(Roots)

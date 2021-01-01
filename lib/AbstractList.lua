@@ -288,7 +288,6 @@ function AbstractList:Insert()
 	error(string.format(ErrorOverride, "Insert"))
 end
 
-
 --- Inserts all items into the AbstractList at the specified index.
 -- Inserts all items from the provided Collection in no particular order.
 -- Shifts other elements to make space at the index of insertion.
