@@ -20,8 +20,9 @@ return function()
 
 		it("should error when Enumerator is not overridden", function()
 			local list = List.new()
-			expect(function() list.Enumerator() end).to.throw(
-				"Abstract method Enumerator must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Enumerator()
+			end).to.throw("Abstract method Enumerator must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Contains method", function()
@@ -31,8 +32,9 @@ return function()
 
 		it("should error when Contains is not overridden", function()
 			local list = List.new()
-			expect(function() list.Contains() end).to.throw(
-				"Abstract method Contains must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Contains()
+			end).to.throw("Abstract method Contains must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a ContainsAll method", function()
@@ -42,8 +44,9 @@ return function()
 
 		it("should error when ContainsAll is not overridden", function()
 			local list = List.new()
-			expect(function() list.ContainsAll() end).to.throw(
-				"Abstract method ContainsAll must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.ContainsAll()
+			end).to.throw("Abstract method ContainsAll must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a ContainsAny method", function()
@@ -53,8 +56,9 @@ return function()
 
 		it("should error when ContainsAny is not overridden", function()
 			local list = List.new()
-			expect(function() list.ContainsAny() end).to.throw(
-				"Abstract method ContainsAny must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.ContainsAny()
+			end).to.throw("Abstract method ContainsAny must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Count method", function()
@@ -64,8 +68,9 @@ return function()
 
 		it("should error when Count is not overridden", function()
 			local list = List.new()
-			expect(function() list.Count() end).to.throw(
-				"Abstract method Count must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Count()
+			end).to.throw("Abstract method Count must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Empty method", function()
@@ -75,8 +80,9 @@ return function()
 
 		it("should error when Empty is not overridden", function()
 			local list = List.new()
-			expect(function() list.Empty() end).to.throw(
-				"Abstract method Empty must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Empty()
+			end).to.throw("Abstract method Empty must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a ToArray method", function()
@@ -86,8 +92,9 @@ return function()
 
 		it("should error when ToArray is not overridden", function()
 			local list = List.new()
-			expect(function() list.ToArray() end).to.throw(
-				"Abstract method ToArray must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.ToArray()
+			end).to.throw("Abstract method ToArray must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a ToTable method", function()
@@ -97,8 +104,9 @@ return function()
 
 		it("should error when ToTable is not overridden", function()
 			local list = List.new()
-			expect(function() list.ToTable() end).to.throw(
-				"Abstract method ToTable must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.ToTable()
+			end).to.throw("Abstract method ToTable must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have an Add method", function()
@@ -108,8 +116,9 @@ return function()
 
 		it("should error when Add is not overridden", function()
 			local list = List.new()
-			expect(function() list.Add() end).to.throw(
-				"Abstract method Add must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Add()
+			end).to.throw("Abstract method Add must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have an AddAll method", function()
@@ -119,8 +128,9 @@ return function()
 
 		it("should error when AddAll is not overridden", function()
 			local list = List.new()
-			expect(function() list.AddAll() end).to.throw(
-				"Abstract method AddAll must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.AddAll()
+			end).to.throw("Abstract method AddAll must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Clear method", function()
@@ -130,8 +140,9 @@ return function()
 
 		it("should error when Clear is not overridden", function()
 			local list = List.new()
-			expect(function() list.Clear() end).to.throw(
-				"Abstract method Clear must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Clear()
+			end).to.throw("Abstract method Clear must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Remove method", function()
@@ -141,8 +152,9 @@ return function()
 
 		it("should error when Remove is not overridden", function()
 			local list = List.new()
-			expect(function() list.Remove() end).to.throw(
-				"Abstract method Remove must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Remove()
+			end).to.throw("Abstract method Remove must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a RemoveAll method", function()
@@ -152,8 +164,9 @@ return function()
 
 		it("should error when RemoveAll is not overridden", function()
 			local list = List.new()
-			expect(function() list.RemoveAll() end).to.throw(
-				"Abstract method RemoveAll must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.RemoveAll()
+			end).to.throw("Abstract method RemoveAll must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a RetainAll method", function()
@@ -163,8 +176,9 @@ return function()
 
 		it("should error when RetainAll is not overridden", function()
 			local list = List.new()
-			expect(function() list.RetainAll() end).to.throw(
-				"Abstract method RetainAll must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.RetainAll()
+			end).to.throw("Abstract method RetainAll must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a First method", function()
@@ -174,8 +188,9 @@ return function()
 
 		it("should error when First is not overridden", function()
 			local list = List.new()
-			expect(function() list.First() end).to.throw(
-				"Abstract method First must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.First()
+			end).to.throw("Abstract method First must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Get method", function()
@@ -185,8 +200,9 @@ return function()
 
 		it("should error when Get is not overridden", function()
 			local list = List.new()
-			expect(function() list.Get() end).to.throw(
-				"Abstract method Get must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Get()
+			end).to.throw("Abstract method Get must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a IndexOf method", function()
@@ -196,8 +212,9 @@ return function()
 
 		it("should error when IndexOf is not overridden", function()
 			local list = List.new()
-			expect(function() list.IndexOf() end).to.throw(
-				"Abstract method IndexOf must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.IndexOf()
+			end).to.throw("Abstract method IndexOf must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Last method", function()
@@ -207,8 +224,9 @@ return function()
 
 		it("should error when Last is not overridden", function()
 			local list = List.new()
-			expect(function() list.Last() end).to.throw(
-				"Abstract method Last must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Last()
+			end).to.throw("Abstract method Last must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a LastIndexOf method", function()
@@ -218,8 +236,9 @@ return function()
 
 		it("should error when LastIndexOf is not overridden", function()
 			local list = List.new()
-			expect(function() list.LastIndexOf() end).to.throw(
-				"Abstract method LastIndexOf must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.LastIndexOf()
+			end).to.throw("Abstract method LastIndexOf must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Sub method", function()
@@ -229,8 +248,9 @@ return function()
 
 		it("should error when Sub is not overridden", function()
 			local list = List.new()
-			expect(function() list.Sub() end).to.throw(
-				"Abstract method Sub must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Sub()
+			end).to.throw("Abstract method Sub must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Delete method", function()
@@ -240,8 +260,9 @@ return function()
 
 		it("should error when Delete is not overridden", function()
 			local list = List.new()
-			expect(function() list.Delete() end).to.throw(
-				"Abstract method Delete must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Delete()
+			end).to.throw("Abstract method Delete must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Insert method", function()
@@ -251,8 +272,9 @@ return function()
 
 		it("should error when Insert is not overridden", function()
 			local list = List.new()
-			expect(function() list.Insert() end).to.throw(
-				"Abstract method Insert must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Insert()
+			end).to.throw("Abstract method Insert must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a InsertAll method", function()
@@ -262,8 +284,9 @@ return function()
 
 		it("should error when InsertAll is not overridden", function()
 			local list = List.new()
-			expect(function() list.InsertAll() end).to.throw(
-				"Abstract method InsertAll must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.InsertAll()
+			end).to.throw("Abstract method InsertAll must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Pop method", function()
@@ -273,8 +296,9 @@ return function()
 
 		it("should error when Pop is not overridden", function()
 			local list = List.new()
-			expect(function() list.Pop() end).to.throw(
-				"Abstract method Pop must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Pop()
+			end).to.throw("Abstract method Pop must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Push method", function()
@@ -284,8 +308,9 @@ return function()
 
 		it("should error when Push is not overridden", function()
 			local list = List.new()
-			expect(function() list.Push() end).to.throw(
-				"Abstract method Push must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Push()
+			end).to.throw("Abstract method Push must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Set method", function()
@@ -295,8 +320,9 @@ return function()
 
 		it("should error when Set is not overridden", function()
 			local list = List.new()
-			expect(function() list.Set() end).to.throw(
-				"Abstract method Set must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Set()
+			end).to.throw("Abstract method Set must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Shift method", function()
@@ -306,8 +332,9 @@ return function()
 
 		it("should error when Shift is not overridden", function()
 			local list = List.new()
-			expect(function() list.Shift() end).to.throw(
-				"Abstract method Shift must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Shift()
+			end).to.throw("Abstract method Shift must be overridden in first concrete subclass. Called directly from List.")
 		end)
 
 		it("should have a Unshift method", function()
@@ -317,8 +344,9 @@ return function()
 
 		it("should error when Unshift is not overridden", function()
 			local list = List.new()
-			expect(function() list.Unshift() end).to.throw(
-				"Abstract method Unshift must be overridden in first concrete subclass. Called directly from List.")
+			expect(function()
+				list.Unshift()
+			end).to.throw("Abstract method Unshift must be overridden in first concrete subclass. Called directly from List.")
 		end)
 	end)
 end

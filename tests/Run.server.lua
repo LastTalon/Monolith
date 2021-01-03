@@ -8,11 +8,10 @@
 -- @throws when the tests fail
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Tests = require(ReplicatedStorage:WaitForChild("Tests")
-	:WaitForChild("Tests"))
+local Tests = require(ReplicatedStorage:WaitForChild("Tests"):WaitForChild("Tests"))
 
 --- The locations containing tests.
-local Roots = {ReplicatedStorage.Tests}
+local Roots = { ReplicatedStorage.Tests }
 
 local completed, result = Tests(Roots)
 
