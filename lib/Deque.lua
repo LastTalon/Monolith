@@ -237,5 +237,4 @@ function Deque:Pop()
 	error(string.format(ErrorOverride, "Pop"))
 end
 
-
 return Deque
