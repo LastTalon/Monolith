@@ -251,7 +251,7 @@ function ArrayList:Sub(first, last)
 	end
 	local sub = ArrayList.new()
 	for index = first, last do
-			sub:Push(array[index])
+		sub:Push(array[index])
 	end
 	return sub
 end

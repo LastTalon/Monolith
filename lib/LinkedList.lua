@@ -61,7 +61,7 @@ end
 function LinkedList:addNode(value, node)
 	self.count = self.count + 1
 	if node ~= nil then -- If node is provided we add insert at that location
-		local new = {value = value, next = node} -- Node now comes after
+		local new = { value = value, next = node } -- Node now comes after
 		if node == self.first then
 			self.first = new -- If node was the first, new is now first
 		else
@@ -70,11 +70,11 @@ function LinkedList:addNode(value, node)
 		node.previous = new -- Whatever was before node now points to new
 	else -- If node is not provided we add to the end
 		if self.first == nil then -- If the list is empty (first not set)
-			self.first = {value = value}
+			self.first = { value = value }
 			self.last = self.first -- Last and first are the same
 		else
 			local last = self.last -- Otherwise reference the previous last
-			self.last = {value = value, previous = last}
+			self.last = { value = value, previous = last }
 			last.next = self.last -- Point forward from previous last
 		end
 	end

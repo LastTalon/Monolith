@@ -20,8 +20,9 @@ return function()
 
 		it("should error when Enumerator is not overridden", function()
 			local enumerable = Enumerable.new()
-			expect(function() enumerable.Enumerator() end).to.throw(
-				"Abstract method Enumerator must be overridden in first concrete subclass. Called directly from Enumerable.")
+			expect(function()
+				enumerable.Enumerator()
+			end).to.throw("Abstract method Enumerator must be overridden in first concrete subclass. Called directly from Enumerable.")
 		end)
 	end)
 end
