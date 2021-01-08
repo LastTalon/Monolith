@@ -9,5 +9,9 @@
 # LuaCov reports
 /luacov.*
 
-# MkDocs build
+# Docs build
 /site
+
+# Lua packages
+/lemur*
+/ldoc*

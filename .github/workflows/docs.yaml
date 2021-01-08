@@ -33,3 +33,41 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: site
+
+  ldoc:
+    name: LDoc
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Project
+      uses: actions/checkout@v2
+
+    - name: Install Lua
+      uses: leafo/gh-actions-lua@v8
+      with:
+        luaVersion: "5.1"
+
+    - name: Install LuaRocks
+      uses: leafo/gh-actions-luarocks@v4
+
+    - name: Install LDoc and Dependencies
+      run: |
+        luarocks install ldoc
+        luarocks unpack ldoc
+
+    - name: Build Docs
+      run: lua $(ls ldoc*/ldoc/ldoc.lua | head -n1) --fatalwarnings .
+
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: ldoc-site
+        path: site/api
+
+    - name: Deploy Docs
+      if: github.event_name == 'push'
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: site/api
+        TARGET_FOLDER: api
