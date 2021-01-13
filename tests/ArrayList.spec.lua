@@ -1,7 +1,4 @@
---- Tests for the ArrayList class.
---
--- @version 0.1.0, 2020-12-11
--- @since 0.1
+--- Tests for the @{ArrayList) class.
 
 return function()
 	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")

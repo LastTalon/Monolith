@@ -1,13 +1,18 @@
---- An array based list of items.
+--- An array-based @{List} of items.
 -- A List implementation that stores items using an array. This provides random
 -- access to any index, however does so at the expense of insertion and
--- deletion except at the end of the list.
+-- deletion everywhere except at the end.
 --
--- ArrayList implements all optional Collection methods as well as all
--- optional List methods.
+-- Access, insertion at the end, and deletion at the end are Θ(1). Insertion
+-- elsewhere, deletion elsewhere, and search are Θ(n).
 --
--- @version 0.1.0 2020-12-11
--- @since 0.1
+-- ArrayList implements all optional @{List} and @{Collection} methods.
+--
+-- **Extends:** @{AbstractList}
+--
+-- **Implements:** @{List}, @{Collection}, @{Enumerable}
+--
+-- @classmod ArrayList
 
 local module = script.Parent
 local AbstractList = require(module:WaitForChild("AbstractList"))
@@ -23,11 +28,12 @@ local ArrayList = AbstractList.new()
 ArrayList.__index = ArrayList
 
 --- Creates a new ArrayList.
--- Creates a ArrayList copy of the provided collection or array indexed table
--- if one is provided, otherwise creates an empty ArrayList.
+-- Creates a ArrayList copy of the provided @{Collection} or array indexed
+-- table if one is provided, otherwise creates an empty ArrayList.
 --
--- @param collection the Collection or table to copy
+-- @param collection the @{Collection} or table to copy
 -- @return the new ArrayList
+-- @static
 function ArrayList.new(collection)
 	local self = setmetatable({}, ArrayList)
 	self.array = {}
@@ -58,6 +64,7 @@ end
 -- @return the enumerator generator
 -- @return the invariant state
 -- @return the control variable state
+-- @from @{Enumerable}
 function ArrayList:Enumerator()
 	return ipairs(self.array)
 end
@@ -65,23 +72,28 @@ end
 --- Gets the number of items in the ArrayList.
 --
 -- @return the number of items
+-- @from @{Collection}
 function ArrayList:Count()
 	return #self.array
 end
 
 --- Removes everything from the ArrayList.
+--
+-- @from @{Collection}
 function ArrayList:Clear()
 	self.array = {} -- The array will be garbage collected (may still be in use)
 end
 
 --- Removes the specified item from the ArrayList.
 -- Removes only a single item. If there are multiple of the same item, it
--- removes only the first encountered when traversing the list from the first
--- element to the last element. Shifts other elements to fill the gap left a
+-- removes only the first encountered.
+--
+-- When an item is removed any others are shifted to fill the gap left at
 -- the index of removal.
 --
 -- @param item the item to remove from the ArrayList
 -- @return true if the ArrayList changed as a result, false otherwise
+-- @from @{Collection}
 function ArrayList:Remove(item)
 	for index, value in ipairs(self.array) do
 		if value == item then
@@ -95,11 +107,11 @@ end
 --- Removes all provided items from the ArrayList.
 -- Removes each instance of a provided item only once for each time provided.
 -- If there are multiple of the same item in this ArrayList, it removes only
--- the first encountered when traversing the list from the first element to the
--- last element each time one is provided.
+-- the first encountered for each provided.
 --
--- @param items the Collection of items to remove from this ArrayList
+-- @param items the @{Collection} of items to remove from this ArrayList
 -- @return true if the ArrayList changed as a result, false otherwise
+-- @from @{Collection}
 function ArrayList:RemoveAll(items)
 	local remove = {}
 	for _, value in items:Enumerator() do
@@ -125,11 +137,12 @@ function ArrayList:RemoveAll(items)
 end
 
 --- Removes all items except those provided from the ArrayList.
--- Retains only the items contained in the specified Collection regardless
--- of duplicates. If there are duplicates they are all kept.
+-- Retains only the items contained in the specified @{Collection}. If there are
+-- duplicates they are all kept.
 --
--- @param items the Collection of items to retain in this ArrayList
+-- @param items the @{Collection} of items to retain in this ArrayList
 -- @return true if the ArrayList changed as a result, false otherwise
+-- @from @{Collection}
 function ArrayList:RetainAll(items)
 	local array = self.array
 	local changed = false -- We can't report a change immediately
@@ -152,7 +165,8 @@ end
 --- Gets the item at the beginning of the ArrayList.
 --
 -- @return the first item in the ArrayList
--- @throw if the ArrayList is empty
+-- @raise if the ArrayList is empty
+-- @from @{List}
 function ArrayList:First()
 	if #self.array == 0 then
 		error(ErrorFirst)
@@ -164,7 +178,8 @@ end
 --
 -- @param index the index to get
 -- @return the item in the ArrayList at the specified index
--- @throw if the index is out of bounds of the ArrayList
+-- @raise if the index is out of bounds of the ArrayList
+-- @from @{List}
 function ArrayList:Get(index)
 	if index < 1 or index > #self.array then
 		error(string.format(ErrorBounds, index))
@@ -172,13 +187,14 @@ function ArrayList:Get(index)
 	return self.array[index]
 end
 
---- Determines the index of the first occurrence of an item in the ArrayList.
--- Starts from specified index or from the beginning if none is provided.
+--- Determines the index of a specific item in the ArrayList.
+-- Starts from a specified index or from the beginning if none is provided.
 --
 -- @param item the item to locate
 -- @param index the index to start looking from
 -- @return the index of the item in the ArrayList if found, 0 otherwise
--- @throw if the index is out of bounds of the ArrayList
+-- @raise if the index is out of bounds of the ArrayList
+-- @from @{List}
 function ArrayList:IndexOf(item, index)
 	local array = self.array
 	if index == nil then
@@ -200,7 +216,8 @@ end
 --- Gets the item at the end of the ArrayList.
 --
 -- @return the last item in the ArrayList
--- @throw if the ArrayList is empty
+-- @raise if the ArrayList is empty
+-- @from @{List}
 function ArrayList:Last()
 	if #self.array == 0 then
 		error(ErrorLast)
@@ -208,11 +225,12 @@ function ArrayList:Last()
 	return self.array[#self.array]
 end
 
---- Determines the index of the last occurrence of an item in the ArrayList.
+--- Determines the last index of a specific item in the ArrayList.
 -- Only returns the very last occurrence of the item in the ArrayList.
 --
 -- @param item the item to locate
 -- @return the index of the item in the ArrayList if found, 0 otherwise
+-- @from @{List}
 function ArrayList:LastIndexOf(item)
 	local array = self.array
 	if #array == 0 then
@@ -234,9 +252,11 @@ end
 -- @param first the index to start at
 -- @param last the index to end at
 -- @return the new ArrayList
--- @throw if the first index is out of bounds
--- @throw if the last index is out of bounds
--- @throw if the last index is smaller than the first index
+-- @raise
+-- * if the first index is out of bounds
+-- * if the last index is out of bounds
+-- * if the last index is smaller than the first index
+-- @from @{List}
 function ArrayList:Sub(first, last)
 	local array = self.array
 	last = last or #array -- If last isn't provided, go to the end
@@ -261,7 +281,8 @@ end
 --
 -- @param index the index of the item to remove from the ArrayList
 -- @return true always since the ArrayList is always changed
--- @throw if the index is out of bounds of the ArrayList
+-- @raise if the index is out of bounds of the ArrayList
+-- @from @{List}
 function ArrayList:Delete(index)
 	if index < 1 or index > #self.array then
 		error(string.format(ErrorBounds, index))
@@ -276,7 +297,8 @@ end
 -- @param index the index to insert the item in the ArrayList
 -- @param item the item to add
 -- @return true always since the ArrayList is always changed
--- @throw if the index is out of bounds of the ArrayList
+-- @raise if the index is out of bounds of the ArrayList
+-- @from @{List}
 function ArrayList:Insert(index, item)
 	if index < 1 or index > #self.array + 1 then
 		error(string.format(ErrorBounds, index))
@@ -286,13 +308,16 @@ function ArrayList:Insert(index, item)
 end
 
 --- Inserts multiple items into the ArrayList at the specified index.
--- Inserts all items from the provided Collection in the order they are
--- enumerated. Shifts other elements to make space at the index of insertion.
+-- Inserts all items from the provided @{Collection} in an arbitrary,
+-- deterministic order. The order is the same as the order of enumeration.
+--
+-- Shifts other elements to make space at the index of insertion.
 --
 -- @param index the index to insert the items in the ArrayList
--- @param items the Collection of items to add to this ArrayList
+-- @param items the @{Collection} of items to add to this ArrayList
 -- @return true always since the ArrayList is always changed
--- @throw if the index is out of bounds of the ArrayList
+-- @raise if the index is out of bounds of the ArrayList
+-- @from @{List}
 function ArrayList:InsertAll(index, items)
 	local array = self.array
 	if index < 1 or index > #array + 1 then
@@ -312,7 +337,8 @@ end
 --- Gets an item from the end and removes that item from the ArrayList.
 --
 -- @return the item in the ArrayList
--- @throw if the ArrayList is empty
+-- @raise if the ArrayList is empty
+-- @from @{List}
 function ArrayList:Pop()
 	if #self.array == 0 then
 		error(ErrorLast)
@@ -326,6 +352,7 @@ end
 --
 -- @param item the item to add
 -- @return true always since the ArrayList is always changed
+-- @from @{List}
 function ArrayList:Push(item)
 	self.array[#self.array + 1] = item
 	return true -- The ArrayList is always changed
@@ -335,6 +362,8 @@ end
 --
 -- @param item the item to add
 -- @return true always since the ArrayList is always changed
+-- @function Add
+-- @from @{Collection}
 ArrayList.Add = ArrayList.Push
 
 --- Sets the element at the specified index.
@@ -342,7 +371,8 @@ ArrayList.Add = ArrayList.Push
 -- @param index the index to set
 -- @param	item the item to set at the index
 -- @return true if the ArrayList changed as a result, false otherwise
--- @throw if the index is out of bounds of the ArrayList
+-- @raise if the index is out of bounds of the ArrayList
+-- @from @{List}
 function ArrayList:Set(index, item)
 	if index < 1 or index > #self.array then
 		error(string.format(ErrorBounds, index))
@@ -356,7 +386,8 @@ end
 -- Shifts other elements to fill the gap left.
 --
 -- @return the item in the ArrayList
--- @throw if the ArrayList is empty
+-- @raise if the ArrayList is empty
+-- @from @{List}
 function ArrayList:Shift()
 	if #self.array == 0 then
 		error(ErrorFirst)
@@ -371,6 +402,7 @@ end
 --
 -- @param item the item to add
 -- @return true always since the ArrayList is always changed
+-- @from @{List}
 function ArrayList:Unshift(item)
 	table.insert(self.array, 1, item)
 	return true -- The ArrayList is always changed

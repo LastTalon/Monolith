@@ -1,7 +1,4 @@
---- Tests for the Monolith library interface.
---
--- @version 0.1.1, 2020-11-28
--- @since 0.1
+--- Tests for the @{Monolith} API.
 
 return function()
 	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")

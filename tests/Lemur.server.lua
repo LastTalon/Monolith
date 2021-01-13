@@ -1,11 +1,9 @@
 --- The Lemur test runner script.
 -- This script can run with Lemur to perform automated tests.
 --
--- @module LemurTestRunner
--- @version 0.1.2, 2020-11-24
--- @since 0.1
---
--- @throws when the tests fail
+-- @script LemurTestRunner
+-- @release 0.1.2, 2020-11-24
+-- @license MIT
 
 -- Add init.lua to path allowing Lemur (and other dependencies to load)
 package.path = package.path .. ";?/init.lua"

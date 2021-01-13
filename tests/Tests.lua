@@ -4,9 +4,8 @@
 -- environment.
 --
 -- @module Tests
--- @version 0.1.1, 2020-11-03
--- @since 0.1
---
+-- @release 0.1.1, 2020-11-03
+-- @license MIT
 -- @see TestEZ
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
