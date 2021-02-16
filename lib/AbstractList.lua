@@ -1,4 +1,4 @@
---- An partial @{List} implementation.
+--- A partial @{List} implementation.
 -- This partial implementation can be used to create concrete @{List|Lists}.
 -- This implementation implements all @{Collection} methods except
 -- @{List.Add|Add} and @{List.Remove|Remove}. It doesn't implement
@@ -104,7 +104,7 @@ function AbstractList:Count()
 	return count
 end
 
---- Determines whether the AbstractList has no elements.
+--- Determines whether the AbstractList contains no elements.
 --
 -- @return true if the AbstractList empty, false otherwise
 -- @from @{Collection}
@@ -112,7 +112,7 @@ function AbstractList:Empty()
 	return self:Count() == 0
 end
 
---- Creates a new array indexed table of this AbstractList.
+--- Creates a new array-indexed table of this AbstractList.
 -- The order of the array is the same as the order of the AbstractList and uses
 -- the same indexing.
 --
@@ -159,7 +159,7 @@ end
 -- deterministic order. The order is the same as the order of enumeration.
 --
 -- @param items the @{Collection} of items to add to this AbstractList
--- @return true always since the AbstractList is always changed
+-- @return true always, since the AbstractList is always changed
 -- @from @{Collection}
 function AbstractList:AddAll(items)
 	for _, value in items:Enumerator() do
@@ -297,7 +297,7 @@ function AbstractList:Sub()
 	error(string.format(ErrorOverride, "Sub"))
 end
 
---- Removes the item from the AbstractList at the specified index.
+--- Removes the item at the specified index from the AbstractList.
 -- Shifts other elements to fill the gap left at the index of removal.
 --
 -- This method is optional. All AbstractList implementations should attempt to
@@ -316,7 +316,7 @@ function AbstractList:Delete()
 	error(string.format(ErrorOverride, "Delete"))
 end
 
---- Inserts the item to the AbstractList at the specified index.
+--- Inserts an item into the AbstractList at the specified index.
 -- Shifts other elements to make space at the index of insertion.
 --
 -- This method is optional. All AbstractList implementations should attempt to

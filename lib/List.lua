@@ -7,7 +7,7 @@
 -- with any abstract List type. Abstract data types may provide addtional
 -- specific operations based on the particular implemented type. Concrete
 -- implementations, such as @{LinkedList|LinkedLists} or
--- @{ArrayList|ArrayLists} ultimately determine the properties of the concrete
+-- @{ArrayList|ArrayLists}, ultimately determine the properties of the concrete
 -- List such as time and space complexity for any operations.
 --
 -- The List interface provides certain optional methods in addition to those in
@@ -92,7 +92,7 @@ function List:Count()
 	error(string.format(ErrorOverride, "Count"))
 end
 
---- Determines whether the List has no elements.
+--- Determines whether the List contains no elements.
 --
 -- @return true if the List empty, false otherwise
 -- @from @{Collection}
@@ -100,7 +100,7 @@ function List:Empty()
 	error(string.format(ErrorOverride, "Empty"))
 end
 
---- Creates a new array indexed table of this List.
+--- Creates a new array-indexed table of this List.
 -- The order of the array is the same as the order of the List and uses the
 -- same indexing.
 --
@@ -295,7 +295,7 @@ function List:Sub()
 	error(string.format(ErrorOverride, "Sub"))
 end
 
---- Removes the item from the List at the specified index.
+--- Removes the item at the specified index from the List.
 -- Shifts other elements to fill the gap left at the index of removal.
 --
 -- This method is optional. All List implementations should attempt to
@@ -313,7 +313,7 @@ function List:Delete()
 	error(string.format(ErrorOverride, "Delete"))
 end
 
---- Inserts the item to the List at the specified index.
+--- Inserts the item into the List at the specified index.
 -- Shifts other elements to make space at the index of insertion.
 --
 -- This method is optional. All List implementations should attempt to

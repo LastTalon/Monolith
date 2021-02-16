@@ -1,5 +1,5 @@
 --- A doubly-linked @{Queue} of items.
--- Implements a Queue as a LinkedList, providing the same performance
+-- Implements a Queue as a @{LinkedList}, providing the same performance
 -- characteristics as the LinkedList.
 --
 -- LinkedQueue implements all optional @{Queue} and @{Collection} methods.
@@ -19,7 +19,7 @@ local LinkedQueue = Queue.new()
 LinkedQueue.__index = LinkedQueue
 
 --- Creates a new LinkedQueue.
--- Creates a LinkedQueue copy of the provided @{Collection} or array indexed
+-- Creates a LinkedQueue copy of the provided @{Collection} or array-indexed
 -- table if one is provided, otherwise creates an empty LinkedQueue.
 --
 -- @param collection the @{Collection} or table to copy
@@ -97,7 +97,7 @@ function LinkedQueue:Count()
 	return self.list:Count()
 end
 
---- Determines whether the LinkedQueue has no elements.
+--- Determines whether the LinkedQueue contains no elements.
 --
 -- @return true if the LinkedQueue empty, false otherwise
 -- @from @{Collection}
@@ -142,7 +142,7 @@ end
 -- order. The order is the same as the order of enumeration.
 --
 -- @param items the Collection of items to add to this LinkedQueue
--- @return true always since the LinkedQueue is always changed
+-- @return true always, since the LinkedQueue is always changed
 -- @from @{Collection}
 function LinkedQueue:AddAll(items)
 	return self.list:AddAll(items)

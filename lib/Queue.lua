@@ -1,4 +1,4 @@
---- An ordered, linear first-in-first-out @{Collection} of items.
+--- An ordered, linear, first-in-first-out @{Collection} of items.
 -- Queues have a distinct, linear ordering of their elements and can be added
 -- to at the back and removed from in the front. The combination of these
 -- ensures that the first elements added are the first ones out of the Queue.
@@ -6,7 +6,7 @@
 -- The Queue interface provides a base set of operations for interacting
 -- with any abstract Queue type. Abstract data types may provide addtional
 -- specific operations based on the particular implemented type. Concrete
--- implementations, such as @{LinkedQueue|LinkedQueues} ultimately determine
+-- implementations, such as @{LinkedQueue|LinkedQueues}, ultimately determine
 -- the properties of the concrete Queue such as time and space complexity for
 -- any operations.
 --
@@ -24,7 +24,8 @@
 local module = script.Parent
 local Collection = require(module:WaitForChild("Collection"))
 
-local ErrorOverride = "Abstract method %s must be overridden in first concrete subclass. Called directly from Queue."
+local ErrorOverride = "Abstract method %s must be overridden in first \z
+	concrete subclass. Called directly from Queue."
 
 local Queue = Collection.new()
 
@@ -66,7 +67,7 @@ end
 -- Checks for items provided in another @{Collection} in an arbitrary,
 -- deterministic order. The order is the same as the order of enumeration.
 --
--- @param items the Collection of items to locate in this Queue
+-- @param items the @{Collection} of items to locate in this Queue
 -- @return true if all items are in the Queue, false otherwise
 -- @from @{Collection}
 function Queue:ContainsAll()
@@ -92,7 +93,7 @@ function Queue:Count()
 	error(string.format(ErrorOverride, "Count"))
 end
 
---- Determines whether the Queue has no elements.
+--- Determines whether the Queue contains no elements.
 --
 -- @return true if the Queue empty, false otherwise
 -- @from @{Collection}
@@ -100,7 +101,7 @@ function Queue:Empty()
 	error(string.format(ErrorOverride, "Empty"))
 end
 
---- Creates a new array indexed table of this Queue.
+--- Creates a new array-indexed table of this Queue.
 -- The order of the array is the same as the order of the Queue. The first
 -- element of the Queue will get index 1 and so on.
 --
@@ -151,7 +152,7 @@ end
 -- unimplemented, it should return an error specific to the optional
 -- functionality that can't be provided by this Queue.
 --
--- @param items the Collection of items to add to this Queue
+-- @param items the @{Collection} of items to add to this Queue
 -- @return true if the Queue changed as a result, false otherwise
 -- @from @{Collection}
 function Queue:AddAll()
@@ -208,7 +209,7 @@ end
 -- unimplemented, it should return an error specific to the optional
 -- functionality that can't be provided by this Queue.
 --
--- @param items the Collection of items to remove from this Queue
+-- @param items the @{Collection} of items to remove from this Queue
 -- @return true if the Queue changed as a result, false otherwise
 -- @from @{Collection}
 function Queue:RemoveAll()
@@ -222,6 +223,10 @@ end
 -- This method is optional. All Queue implementations should attempt to
 -- implement this method, but some may be unable to do so or may need to
 -- impose additional conditions to do so.
+--
+-- This method should always be overridden regardless of implementation. If
+-- unimplemented, it should return an error specific to the optional
+-- functionality that can't be provided by this Queue.
 --
 -- @param items the @{Collection} of items to retain in this Queue
 -- @return true if the Queue changed as a result, false otherwise

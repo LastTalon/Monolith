@@ -29,7 +29,7 @@ local LinkedList = AbstractList.new()
 LinkedList.__index = LinkedList
 
 --- Creates a new LinkedList.
--- Creates a LinkedList copy of the provided @{Collection} or array indexed
+-- Creates a LinkedList copy of the provided @{Collection} or array-indexed
 -- table if one is provided, otherwise creates an empty LinkedList.
 --
 -- @param collection the @{Collection} or table to copy
@@ -318,7 +318,7 @@ function LinkedList:Sub(first, last)
 	return sub
 end
 
---- Removes the item from the LinkedList at the specified index.
+--- Removes the item at the specified index from the LinkedList.
 -- Shifts other elements to fill the gap left at the index of removal.
 --
 -- @param index the index of the item to remove from the LinkedList
@@ -341,7 +341,7 @@ function LinkedList:Delete(index)
 	end
 end
 
---- Inserts the item to the LinkedList at the specified index.
+--- Inserts the item into the LinkedList at the specified index.
 -- Shifts other elements to make space at the index of insertion.
 --
 -- @param index the index to insert the item in the LinkedList

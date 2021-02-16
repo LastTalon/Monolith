@@ -28,7 +28,7 @@ local ArrayList = AbstractList.new()
 ArrayList.__index = ArrayList
 
 --- Creates a new ArrayList.
--- Creates a ArrayList copy of the provided @{Collection} or array indexed
+-- Creates a ArrayList copy of the provided @{Collection} or array-indexed
 -- table if one is provided, otherwise creates an empty ArrayList.
 --
 -- @param collection the @{Collection} or table to copy
@@ -276,7 +276,7 @@ function ArrayList:Sub(first, last)
 	return sub
 end
 
---- Removes the item from the ArrayList at the specified index.
+--- Removes the item at the specified index from the ArrayList.
 -- Shifts other elements to fill the gap left at the index of removal.
 --
 -- @param index the index of the item to remove from the ArrayList
@@ -291,7 +291,7 @@ function ArrayList:Delete(index)
 	return true -- The ArrayList is always changed
 end
 
---- Inserts the item to the ArrayList at the specified index.
+--- Inserts the item into the ArrayList at the specified index.
 -- Shifts other elements to make space at the index of insertion.
 --
 -- @param index the index to insert the item in the ArrayList

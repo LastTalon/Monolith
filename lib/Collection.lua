@@ -6,7 +6,7 @@
 -- with any abstract Collection type. Abstract data types, such as
 -- @{List|Lists} or @{Queue|Queues}, provide addtional specific operations
 -- based on the particular implemented type. Concrete implementations, such as
--- @{LinkedList|LinkedLists} or @{ArrayList|ArrayLists} ultimately determine
+-- @{LinkedList|LinkedLists} or @{ArrayList|ArrayLists}, ultimately determine
 -- the properties of the concrete Collection such as time and space complexity
 -- for any operations.
 --
@@ -88,7 +88,7 @@ function Collection:Count()
 	error(string.format(ErrorOverride, "Count"))
 end
 
---- Determines whether the Collection has no elements.
+--- Determines whether the Collection contains no elements.
 --
 -- @return true if the Collection empty, false otherwise
 function Collection:Empty()
