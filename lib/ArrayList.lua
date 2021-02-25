@@ -239,8 +239,7 @@ end
 -- @throw if the last index is smaller than the first index
 function ArrayList:Sub(first, last)
 	local array = self.array
-	last = last
-		or #array -- If last isn't provided, go to the end
+	last = last or #array -- If last isn't provided, go to the end
 	if first < 1 or first > #array then
 		error(string.format(ErrorBounds, first))
 	end
