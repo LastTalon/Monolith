@@ -110,14 +110,11 @@ return function()
 					expect(list:ContainsAll(contained)).to.equal(false)
 				end)
 
-				it(
-					"should find all 0 elements when the provided container is empty",
-					function()
-						local list = SomeList.new({ 1, 2, 3, 4, 5 })
-						local contained = SomeList.new()
-						expect(list:ContainsAll(contained)).to.equal(true)
-					end
-				)
+				it("should find all 0 elements when the provided container is empty", function()
+					local list = SomeList.new({ 1, 2, 3, 4, 5 })
+					local contained = SomeList.new()
+					expect(list:ContainsAll(contained)).to.equal(true)
+				end)
 
 				it("should find all elements when the elements exist", function()
 					local list = SomeList.new({ 1, 2, 3, 4, 5 })
@@ -651,14 +648,11 @@ return function()
 					expect(list:Count()).to.equal(0)
 				end)
 
-				it(
-					"should return true when not retaining a single element which does not match",
-					function()
-						local list = SomeList.new({ 1, 2, 3, 4, 5 })
-						local retain = SomeList.new({ 3 })
-						expect(list:RetainAll(retain)).to.equal(true)
-					end
-				)
+				it("should return true when not retaining a single element which does not match", function()
+					local list = SomeList.new({ 1, 2, 3, 4, 5 })
+					local retain = SomeList.new({ 3 })
+					expect(list:RetainAll(retain)).to.equal(true)
+				end)
 
 				it("should retain multiple elements when more exist", function()
 					local list = SomeList.new({ 1, 2, 3, 4, 5 })
@@ -667,24 +661,18 @@ return function()
 					expect(list:Count()).to.equal(3)
 				end)
 
-				it(
-					"should return true when retaining multiple elements when more exist",
-					function()
-						local list = SomeList.new({ 1, 2, 3, 4, 5 })
-						local retain = SomeList.new({ 1, 3, 5 })
-						expect(list:RetainAll(retain)).to.equal(true)
-					end
-				)
+				it("should return true when retaining multiple elements when more exist", function()
+					local list = SomeList.new({ 1, 2, 3, 4, 5 })
+					local retain = SomeList.new({ 1, 3, 5 })
+					expect(list:RetainAll(retain)).to.equal(true)
+				end)
 
-				it(
-					"should retain multiple elements when attempting to retain excess",
-					function()
-						local list = SomeList.new({ 1, 2, 3, 4, 5 })
-						local retain = SomeList.new({ 0, 1, 3 })
-						list:RetainAll(retain)
-						expect(list:Count()).to.equal(2)
-					end
-				)
+				it("should retain multiple elements when attempting to retain excess", function()
+					local list = SomeList.new({ 1, 2, 3, 4, 5 })
+					local retain = SomeList.new({ 0, 1, 3 })
+					list:RetainAll(retain)
+					expect(list:Count()).to.equal(2)
+				end)
 
 				it("should return true when attemping to retain with excess", function()
 					local list = SomeList.new({ 1, 2, 3, 4, 5 })
@@ -712,14 +700,11 @@ return function()
 					expect(list:Count()).to.equal(5)
 				end)
 
-				it(
-					"should return false when attempting to retain exceess and retaining all elements",
-					function()
-						local list = SomeList.new({ 1, 2, 3, 4, 5 })
-						local retain = SomeList.new({ 0, 1, 2, 3, 4, 5 })
-						expect(list:RetainAll(retain)).to.equal(false)
-					end
-				)
+				it("should return false when attempting to retain exceess and retaining all elements", function()
+					local list = SomeList.new({ 1, 2, 3, 4, 5 })
+					local retain = SomeList.new({ 0, 1, 2, 3, 4, 5 })
+					expect(list:RetainAll(retain)).to.equal(false)
+				end)
 
 				it("should retain all duplicates", function()
 					local list = SomeList.new({ 1, 1, 2, 2, 3 })
