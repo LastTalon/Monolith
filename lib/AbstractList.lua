@@ -9,7 +9,7 @@
 --
 -- AbstractList has the same optional and required methods of @{Collection} and
 -- @{List}. AbstractList assumes all optional methods are intended to be
--- implemented, however, they can be overridden if they should not be in a
+-- implemented, however, they may overridden if they should not be in a
 -- particular concrete List implementation.
 --
 -- @classmod AbstractList
