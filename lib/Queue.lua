@@ -24,7 +24,7 @@
 local module = script.Parent
 local Collection = require(module:WaitForChild("Collection"))
 
-local ErrorOverride = "Abstract method %s must be overridden in first	concrete subclass. Called directly from Queue."
+local ErrorOverride = "Abstract method %s must be overridden in first concrete subclass. Called directly from Queue."
 
 local Queue = Collection.new()
 
