@@ -1,4 +1,4 @@
-# Roblox files
+# Roblox builds and artifacts
 *.rbxl
 *.rbxlx
 *.rbxm
@@ -6,5 +6,12 @@
 *.rbxl.lock
 *.rbxlx.lock
 
-# LuaCov files
+# LuaCov reports
 /luacov.*
+
+# Docs build
+/site
+
+# Lua packages
+/lemur*
+/ldoc*

@@ -1,7 +1,4 @@
---- Tests for the List interface.
---
--- @version 0.1.0, 2020-12-04
--- @since 0.1
+--- Tests for the @{List} interface.
 
 return function()
 	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
