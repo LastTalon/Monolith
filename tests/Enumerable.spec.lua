@@ -1,7 +1,4 @@
---- Tests for the Enumerable interface.
---
--- @version 0.1.0, 2020-11-28
--- @since 0.1
+--- Tests for the @{Enumerable} interface.
 
 return function()
 	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")

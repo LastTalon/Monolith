@@ -1,14 +1,19 @@
---- A doubly-linked list of items.
+--- A doubly-linked @{List} of items.
 -- A List implementation that stores items as nodes that point backward and
 -- forward to each other for traversal. This provides good insertion, and
 -- deletion characteristics as well as access to the beginning and end of the
 -- list, but does so at the expense of random access and search complexity.
 --
--- LinkedList implements all optional Collection methods as well as all
--- optional List methods with the exception that List methods.
+-- Insertion, deletion, and access to the beginning and end are Θ(1). Access
+-- elsewhere, and search are Θ(n).
 --
--- @version 0.1.0, 2020-12-11
--- @since 0.1
+-- LinkedList implements all optional @{List} and @{Collection} methods.
+--
+-- **Extends:** @{AbstractList}
+--
+-- **Implements:** @{List}, @{Collection}, @{Enumerable}
+--
+-- @classmod LinkedList
 
 local module = script.Parent
 local AbstractList = require(module:WaitForChild("AbstractList"))
@@ -24,11 +29,12 @@ local LinkedList = AbstractList.new()
 LinkedList.__index = LinkedList
 
 --- Creates a new LinkedList.
--- Creates a LinkedList copy of the provided collection or array indexed table
--- if one is provided, otherwise creates an empty LinkedList.
+-- Creates a LinkedList copy of the provided @{Collection} or array-indexed
+-- table if one is provided, otherwise creates an empty LinkedList.
 --
--- @param collection the Collection or table to copy
+-- @param collection the @{Collection} or table to copy
 -- @return the new LinkedList
+-- @static
 function LinkedList.new(collection)
 	local self = setmetatable({}, LinkedList)
 	self.count = 0
@@ -54,10 +60,11 @@ end
 
 --- Adds a new node to the LinkedList.
 -- Inserts the node infront of the node provided or at the end of the
--- LinkedList if one is provided, otherwise adds it to the end.
+-- LinkedList if none is provided.
 --
 -- @param value the value to add a new node for
 -- @param node the node to insert before
+-- @access private
 function LinkedList:addNode(value, node)
 	self.count = self.count + 1
 	if node ~= nil then -- If node is provided we add insert at that location
@@ -83,6 +90,7 @@ end
 --- Remove a node from the LinkedList.
 --
 -- @param node the node to remove
+-- @access private
 function LinkedList:removeNode(node)
 	self.count = self.count - 1
 	if node == self.first then -- If node is first we must move first
@@ -104,6 +112,7 @@ end
 -- or ipairs.
 --
 -- @return the enumerator generator
+-- @from @{Enumerable}
 function LinkedList:Enumerator()
 	local index = 0
 	local node = self.first -- Start at the beginning
@@ -120,11 +129,14 @@ end
 --- Gets the number of items in the LinkedList.
 --
 -- @return the number of items
+-- @from @{Collection}
 function LinkedList:Count()
 	return self.count
 end
 
 --- Removes everything from the LinkedList.
+--
+-- @from @{Collection}
 function LinkedList:Clear()
 	self.first = nil -- We no longer need references, but we need not destroy
 	self.last = nil -- The nodes will only be held if in use (enumeration)
@@ -133,12 +145,14 @@ end
 
 --- Removes the specified item from the LinkedList.
 -- Removes only a single item. If there are multiple of the same item, it
--- removes only the first encountered when traversing the list from the first
--- element to the last element. Shifts other elements to fill the gap left a
+-- removes only the first encountered.
+--
+-- When an item is removed any others are shifted to fill the gap left at
 -- the index of removal.
 --
 -- @param item the item to remove from the LinkedList
 -- @return true if the LinkedList changed as a result, false otherwise
+-- @from @{Collection}
 function LinkedList:Remove(item)
 	local node = self.first
 	while node ~= nil do -- There's no next node
@@ -152,11 +166,12 @@ function LinkedList:Remove(item)
 end
 
 --- Removes all items except those provided from the LinkedList.
--- Retains only the items contained in the specified Collection regardless
--- of duplicates. If there are duplicates they are all kept.
+-- Retains only the items contained in the specified @{Collection}. If there are
+-- duplicates they are all kept.
 --
--- @param items the Collection of items to retain in this LinkedList
+-- @param items the @{Collection} of items to retain in this LinkedList
 -- @return true if the LinkedList changed as a result, false otherwise
+-- @from @{Collection}
 function LinkedList:RetainAll(items)
 	local node = self.first
 	local changed = false -- We can't report a change immediately
@@ -173,7 +188,8 @@ end
 --- Gets the item at the beginning of the LinkedList.
 --
 -- @return the first item in the LinkedList
--- @throw if the LinkedList is empty
+-- @raise if the LinkedList is empty
+-- @from @{List}
 function LinkedList:First()
 	if self.first == nil then
 		error(ErrorFirst)
@@ -185,7 +201,8 @@ end
 --
 -- @param index the index to get
 -- @return the item in the LinkedList at the specified index
--- @throw if the index is out of bounds of the LinkedList
+-- @raise if the index is out of bounds of the LinkedList
+-- @from @{List}
 function LinkedList:Get(index)
 	if index < 1 or index > self.count then
 		error(string.format(ErrorBounds, index))
@@ -201,13 +218,14 @@ function LinkedList:Get(index)
 	end
 end
 
---- Determines the index of the first occurrence of an item in the LinkedList.
--- Starts from specified index or from the beginning if none is provided.
+--- Determines the index of a specific item in the LinkedList.
+-- Starts from a specified index or from the beginning if none is provided.
 --
 -- @param item the item to locate
 -- @param index the index to start looking from
 -- @return the index of the item in the LinkedList if found, 0 otherwise
--- @throw if the index is out of bounds of the LinkedList
+-- @raise if the index is out of bounds of the LinkedList
+-- @from @{List}
 function LinkedList:IndexOf(item, index)
 	if index == nil then
 		index = 1 -- If index isn't provided, start at the beginning
@@ -232,7 +250,8 @@ end
 --- Gets the item at the end of the LinkedList.
 --
 -- @return the last item in the LinkedList
--- @throw if the LinkedList is empty
+-- @raise if the LinkedList is empty
+-- @from @{List}
 function LinkedList:Last()
 	if self.last == nil then
 		error(ErrorLast)
@@ -240,11 +259,12 @@ function LinkedList:Last()
 	return self.last.value
 end
 
---- Determines the index of the last occurrence of an item in the LinkedList.
+--- Determines the last index of a specific item in the LinkedList.
 -- Only returns the very last occurrence of the item in the LinkedList.
 --
 -- @param item the item to locate
 -- @return the index of the item in the LinkedList if found, 0 otherwise
+-- @from @{List}
 function LinkedList:LastIndexOf(item)
 	local currentIndex = self.count
 	local node = self.last
@@ -266,9 +286,11 @@ end
 -- @param first the index to start at
 -- @param last the index to end at
 -- @return the new LinkedList
--- @throw if the first index is out of bounds
--- @throw if the last index is out of bounds
--- @throw if the last index is smaller than the first index
+-- @raise
+-- * if the first index is out of bounds
+-- * if the last index is out of bounds
+-- * if the last index is smaller than the first index
+-- @from @{List}
 function LinkedList:Sub(first, last)
 	last = last or self.count -- If last isn't provided, go to the end
 	if first < 1 or first > self.count then
@@ -296,12 +318,13 @@ function LinkedList:Sub(first, last)
 	return sub
 end
 
---- Removes the item from the LinkedList at the specified index.
+--- Removes the item at the specified index from the LinkedList.
 -- Shifts other elements to fill the gap left at the index of removal.
 --
 -- @param index the index of the item to remove from the LinkedList
 -- @return true always since the LinkedList is always changed
--- @throw if the index is out of bounds of the LinkedList
+-- @raise if the index is out of bounds of the LinkedList
+-- @from @{List}
 function LinkedList:Delete(index)
 	if index < 1 or index > self.count then
 		error(string.format(ErrorBounds, index))
@@ -318,13 +341,14 @@ function LinkedList:Delete(index)
 	end
 end
 
---- Inserts the item to the LinkedList at the specified index.
+--- Inserts the item into the LinkedList at the specified index.
 -- Shifts other elements to make space at the index of insertion.
 --
 -- @param index the index to insert the item in the LinkedList
 -- @param item the item to add
 -- @return true always since the LinkedList is always changed
--- @throw if the index is out of bounds of the LinkedList
+-- @raise if the index is out of bounds of the LinkedList
+-- @from @{List}
 function LinkedList:Insert(index, item)
 	if index == self.count + 1 then -- If we're adding to the end
 		self:addNode(item)
@@ -352,7 +376,8 @@ end
 -- @param index the index to insert the items in the LinkedList
 -- @param items the Collection of items to add to this LinkedList
 -- @return true always since the LinkedList is always changed
--- @throw if the index is out of bounds of the LinkedList
+-- @raise if the index is out of bounds of the LinkedList
+-- @from @{List}
 function LinkedList:InsertAll(index, items)
 	if index == self.count + 1 then -- If we're addeing to the end
 		for _, value in items:Enumerator() do
@@ -380,7 +405,8 @@ end
 --- Gets an item from the end and removes that item from the LinkedList.
 --
 -- @return the item in the LinkedList
--- @throw if the LinkedList is empty
+-- @raise if the LinkedList is empty
+-- @from @{List}
 function LinkedList:Pop()
 	if self.last == nil then
 		error(ErrorLast)
@@ -394,6 +420,7 @@ end
 --
 -- @param item the item to add
 -- @return true always since the LinkedList is always changed
+-- @from @{List}
 function LinkedList:Push(item)
 	self:addNode(item)
 	return true -- The LinkedList changed
@@ -403,6 +430,8 @@ end
 --
 -- @param item the item to add
 -- @return true always since the LinkedList is always changed
+-- @function Add
+-- @from @{Collection}
 LinkedList.Add = LinkedList.Push
 
 --- Sets the element at the specified index.
@@ -410,7 +439,8 @@ LinkedList.Add = LinkedList.Push
 -- @param index the index to set
 -- @param	item the item to set at the index
 -- @return true if the LinkedList changed as a result, false otherwise
--- @throw if the index is out of bounds of the LinkedList
+-- @raise if the index is out of bounds of the LinkedList
+-- @from @{List}
 function LinkedList:Set(index, item)
 	if index < 1 or index > self.count then
 		error(string.format(ErrorBounds, index))
@@ -432,7 +462,8 @@ end
 -- Shifts other elements to fill the gap left.
 --
 -- @return the item in the LinkedList
--- @throw if the LinkedList is empty
+-- @raise if the LinkedList is empty
+-- @from @{List}
 function LinkedList:Shift()
 	if self.first == nil then
 		error(ErrorFirst)
@@ -447,6 +478,7 @@ end
 --
 -- @param item the item to add
 -- @return true always since the LinkedList is always changed
+-- @from @{List}
 function LinkedList:Unshift(item)
 	self:addNode(item, self.first)
 	return true -- The LinkedList changed

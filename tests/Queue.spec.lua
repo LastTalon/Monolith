@@ -1,7 +1,4 @@
---- Tests for the Queue interface.
---
--- @version 0.1.0, 2020-12-12
--- @since 0.1
+--- Tests for the @{Queue} interface.
 
 return function()
 	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
