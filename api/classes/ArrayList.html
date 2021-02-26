@@ -1,0 +1,922 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>API Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Monolith</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/AbstractList.html">AbstractList</a></li>
+  <li><strong>ArrayList</strong></li>
+  <li><a href="../classes/Collection.html">Collection</a></li>
+  <li><a href="../classes/Enumerable.html">Enumerable</a></li>
+  <li><a href="../classes/LinkedList.html">LinkedList</a></li>
+  <li><a href="../classes/LinkedQueue.html">LinkedQueue</a></li>
+  <li><a href="../classes/List.html">List</a></li>
+  <li><a href="../classes/Queue.html">Queue</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Monolith.html">Monolith</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>ArrayList</code></h1>
+<p>An array-based <a href="../classes/List.html#">List</a> of items.</p>
+<p> A List implementation that stores items using an array. This provides random
+ access to any index, however does so at the expense of insertion and
+ deletion everywhere except at the end.</p>
+
+<p> Access, insertion at the end, and deletion at the end are Θ(1). Insertion
+ elsewhere, deletion elsewhere, and search are Θ(n).</p>
+
+<p> ArrayList implements all optional <a href="../classes/List.html#">List</a> and <a href="../classes/Collection.html#">Collection</a> methods.</p>
+
+<p> <strong>Extends:</strong> <a href="../classes/AbstractList.html#">AbstractList</a></p>
+
+<p> <strong>Implements:</strong> <a href="../classes/List.html#">List</a>, <a href="../classes/Collection.html#">Collection</a>, <a href="../classes/Enumerable.html#">Enumerable</a></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList.new">ArrayList.new(collection)</a></td>
+	<td class="summary">Creates a new ArrayList.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Add">ArrayList:Add(item)</a></td>
+	<td class="summary">Adds an item to the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Clear">ArrayList:Clear()</a></td>
+	<td class="summary">Removes everything from the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Count">ArrayList:Count()</a></td>
+	<td class="summary">Gets the number of items in the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Delete">ArrayList:Delete(index)</a></td>
+	<td class="summary">Removes the item at the specified index from the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Enumerator">ArrayList:Enumerator()</a></td>
+	<td class="summary">Creates an enumerator for the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:First">ArrayList:First()</a></td>
+	<td class="summary">Gets the item at the beginning of the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Get">ArrayList:Get(index)</a></td>
+	<td class="summary">Gets the item at the specified index in the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:IndexOf">ArrayList:IndexOf(item, index)</a></td>
+	<td class="summary">Determines the index of a specific item in the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Insert">ArrayList:Insert(index, item)</a></td>
+	<td class="summary">Inserts the item into the ArrayList at the specified index.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:InsertAll">ArrayList:InsertAll(index, items)</a></td>
+	<td class="summary">Inserts multiple items into the ArrayList at the specified index.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Last">ArrayList:Last()</a></td>
+	<td class="summary">Gets the item at the end of the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:LastIndexOf">ArrayList:LastIndexOf(item)</a></td>
+	<td class="summary">Determines the last index of a specific item in the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Pop">ArrayList:Pop()</a></td>
+	<td class="summary">Gets an item from the end and removes that item from the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Push">ArrayList:Push(item)</a></td>
+	<td class="summary">Adds an item to the end of the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Remove">ArrayList:Remove(item)</a></td>
+	<td class="summary">Removes the specified item from the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:RemoveAll">ArrayList:RemoveAll(items)</a></td>
+	<td class="summary">Removes all provided items from the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:RetainAll">ArrayList:RetainAll(items)</a></td>
+	<td class="summary">Removes all items except those provided from the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Set">ArrayList:Set(index, item)</a></td>
+	<td class="summary">Sets the element at the specified index.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Shift">ArrayList:Shift()</a></td>
+	<td class="summary">Gets an item from the beginning and removes that item from the ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Sub">ArrayList:Sub(first, last)</a></td>
+	<td class="summary">Creates a new sub-list of this ArrayList.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrayList:Unshift">ArrayList:Unshift(item)</a></td>
+	<td class="summary">Adds an item to the beginning of the ArrayList.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "ArrayList.new"></a>
+    <strong>ArrayList.new(collection)</strong>
+    </dt>
+    <dd>
+    Creates a new ArrayList.
+ Creates a ArrayList copy of the provided <a href="../classes/Collection.html#">Collection</a> or array-indexed
+ table if one is provided, otherwise creates an empty ArrayList.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">collection</span>
+         the <a href="../classes/Collection.html#">Collection</a> or table to copy
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new ArrayList
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "ArrayList:Add"></a>
+    <strong>ArrayList:Add(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the ArrayList.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the ArrayList is always changed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Clear"></a>
+    <strong>ArrayList:Clear()</strong>
+    </dt>
+    <dd>
+    Removes everything from the ArrayList.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Count"></a>
+    <strong>ArrayList:Count()</strong>
+    </dt>
+    <dd>
+    Gets the number of items in the ArrayList.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the number of items
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Delete"></a>
+    <strong>ArrayList:Delete(index)</strong>
+    </dt>
+    <dd>
+    Removes the item at the specified index from the ArrayList.
+ Shifts other elements to fill the gap left at the index of removal.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         the index of the item to remove from the ArrayList
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the ArrayList is always changed
+    </ol>
+
+    <h3>Raises:</h3>
+    if the index is out of bounds of the ArrayList
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Enumerator"></a>
+    <strong>ArrayList:Enumerator()</strong>
+    </dt>
+    <dd>
+    Creates an enumerator for the ArrayList.
+ The enumerator can be used directly in a generic for loop similar to pairs
+ or ipairs.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Enumerable.html#">Enumerable</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        the enumerator generator</li>
+        <li>
+        the invariant state</li>
+        <li>
+        the control variable state</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:First"></a>
+    <strong>ArrayList:First()</strong>
+    </dt>
+    <dd>
+    Gets the item at the beginning of the ArrayList.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the first item in the ArrayList
+    </ol>
+
+    <h3>Raises:</h3>
+    if the ArrayList is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Get"></a>
+    <strong>ArrayList:Get(index)</strong>
+    </dt>
+    <dd>
+    Gets the item at the specified index in the ArrayList.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         the index to get
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the item in the ArrayList at the specified index
+    </ol>
+
+    <h3>Raises:</h3>
+    if the index is out of bounds of the ArrayList
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:IndexOf"></a>
+    <strong>ArrayList:IndexOf(item, index)</strong>
+    </dt>
+    <dd>
+    Determines the index of a specific item in the ArrayList.
+ Starts from a specified index or from the beginning if none is provided.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to locate
+        </li>
+        <li><span class="parameter">index</span>
+         the index to start looking from
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the index of the item in the ArrayList if found, 0 otherwise
+    </ol>
+
+    <h3>Raises:</h3>
+    if the index is out of bounds of the ArrayList
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Insert"></a>
+    <strong>ArrayList:Insert(index, item)</strong>
+    </dt>
+    <dd>
+    Inserts the item into the ArrayList at the specified index.
+ Shifts other elements to make space at the index of insertion.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         the index to insert the item in the ArrayList
+        </li>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the ArrayList is always changed
+    </ol>
+
+    <h3>Raises:</h3>
+    if the index is out of bounds of the ArrayList
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:InsertAll"></a>
+    <strong>ArrayList:InsertAll(index, items)</strong>
+    </dt>
+    <dd>
+    Inserts multiple items into the ArrayList at the specified index.
+ Inserts all items from the provided <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.</p>
+
+<p> Shifts other elements to make space at the index of insertion.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         the index to insert the items in the ArrayList
+        </li>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to add to this ArrayList
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the ArrayList is always changed
+    </ol>
+
+    <h3>Raises:</h3>
+    if the index is out of bounds of the ArrayList
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Last"></a>
+    <strong>ArrayList:Last()</strong>
+    </dt>
+    <dd>
+    Gets the item at the end of the ArrayList.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the last item in the ArrayList
+    </ol>
+
+    <h3>Raises:</h3>
+    if the ArrayList is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:LastIndexOf"></a>
+    <strong>ArrayList:LastIndexOf(item)</strong>
+    </dt>
+    <dd>
+    Determines the last index of a specific item in the ArrayList.
+ Only returns the very last occurrence of the item in the ArrayList.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to locate
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the index of the item in the ArrayList if found, 0 otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Pop"></a>
+    <strong>ArrayList:Pop()</strong>
+    </dt>
+    <dd>
+    Gets an item from the end and removes that item from the ArrayList.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the item in the ArrayList
+    </ol>
+
+    <h3>Raises:</h3>
+    if the ArrayList is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Push"></a>
+    <strong>ArrayList:Push(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the end of the ArrayList.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the ArrayList is always changed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Remove"></a>
+    <strong>ArrayList:Remove(item)</strong>
+    </dt>
+    <dd>
+    Removes the specified item from the ArrayList.
+ Removes only a single item. If there are multiple of the same item, it
+ removes only the first encountered.</p>
+
+<p> When an item is removed any others are shifted to fill the gap left at
+ the index of removal.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to remove from the ArrayList
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the ArrayList changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:RemoveAll"></a>
+    <strong>ArrayList:RemoveAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all provided items from the ArrayList.
+ Removes each instance of a provided item only once for each time provided.
+ If there are multiple of the same item in this ArrayList, it removes only
+ the first encountered for each provided.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to remove from this ArrayList
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the ArrayList changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:RetainAll"></a>
+    <strong>ArrayList:RetainAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all items except those provided from the ArrayList.
+ Retains only the items contained in the specified <a href="../classes/Collection.html#">Collection</a>. If there are
+ duplicates they are all kept.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to retain in this ArrayList
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the ArrayList changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Set"></a>
+    <strong>ArrayList:Set(index, item)</strong>
+    </dt>
+    <dd>
+    Sets the element at the specified index.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         the index to set
+        </li>
+        <li><span class="parameter">item</span>
+         the item to set at the index
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the ArrayList changed as a result, false otherwise
+    </ol>
+
+    <h3>Raises:</h3>
+    if the index is out of bounds of the ArrayList
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Shift"></a>
+    <strong>ArrayList:Shift()</strong>
+    </dt>
+    <dd>
+    Gets an item from the beginning and removes that item from the ArrayList.
+ Shifts other elements to fill the gap left.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the item in the ArrayList
+    </ol>
+
+    <h3>Raises:</h3>
+    if the ArrayList is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Sub"></a>
+    <strong>ArrayList:Sub(first, last)</strong>
+    </dt>
+    <dd>
+    Creates a new sub-list of this ArrayList.
+ Creates the list that is the portion of this ArrayList between the
+ specified indices or from the first specified index to the end if only one
+ index is specified.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">first</span>
+         the index to start at
+        </li>
+        <li><span class="parameter">last</span>
+         the index to end at
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new ArrayList
+    </ol>
+
+    <h3>Raises:</h3>
+
+
+<ul>
+    <li>if the first index is out of bounds</li>
+    <li>if the last index is out of bounds</li>
+    <li>if the last index is smaller than the first index</li>
+</ul>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ArrayList:Unshift"></a>
+    <strong>ArrayList:Unshift(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the beginning of the ArrayList.
+ Shifts other elements to make space.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/List.html#">List</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the ArrayList is always changed
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-02-26 21:00:53 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
