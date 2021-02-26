@@ -1,7 +1,4 @@
---- Tests for the LinkedList class.
---
--- @version 0.1.0, 2020-12-09
--- @since 0.1
+--- Tests for the @{LinkedList} class.
 
 return function()
 	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
@@ -122,14 +119,11 @@ return function()
 					expect(list:ContainsAll(contained)).to.equal(false)
 				end)
 
-				it(
-					"should find all 0 elements when the provided container is empty",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						local contained = LinkedList.new()
-						expect(list:ContainsAll(contained)).to.equal(true)
-					end
-				)
+				it("should find all 0 elements when the provided container is empty", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					local contained = LinkedList.new()
+					expect(list:ContainsAll(contained)).to.equal(true)
+				end)
 
 				it("should find all elements when the elements exist", function()
 					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
@@ -734,14 +728,11 @@ return function()
 					expect(list:Count()).to.equal(0)
 				end)
 
-				it(
-					"should return true when not retaining a single element which does not match",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						local retain = LinkedList.new({ 3 })
-						expect(list:RetainAll(retain)).to.equal(true)
-					end
-				)
+				it("should return true when not retaining a single element which does not match", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					local retain = LinkedList.new({ 3 })
+					expect(list:RetainAll(retain)).to.equal(true)
+				end)
 
 				it("should retain multiple elements when more exist", function()
 					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
@@ -750,24 +741,18 @@ return function()
 					expect(list:Count()).to.equal(3)
 				end)
 
-				it(
-					"should return true when retaining multiple elements when more exist",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						local retain = LinkedList.new({ 1, 3, 5 })
-						expect(list:RetainAll(retain)).to.equal(true)
-					end
-				)
+				it("should return true when retaining multiple elements when more exist", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					local retain = LinkedList.new({ 1, 3, 5 })
+					expect(list:RetainAll(retain)).to.equal(true)
+				end)
 
-				it(
-					"should retain multiple elements when attempting to retain excess",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						local retain = LinkedList.new({ 0, 1, 3 })
-						list:RetainAll(retain)
-						expect(list:Count()).to.equal(2)
-					end
-				)
+				it("should retain multiple elements when attempting to retain excess", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					local retain = LinkedList.new({ 0, 1, 3 })
+					list:RetainAll(retain)
+					expect(list:Count()).to.equal(2)
+				end)
 
 				it("should return true when attemping to retain with excess", function()
 					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
@@ -795,14 +780,11 @@ return function()
 					expect(list:Count()).to.equal(5)
 				end)
 
-				it(
-					"should return false when attempting to retain exceess and retaining all elements",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						local retain = LinkedList.new({ 0, 1, 2, 3, 4, 5 })
-						expect(list:RetainAll(retain)).to.equal(false)
-					end
-				)
+				it("should return false when attempting to retain exceess and retaining all elements", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					local retain = LinkedList.new({ 0, 1, 2, 3, 4, 5 })
+					expect(list:RetainAll(retain)).to.equal(false)
+				end)
 
 				it("should retain all duplicates", function()
 					local list = LinkedList.new({ 1, 1, 2, 2, 3 })
@@ -923,44 +905,32 @@ return function()
 					expect(list:IndexOf(1)).to.equal(1)
 				end)
 
-				it(
-					"should return 0 when the element doesn't exist and only one element exists",
-					function()
-						local list = LinkedList.new({ 1 })
-						expect(list:IndexOf(0)).to.equal(0)
-					end
-				)
+				it("should return 0 when the element doesn't exist and only one element exists", function()
+					local list = LinkedList.new({ 1 })
+					expect(list:IndexOf(0)).to.equal(0)
+				end)
 
-				it(
-					"should accept 1 as a starting index when only one element exists",
-					function()
-						local list = LinkedList.new({ 1 })
-						expect(list:IndexOf(1, 1)).to.equal(1)
-					end
-				)
+				it("should accept 1 as a starting index when only one element exists", function()
+					local list = LinkedList.new({ 1 })
+					expect(list:IndexOf(1, 1)).to.equal(1)
+				end)
 
-				it(
-					"should error when the index is out of bounds when only one element exists",
-					function()
-						local list = LinkedList.new({ 1 })
-						expect(function()
-							list:IndexOf(1, 2)
-						end).to.throw("Index '2' is out of bounds.")
-					end
-				)
+				it("should error when the index is out of bounds when only one element exists", function()
+					local list = LinkedList.new({ 1 })
+					expect(function()
+						list:IndexOf(1, 2)
+					end).to.throw("Index '2' is out of bounds.")
+				end)
 
 				it("should find the index with many elements", function()
 					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
 					expect(list:IndexOf(3)).to.equal(3)
 				end)
 
-				it(
-					"should return 0 when the element doesn't exist with many elements",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						expect(list:IndexOf(0)).to.equal(0)
-					end
-				)
+				it("should return 0 when the element doesn't exist with many elements", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					expect(list:IndexOf(0)).to.equal(0)
+				end)
 
 				it("should find the first index when there are many elements", function()
 					local list = LinkedList.new({ 1, 2, 3, 4, 3 })
@@ -972,15 +942,12 @@ return function()
 					expect(list:IndexOf(3, 4)).to.equal(5)
 				end)
 
-				it(
-					"should error when the index is out of bounds with many elements",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						expect(function()
-							list:IndexOf(1, 6)
-						end).to.throw("Index '6' is out of bounds.")
-					end
-				)
+				it("should error when the index is out of bounds with many elements", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					expect(function()
+						list:IndexOf(1, 6)
+					end).to.throw("Index '6' is out of bounds.")
+				end)
 			end)
 
 			describe("Last", function()
@@ -1029,26 +996,20 @@ return function()
 					expect(list:LastIndexOf(1)).to.equal(1)
 				end)
 
-				it(
-					"should return 0 when the element doesn't exist and only one element exists",
-					function()
-						local list = LinkedList.new({ 1 })
-						expect(list:LastIndexOf(0)).to.equal(0)
-					end
-				)
+				it("should return 0 when the element doesn't exist and only one element exists", function()
+					local list = LinkedList.new({ 1 })
+					expect(list:LastIndexOf(0)).to.equal(0)
+				end)
 
 				it("should find the index with many elements", function()
 					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
 					expect(list:LastIndexOf(3)).to.equal(3)
 				end)
 
-				it(
-					"should return 0 when the element doesn't exist with many elements",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						expect(list:LastIndexOf(0)).to.equal(0)
-					end
-				)
+				it("should return 0 when the element doesn't exist with many elements", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					expect(list:LastIndexOf(0)).to.equal(0)
+				end)
 
 				it("should find the first index when there are many elements", function()
 					local list = LinkedList.new({ 1, 2, 3, 4, 3 })
@@ -1069,25 +1030,19 @@ return function()
 					expect(list:Sub(1):Get(1)).to.equal(1)
 				end)
 
-				it(
-					"should error when the first index is out of bounds with only one element",
-					function()
-						local list = LinkedList.new({ 1 })
-						expect(function()
-							list:Sub(2)
-						end).to.throw("Index '2' is out of bounds.")
-					end
-				)
+				it("should error when the first index is out of bounds with only one element", function()
+					local list = LinkedList.new({ 1 })
+					expect(function()
+						list:Sub(2)
+					end).to.throw("Index '2' is out of bounds.")
+				end)
 
-				it(
-					"should error when the last index is out of bounds with only one element",
-					function()
-						local list = LinkedList.new({ 1 })
-						expect(function()
-							list:Sub(1, 2)
-						end).to.throw("Index '2' is out of bounds.")
-					end
-				)
+				it("should error when the last index is out of bounds with only one element", function()
+					local list = LinkedList.new({ 1 })
+					expect(function()
+						list:Sub(1, 2)
+					end).to.throw("Index '2' is out of bounds.")
+				end)
 
 				it("should create a sub-list with many elements", function()
 					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
@@ -1107,35 +1062,26 @@ return function()
 					expect(sub:Get(3)).to.equal(4)
 				end)
 
-				it(
-					"should error if the first index is out of bounds with many elements",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						expect(function()
-							list:Sub(0)
-						end).to.throw("Index '0' is out of bounds.")
-					end
-				)
+				it("should error if the first index is out of bounds with many elements", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					expect(function()
+						list:Sub(0)
+					end).to.throw("Index '0' is out of bounds.")
+				end)
 
-				it(
-					"should error if the last index is out of bounds with many elements",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						expect(function()
-							list:Sub(1, 6)
-						end).to.throw("Index '6' is out of bounds.")
-					end
-				)
+				it("should error if the last index is out of bounds with many elements", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					expect(function()
+						list:Sub(1, 6)
+					end).to.throw("Index '6' is out of bounds.")
+				end)
 
-				it(
-					"should error when providing a last index smaller than the first index",
-					function()
-						local list = LinkedList.new({ 1, 2, 3, 4, 5 })
-						expect(function()
-							list:Sub(4, 2)
-						end).to.throw("Last index is smaller than first index.")
-					end
-				)
+				it("should error when providing a last index smaller than the first index", function()
+					local list = LinkedList.new({ 1, 2, 3, 4, 5 })
+					expect(function()
+						list:Sub(4, 2)
+					end).to.throw("Last index is smaller than first index.")
+				end)
 			end)
 		end)
 
