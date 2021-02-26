@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Getting Started - Monolith</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Getting Started";
+    var mkdocs_page_input_path = "getting-started.md";
+    var mkdocs_page_url = "/Monolith/getting-started/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Monolith</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Getting Started</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#getting-started">Getting Started</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#installation">Installation</a></li>
+        
+            <li><a class="toctree-l3" href="#usage">Usage</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">User Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../user-guide/">Introduction</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../api/">API Reference</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Monolith</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Getting Started</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<p>Monolith is designed to be easy to use. You shouldn't have to worry about what
+goes on in the background. It does, however, require some setup before you can
+start using it.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Monolith is packaged to easily use the filesystem alongside
+<a href="https://www.roblox.com/">Roblox</a> or
+<a href="https://github.com/LPGhatguy/lemur">Lemur</a>, however it isn't required.
+Using <a href="https://rojo.space/">Rojo</a> to sync is the easiest method and will get
+you started quickly.</p>
+<h3 id="using-the-filesystem">Using the Filesystem<a class="headerlink" href="#using-the-filesystem" title="Permanent link">&para;</a></h3>
+<p>When using the filesystem the first step is to download Monolith.</p>
+<p>The <a href="https://github.com/LastTalon/Monolith/releases">latest release</a> can be
+downloaded via <a href="https://github.com/LastTalon/Monolith">GitHub</a>.
+Alternatively, if you'd like the latest developement changes or wish to
+contribute you can clone or create a submodule of the repository with git.</p>
+<pre><code>git clone https://github.com/LastTalon/Monolith.git
+</code></pre>
+
+<h4 id="rojo">Rojo<a class="headerlink" href="#rojo" title="Permanent link">&para;</a></h4>
+<p><a href="https://rojo.space/">Rojo</a> is the easiest and simplest way to install
+Monolith. Start by <a href="https://rojo.space/docs/installation/">installing Rojo</a>. We
+recommend using <a href="https://github.com/Roblox/foreman">Foreman</a> or the
+<a href="https://marketplace.visualstudio.com/items?itemName=evaera.vscode-rojo">Visual Studio Code extension</a>.</p>
+<p>Once Rojo is installed just sync or build your project with Monolith. Monolith
+includes a <code>default.project.json</code> that you can use. It includes all
+of Monolith, as well as its dependencies and tests.</p>
+<p>A more basic <code>.project.json</code> can also be used to sync Monolith.</p>
+<pre><code class="json">{
+    &quot;name&quot;: &quot;Monolith&quot;,
+    &quot;tree&quot;: {
+        &quot;$className&quot;: &quot;DataModel&quot;,
+        &quot;ReplicatedStorage&quot;: {
+            &quot;$className&quot;: &quot;ReplicatedStorage&quot;,
+            &quot;Monolith&quot;: {
+                &quot;$path&quot;: &quot;lib&quot;
+            }
+        }
+    }
+}
+</code></pre>
+
+<h4 id="lemur">Lemur<a class="headerlink" href="#lemur" title="Permanent link">&para;</a></h4>
+<p>Monolith is fully compatibile with <a href="https://github.com/LPGhatguy/lemur">Lemur</a>.
+Monolith uses Lemur for testing and this <a href="https://github.com/LastTalon/Monolith/blob/master/tests/Lemur.server.lua">testing script</a>
+can be used as an example.</p>
+<p>Lemur and Monolith can both be loaded from a Lua script:</p>
+<pre><code class="lua">package.path = package.path .. &quot;;?/init.lua&quot; -- Lua installations may need this
+
+local Lemur = require(&quot;lemur&quot;)
+local Habitat = Lemur.Habitat.new()
+local ReplicatedStorage = Habitat.game:GetService(&quot;ReplicatedStorage&quot;)
+
+local monolith = Habitat:loadFromFs(&quot;lib&quot;) -- lib is the root of Monolith
+monolith.Parent = ReplicatedStorage
+</code></pre>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Lemur can't load from <code>.project.json</code> files, but can still load <code>.lua</code>
+files from the filesystem just like Rojo with <code>Habitat:loadFromFs()</code>.</p>
+</div>
+<h4 id="alternatives">Alternatives<a class="headerlink" href="#alternatives" title="Permanent link">&para;</a></h4>
+<p>Other syncing tools can be used for Monolith provided they can build or sync
+<code>*.lua</code> files into a Roblox place or model file or directly with Roblox Studio.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All <code>.lua</code> files in Monolith are meant to be synced as a <code>ModuleScript</code>.</p>
+</div>
+<h3 id="using-roblox">Using Roblox<a class="headerlink" href="#using-roblox" title="Permanent link">&para;</a></h3>
+<p>Creating the scripts manually in Roblox Studio can replicate the work done by a
+sync tool such as Rojo without the need for any additional tooling or the use
+of the filesystem.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the future, Monolith will release pre-built model packages that can be
+used with Roblox without any additional tooling or setup.</p>
+</div>
+<p>In order to recreate the structure of the project manually within Roblox:</p>
+<ol>
+<li>Create a <code>ModuleScript</code> for the root Monolith module wherever you'd like to
+    use it from. Typically <code>ReplicatedStorage</code> is a good place for it.</li>
+<li>Name it <code>Monolith</code> (or use whatever name you'd like, it doesn't matter!) and
+    copy the contents of <code>lib/init.lua</code> into it. This will be what you require
+    when you use Monolith.</li>
+<li>Inside your root <code>ModuleScript</code> repeat each of th following steps for every
+    script in Monolith's <code>lib/</code> directory (we already did <code>lib/init.lua</code>, so you
+    can skip it):<ol>
+<li>Create a new <code>ModuleScript</code> inside of the root <code>ModuleScript</code>.</li>
+<li>Name it whatever the file is named in Monolith excluding the <code>.lua</code> file
+    extension. E.g. for <code>List.lua</code> simply call it <code>List</code>. Monolith looks for
+    these names, so they do matter this time.</li>
+<li>Copy the contents of the file in Monolith into the new <code>ModuleScript</code>.</li>
+</ol>
+</li>
+</ol>
+<p>When you're done, the structure should look something like this, and you should
+be able to require Monolith without any errors.</p>
+<pre><code>|-- ReplicatedStorage
+|   |-- Monolith
+|   |   |-- AbstractList
+|   |   |-- ArrayList
+|   |   |-- Collection
+|   |   |-- Enumerable
+|   |   |-- ...
+</code></pre>
+
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Using this method is very error prone at the moment. We recommend using a
+sync tool such as Rojo to avoid human error in the process.</p>
+<p>A sync tool can be used to sync with a blank project, then saved as a model,
+or copied into another project for cases where the rest of the project
+doesn't use the filesystem and it would be preferable to avoid syncing
+regularly.</p>
+</div>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>Once Monolith is installed, assuming its named <code>Monolith</code> and is located in
+<code>ReplicatedStorage</code>, you can simply require it to start using it.</p>
+<pre><code class="lua">local Monolith = require(game:GetService(&quot;ReplicatedStorage&quot;).Monolith)
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We'll assume from here on that <code>Monolith</code> has already been required.</p>
+</div>
+<h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
+<p>The Monolith module provides access to all the classes and interfaces contained
+within Monolith. They can each be created using the <code>new()</code> constructor.</p>
+<pre><code class="lua">local list = Monolith.LinkedList.new()
+local stack = Monolith.ArrayStack.new()
+local map = Monolith.HashMap.new()
+</code></pre>
+
+<p>Here we can see when we want a <code>List</code> we can't simply create it. Instead, we
+must instantiate a concrete data structure that implements <code>List</code> such
+as <code>LinkedList</code>. The same is true for all of Monolith's abstract data types.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>As of v0.1, Monolith provides no way to cast between classes and interfaces,
+however classes still act as if they were those interfaces and can be used in
+their place. The ability to cast classes to interfaces will be added in a
+future update.</p>
+<p>At the moment the only use of the interfaces is for creating your own data
+types or data structures.</p>
+</div>
+<p>We can construct new data structures from any other <code>Collection</code> type or from
+plain old Lua tables. This makes it easy to convert data from one type to
+another.</p>
+<pre><code class="lua">local data = { 1, 2, 3, 4, 5 }
+local list = Monolith.ArrayList.new(data)
+local set = Monolith.HashSet.new(list)
+</code></pre>
+
+<h3 id="collections">Collections<a class="headerlink" href="#collections" title="Permanent link">&para;</a></h3>
+<p>All of Monolith's abstract data types implmement <code>Collection</code>. In addition,
+because <code>Collection</code> implements <code>Enumerable</code>, all are also <code>Enumerable</code>.</p>
+<h4 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h4>
+<p>To enumerate over a data structure we can simply use the <code>Enumerator()</code> method
+in a generic for loop.</p>
+<pre><code class="lua">local names = {
+    &quot;Jim&quot;,
+    &quot;Bob&quot;,
+    &quot;Joe&quot;,
+}
+
+local nameList = Monolith.LinkedList.new(names)
+
+for index, name in nameList:Enumerator() do
+    print(string.format(&quot;%d. %s&quot;, index, name))
+end
+</code></pre>
+
+<h4 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h4>
+<p>The <code>Collection</code> interface declares a set of methods for constructing,
+transforming, and, reading data regardless of any particular data
+structure's implementation. Here we use a <code>HashSet</code>, but it could have been an
+<code>ArrayList</code> or a <code>LinkedQueue</code>, we could use the same operations.</p>
+<pre><code class="lua">local associates = {
+    &quot;Alice&quot;,
+    &quot;Bob&quot;,
+}
+
+local clients = {
+    &quot;Chuck&quot;,
+    &quot;Dan&quot;,
+}
+
+local participants = Monolith.HashSet.new(associates)
+participants:Add(&quot;Eve&quot;)
+participants:AddAll(clients)
+participants:Remove(&quot;Bob&quot;)
+
+if participants:Contains(&quot;Trudy&quot;) then
+    print(&quot;Intruder alert!&quot;)
+    participants:Clear()
+end
+
+return participants:ToArray()
+</code></pre>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>There are a lot more data types and methods. Check them out in our
+<a href="/user-guide/">user guide</a> or our <a href="/api/">API reference</a>.</p>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../user-guide/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/LastTalon/Monolith/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../user-guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
