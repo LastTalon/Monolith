@@ -8,8 +8,7 @@
 -- equired and can be used freely. Some stacks may not be able to provide full
 -- functionality for some optional methods.
 --
--- @version 0.1.0, 2020-12-26
--- @since 0.1
+-- @classmod Stack
 
 local module = script.Parent
 local Collection = require(module:WaitForChild("Collection"))
@@ -176,7 +175,7 @@ end
 --- Gets the item at the end of the Stack.
 --
 -- @return the last item in the Stack
--- @throw if the Stack is empty
+-- @raise if the Stack is empty
 function Stack:Last()
 	error(string.format(ErrorOverride, "Last"))
 end
@@ -199,7 +198,7 @@ end
 -- impose additional conditions to do so.
 --
 -- @return the item in the Stack
--- @throw if the Stack is empty
+-- @raise if the Stack is empty
 function Stack:Pop()
 	error(string.format(ErrorOverride, "Pop"))
 end

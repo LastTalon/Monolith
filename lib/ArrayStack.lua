@@ -5,8 +5,7 @@
 -- ArrayStack implements all optional Collection methods as well as all
 -- optional Stack methods.
 --
--- @version 0.1.0, 2020-12-28
--- @since 0.1
+-- @classmod ArrayStack
 
 local module = script.Parent
 local Stack = require(module:WaitForChild("Stack"))
@@ -177,7 +176,7 @@ end
 --- Gets the item at the end of the ArrayStack.
 --
 -- @return the last item in the ArrayStack
--- @throw if the ArrayStack is empty
+-- @raise if the ArrayStack is empty
 function ArrayStack:Last()
 	return self.list:Last()
 end
@@ -193,7 +192,7 @@ end
 --- Gets an item from the end and removes that item from the ArrayStack.
 --
 -- @return the item in the ArrayStack
--- @throw if the ArrayStack is empty
+-- @raise if the ArrayStack is empty
 function ArrayStack:Pop()
 	return self.list:Pop()
 end
