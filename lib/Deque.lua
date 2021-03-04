@@ -238,7 +238,7 @@ end
 --- Gets the item at the beginning of the Deque.
 --
 -- @return the first item in the Deque
--- @throw if the Deque is empty
+-- @raise if the Deque is empty
 -- @from @{Queue}
 function Deque:First()
 	error(string.format(ErrorOverride, "First"))
@@ -273,7 +273,7 @@ end
 -- functionality that can't be provided by this Deque.
 --
 -- @return the item in the Deque
--- @throw if the Deque is empty
+-- @raise if the Deque is empty
 -- @from @{Queue}
 function Deque:Shift()
 	error(string.format(ErrorOverride, "Shift"))
@@ -282,7 +282,7 @@ end
 --- Gets the item at the end of the Deque.
 --
 -- @return the last item in the Deque
--- @throw if the Deque is empty
+-- @raise if the Deque is empty
 function Deque:Last()
 	error(string.format(ErrorOverride, "Last"))
 end
@@ -315,7 +315,7 @@ end
 -- functionality that can't be provided by this Deque.
 --
 -- @return the item in the Deque
--- @throw if the Deque is empty
+-- @raise if the Deque is empty
 function Deque:Pop()
 	error(string.format(ErrorOverride, "Pop"))
 end

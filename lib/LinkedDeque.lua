@@ -196,7 +196,7 @@ end
 --- Gets the item at the beginning of the LinkedDeque.
 --
 -- @return the first item in the LinkedDeque
--- @throw if the LinkedDeque is empty
+-- @raise if the LinkedDeque is empty
 -- @from @{Queue}
 function LinkedDeque:First()
 	return self.list:First()
@@ -215,7 +215,7 @@ end
 -- Shifts other elements to fill the gap left.
 --
 -- @return the item in the LinkedDeque
--- @throw if the LinkedDeque is empty
+-- @raise if the LinkedDeque is empty
 -- @from @{Queue}
 function LinkedDeque:Shift()
 	return self.list:Shift()
@@ -224,7 +224,7 @@ end
 --- Gets the item at the end of the LinkedDeque.
 --
 -- @return the last item in the LinkedDeque
--- @throw if the LinkedDeque is empty
+-- @raise if the LinkedDeque is empty
 -- @from @{Deque}
 function LinkedDeque:Last()
 	return self.list:Last()
@@ -242,7 +242,7 @@ end
 --- Gets an item from the end and removes that item from the LinkedDeque.
 --
 -- @return the item in the LinkedDeque
--- @throw if the LinkedDeque is empty
+-- @raise if the LinkedDeque is empty
 -- @from @{Deque}
 function LinkedDeque:Pop()
 	return self.list:Pop()
