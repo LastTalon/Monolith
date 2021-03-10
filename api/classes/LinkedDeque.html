@@ -1,0 +1,832 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>API Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Monolith</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/AbstractList.html">AbstractList</a></li>
+  <li><a href="../classes/ArrayList.html">ArrayList</a></li>
+  <li><a href="../classes/Collection.html">Collection</a></li>
+  <li><a href="../classes/Deque.html">Deque</a></li>
+  <li><a href="../classes/Enumerable.html">Enumerable</a></li>
+  <li><strong>LinkedDeque</strong></li>
+  <li><a href="../classes/LinkedList.html">LinkedList</a></li>
+  <li><a href="../classes/LinkedQueue.html">LinkedQueue</a></li>
+  <li><a href="../classes/List.html">List</a></li>
+  <li><a href="../classes/Queue.html">Queue</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Monolith.html">Monolith</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>LinkedDeque</code></h1>
+<p>A doubly-linked, double-ended <a href="../classes/Deque.html#">Deque</a> of items.</p>
+<p> Implements a Deque as a <a href="../classes/LinkedList.html#">LinkedList</a>, providing the same performance
+ characteristics as the <a href="../classes/LinkedList.html#">LinkedList</a>.</p>
+
+<p> LinkedDeque implements all optional <a href="../classes/Deque.html#">Deque</a>, <a href="../classes/Queue.html#">Queue</a>, and <a href="../classes/Collection.html#">Collection</a>
+ methods.</p>
+
+<p> <strong>Implements:</strong> <a href="../classes/Deque.html#">Deque</a>, <a href="../classes/Queue.html#">Queue</a>, <a href="../classes/Collection.html#">Collection</a>, <a href="../classes/Enumerable.html#">Enumerable</a></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque.new">LinkedDeque.new(collection)</a></td>
+	<td class="summary">Creates a new LinkedDeque.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Add">LinkedDeque:Add(item)</a></td>
+	<td class="summary">Adds an item to the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:AddAll">LinkedDeque:AddAll(items)</a></td>
+	<td class="summary">Adds all provided items to the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Clear">LinkedDeque:Clear()</a></td>
+	<td class="summary">Removes everything from the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Contains">LinkedDeque:Contains(item)</a></td>
+	<td class="summary">Determines whether the LinkedDeque contains an item.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:ContainsAll">LinkedDeque:ContainsAll(items)</a></td>
+	<td class="summary">Determines whether the LinkedDeque contains all of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:ContainsAny">LinkedDeque:ContainsAny(items)</a></td>
+	<td class="summary">Determines whether the LinkedDeque contains any of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Count">LinkedDeque:Count()</a></td>
+	<td class="summary">Gets the number of items in the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Empty">LinkedDeque:Empty()</a></td>
+	<td class="summary">Determines whether the LinkedDeque has no elements.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Enumerator">LinkedDeque:Enumerator()</a></td>
+	<td class="summary">Creates an enumerator for the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:First">LinkedDeque:First()</a></td>
+	<td class="summary">Gets the item at the beginning of the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Last">LinkedDeque:Last()</a></td>
+	<td class="summary">Gets the item at the end of the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Pop">LinkedDeque:Pop()</a></td>
+	<td class="summary">Gets an item from the end and removes that item from the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Push">LinkedDeque:Push(item)</a></td>
+	<td class="summary">Adds an item to the end of the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Remove">LinkedDeque:Remove(item)</a></td>
+	<td class="summary">Removes the specified item from the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:RemoveAll">LinkedDeque:RemoveAll(items)</a></td>
+	<td class="summary">Removes all provided items from the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:RetainAll">LinkedDeque:RetainAll(items)</a></td>
+	<td class="summary">Removes all items except those provided from the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Shift">LinkedDeque:Shift()</a></td>
+	<td class="summary">Gets an item from the beginning and removes that item from the LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:ToArray">LinkedDeque:ToArray()</a></td>
+	<td class="summary">Creates a new array indexed table of this LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:ToTable">LinkedDeque:ToTable()</a></td>
+	<td class="summary">Creates a new table of this LinkedDeque.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LinkedDeque:Unshift">LinkedDeque:Unshift(item)</a></td>
+	<td class="summary">Adds an item to the beginning of the LinkedDeque.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "LinkedDeque.new"></a>
+    <strong>LinkedDeque.new(collection)</strong>
+    </dt>
+    <dd>
+    Creates a new LinkedDeque.
+ Creates a LinkedDeque copy of the provided <a href="../classes/Collection.html#">Collection</a> or array-indexed
+ table if one is provided, otherwise creates an empty LinkedDeque.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">collection</span>
+         the <a href="../classes/Collection.html#">Collection</a> or table to copy
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new LinkedDeque
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "LinkedDeque:Add"></a>
+    <strong>LinkedDeque:Add(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the LinkedDeque.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the LinkedDeque is always changed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:AddAll"></a>
+    <strong>LinkedDeque:AddAll(items)</strong>
+    </dt>
+    <dd>
+    Adds all provided items to the LinkedDeque.
+ Adds items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary, deterministic
+ order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to add to this LinkedDeque
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the LinkedDeque is always changed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Clear"></a>
+    <strong>LinkedDeque:Clear()</strong>
+    </dt>
+    <dd>
+    Removes everything from the LinkedDeque.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Contains"></a>
+    <strong>LinkedDeque:Contains(item)</strong>
+    </dt>
+    <dd>
+    Determines whether the LinkedDeque contains an item.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to locate in the LinkedDeque
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the item is in the LinkedDeque, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:ContainsAll"></a>
+    <strong>LinkedDeque:ContainsAll(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the LinkedDeque contains all of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this LinkedDeque
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all items are in the LinkedDeque, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:ContainsAny"></a>
+    <strong>LinkedDeque:ContainsAny(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the LinkedDeque contains any of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this LinkedDeque
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any items are in the LinkedDeque, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Count"></a>
+    <strong>LinkedDeque:Count()</strong>
+    </dt>
+    <dd>
+    Gets the number of items in the LinkedDeque.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the number of items
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Empty"></a>
+    <strong>LinkedDeque:Empty()</strong>
+    </dt>
+    <dd>
+    Determines whether the LinkedDeque has no elements.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the LinkedDeque empty, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Enumerator"></a>
+    <strong>LinkedDeque:Enumerator()</strong>
+    </dt>
+    <dd>
+    Creates an enumerator for the LinkedDeque.
+ The enumerator can be used directly in a generic for loop similar to pairs
+ or ipairs.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Enumerable.html#">Enumerable</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the enumerator generator
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:First"></a>
+    <strong>LinkedDeque:First()</strong>
+    </dt>
+    <dd>
+    Gets the item at the beginning of the LinkedDeque.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Queue.html#">Queue</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the first item in the LinkedDeque
+    </ol>
+
+    <h3>Raises:</h3>
+    if the LinkedDeque is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Last"></a>
+    <strong>LinkedDeque:Last()</strong>
+    </dt>
+    <dd>
+    Gets the item at the end of the LinkedDeque.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Deque.html#">Deque</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the last item in the LinkedDeque
+    </ol>
+
+    <h3>Raises:</h3>
+    if the LinkedDeque is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Pop"></a>
+    <strong>LinkedDeque:Pop()</strong>
+    </dt>
+    <dd>
+    Gets an item from the end and removes that item from the LinkedDeque.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Deque.html#">Deque</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the item in the LinkedDeque
+    </ol>
+
+    <h3>Raises:</h3>
+    if the LinkedDeque is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Push"></a>
+    <strong>LinkedDeque:Push(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the end of the LinkedDeque.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Queue.html#">Queue</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the LinkedDeque is always changed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Remove"></a>
+    <strong>LinkedDeque:Remove(item)</strong>
+    </dt>
+    <dd>
+    Removes the specified item from the LinkedDeque.
+ Removes only a single item. If there are multiple of the same item, it
+ removes only the first encountered.</p>
+
+<p> When an item is removed any others are shifted to fill the gap left at
+ the index of removal.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to remove from the LinkedDeque
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the LinkedDeque changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:RemoveAll"></a>
+    <strong>LinkedDeque:RemoveAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all provided items from the LinkedDeque.
+ Removes each instance of a provided item only once for each time provided.
+ If there are multiple of the same item in this LinkedDeque, it removes only
+ the first encountered for each provided.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to remove from this LinkedDeque
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the LinkedDeque changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:RetainAll"></a>
+    <strong>LinkedDeque:RetainAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all items except those provided from the LinkedDeque.
+ Retains only the items contained in the specified <a href="../classes/Collection.html#">Collection</a> regardless
+ of duplicates. If there are duplicates they are all kept.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to retain in this LinkedDeque
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the LinkedDeque changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Shift"></a>
+    <strong>LinkedDeque:Shift()</strong>
+    </dt>
+    <dd>
+    Gets an item from the beginning and removes that item from the LinkedDeque.
+ Shifts other elements to fill the gap left.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Queue.html#">Queue</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the item in the LinkedDeque
+    </ol>
+
+    <h3>Raises:</h3>
+    if the LinkedDeque is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:ToArray"></a>
+    <strong>LinkedDeque:ToArray()</strong>
+    </dt>
+    <dd>
+    Creates a new array indexed table of this LinkedDeque.
+ The order of the array is the same as the order of the LinkedDeque. The first
+ element of the LinkedDeque will get index 1 and so on.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the array indexed table
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/LinkedDeque.html#LinkedDeque:ToTable">ToTable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:ToTable"></a>
+    <strong>LinkedDeque:ToTable()</strong>
+    </dt>
+    <dd>
+    Creates a new table of this LinkedDeque.
+ LinkedDeques, being ordered and linear, need no indices that are not array
+ indices, so this provides a table with all the same array indices as
+ <a href="../classes/LinkedDeque.html#LinkedDeque:ToArray">ToArray</a>.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the table
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/LinkedDeque.html#LinkedDeque:ToArray">ToArray</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "LinkedDeque:Unshift"></a>
+    <strong>LinkedDeque:Unshift(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the beginning of the LinkedDeque.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Deque.html#">Deque</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true always since the LinkedDeque is always changed
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-03-10 04:59:04 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
