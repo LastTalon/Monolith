@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  <link rel="canonical" href="https://lasttalon.github.io/Monolith/getting-started/">
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Getting Started - Monolith</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,8 +25,8 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -36,6 +37,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> Monolith</a>
         <div role="search">
@@ -46,58 +48,58 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Home</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Getting Started</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#getting-started">Getting Started</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Getting Started</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#installation">Installation</a></li>
-        
-            <li><a class="toctree-l3" href="#usage">Usage</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#using-the-filesystem">Using the Filesystem</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#rojo">Rojo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lemur">Lemur</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#alternatives">Alternatives</a>
+    </li>
         </ul>
-    
-
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">User Guide</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../user-guide/">Introduction</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Reference</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../api/">API Reference</a>
-                </li>
-    </ul>
-	    </li>
-          
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-roblox">Using Roblox</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#constructors">Constructors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#collections">Collections</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#enumeration">Enumeration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">User Guide</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../user-guide/">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../api/">API Reference</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -122,6 +124,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -145,7 +148,6 @@ Alternatively, if you'd like the latest developement changes or wish to
 contribute you can clone or create a submodule of the repository with git.</p>
 <pre><code>git clone https://github.com/LastTalon/Monolith.git
 </code></pre>
-
 <h4 id="rojo">Rojo<a class="headerlink" href="#rojo" title="Permanent link">&para;</a></h4>
 <p><a href="https://rojo.space/">Rojo</a> is the easiest and simplest way to install
 Monolith. Start by <a href="https://rojo.space/docs/installation/">installing Rojo</a>. We
@@ -155,7 +157,7 @@ recommend using <a href="https://github.com/Roblox/foreman">Foreman</a> or the
 includes a <code>default.project.json</code> that you can use. It includes all
 of Monolith, as well as its dependencies and tests.</p>
 <p>A more basic <code>.project.json</code> can also be used to sync Monolith.</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;name&quot;: &quot;Monolith&quot;,
     &quot;tree&quot;: {
         &quot;$className&quot;: &quot;DataModel&quot;,
@@ -168,13 +170,12 @@ of Monolith, as well as its dependencies and tests.</p>
     }
 }
 </code></pre>
-
 <h4 id="lemur">Lemur<a class="headerlink" href="#lemur" title="Permanent link">&para;</a></h4>
 <p>Monolith is fully compatibile with <a href="https://github.com/LPGhatguy/lemur">Lemur</a>.
 Monolith uses Lemur for testing and this <a href="https://github.com/LastTalon/Monolith/blob/master/tests/Lemur.server.lua">testing script</a>
 can be used as an example.</p>
 <p>Lemur and Monolith can both be loaded from a Lua script:</p>
-<pre><code class="lua">package.path = package.path .. &quot;;?/init.lua&quot; -- Lua installations may need this
+<pre><code class="language-lua">package.path = package.path .. &quot;;?/init.lua&quot; -- Lua installations may need this
 
 local Lemur = require(&quot;lemur&quot;)
 local Habitat = Lemur.Habitat.new()
@@ -183,7 +184,6 @@ local ReplicatedStorage = Habitat.game:GetService(&quot;ReplicatedStorage&quot;)
 local monolith = Habitat:loadFromFs(&quot;lib&quot;) -- lib is the root of Monolith
 monolith.Parent = ReplicatedStorage
 </code></pre>
-
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Lemur can't load from <code>.project.json</code> files, but can still load <code>.lua</code>
@@ -233,7 +233,6 @@ be able to require Monolith without any errors.</p>
 |   |   |-- Enumerable
 |   |   |-- ...
 </code></pre>
-
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Using this method is very error prone at the moment. We recommend using a
@@ -246,9 +245,8 @@ regularly.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>Once Monolith is installed, assuming its named <code>Monolith</code> and is located in
 <code>ReplicatedStorage</code>, you can simply require it to start using it.</p>
-<pre><code class="lua">local Monolith = require(game:GetService(&quot;ReplicatedStorage&quot;).Monolith)
+<pre><code class="language-lua">local Monolith = require(game:GetService(&quot;ReplicatedStorage&quot;).Monolith)
 </code></pre>
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We'll assume from here on that <code>Monolith</code> has already been required.</p>
@@ -256,11 +254,10 @@ regularly.</p>
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
 <p>The Monolith module provides access to all the classes and interfaces contained
 within Monolith. They can each be created using the <code>new()</code> constructor.</p>
-<pre><code class="lua">local list = Monolith.LinkedList.new()
+<pre><code class="language-lua">local list = Monolith.LinkedList.new()
 local stack = Monolith.ArrayStack.new()
 local map = Monolith.HashMap.new()
 </code></pre>
-
 <p>Here we can see when we want a <code>List</code> we can't simply create it. Instead, we
 must instantiate a concrete data structure that implements <code>List</code> such
 as <code>LinkedList</code>. The same is true for all of Monolith's abstract data types.</p>
@@ -276,18 +273,17 @@ types or data structures.</p>
 <p>We can construct new data structures from any other <code>Collection</code> type or from
 plain old Lua tables. This makes it easy to convert data from one type to
 another.</p>
-<pre><code class="lua">local data = { 1, 2, 3, 4, 5 }
+<pre><code class="language-lua">local data = { 1, 2, 3, 4, 5 }
 local list = Monolith.ArrayList.new(data)
 local set = Monolith.HashSet.new(list)
 </code></pre>
-
 <h3 id="collections">Collections<a class="headerlink" href="#collections" title="Permanent link">&para;</a></h3>
 <p>All of Monolith's abstract data types implmement <code>Collection</code>. In addition,
 because <code>Collection</code> implements <code>Enumerable</code>, all are also <code>Enumerable</code>.</p>
 <h4 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h4>
 <p>To enumerate over a data structure we can simply use the <code>Enumerator()</code> method
 in a generic for loop.</p>
-<pre><code class="lua">local names = {
+<pre><code class="language-lua">local names = {
     &quot;Jim&quot;,
     &quot;Bob&quot;,
     &quot;Joe&quot;,
@@ -299,13 +295,12 @@ for index, name in nameList:Enumerator() do
     print(string.format(&quot;%d. %s&quot;, index, name))
 end
 </code></pre>
-
 <h4 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h4>
 <p>The <code>Collection</code> interface declares a set of methods for constructing,
 transforming, and, reading data regardless of any particular data
 structure's implementation. Here we use a <code>HashSet</code>, but it could have been an
 <code>ArrayList</code> or a <code>LinkedQueue</code>, we could use the same operations.</p>
-<pre><code class="lua">local associates = {
+<pre><code class="language-lua">local associates = {
     &quot;Alice&quot;,
     &quot;Bob&quot;,
 }
@@ -327,7 +322,6 @@ end
 
 return participants:ToArray()
 </code></pre>
-
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>There are a lot more data types and methods. Check them out in our
@@ -355,7 +349,7 @@ return participants:ToArray()
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -365,7 +359,7 @@ return participants:ToArray()
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
           <a href="https://github.com/LastTalon/Monolith/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
@@ -381,6 +375,11 @@ return participants:ToArray()
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

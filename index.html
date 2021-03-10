@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="None">
   
+  <link rel="canonical" href="https://lasttalon.github.io/Monolith/">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Home - Monolith</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <title>Monolith</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,8 +25,8 @@
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
   <script src="js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -36,6 +37,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="." class="icon icon-home"> Monolith</a>
         <div role="search">
@@ -46,53 +48,32 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href=".">Home</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#installation">Installation</a></li>
-    
-
-    <li class="toctree-l2"><a href="#using-monolith">Using Monolith</a></li>
-    
-
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-monolith">Using Monolith</a>
+    </li>
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="getting-started/">Getting Started</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">User Guide</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="user-guide/">Introduction</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Reference</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="api/">API Reference</a>
-                </li>
-    </ul>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="getting-started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">User Guide</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="user-guide/">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="api/">API Reference</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -117,6 +98,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -149,16 +131,14 @@ Simply require Monolith to begin using it.</p>
 <h2 id="using-monolith">Using Monolith<a class="headerlink" href="#using-monolith" title="Permanent link">&para;</a></h2>
 <p>Once Monolith is installed, usage is very simple. Requiring Monolith provides a
 straightforward API for all of Monolith's data structures and types.</p>
-<pre><code class="lua">local Monolith = require(game:GetService(&quot;ReplicatedStorage&quot;).Monolith)
+<pre><code class="language-lua">local Monolith = require(game:GetService(&quot;ReplicatedStorage&quot;).Monolith)
 local list = Monolith.LinkedList.new()
 </code></pre>
-
 <p>All data structures are objects that expose methods for modification.</p>
-<pre><code class="lua">local list = Monolith.LinkedList.new()
+<pre><code class="language-lua">local list = Monolith.LinkedList.new()
 list:Add(&quot;Element 1&quot;)
 list:Remove(&quot;Element 1&quot;)
 </code></pre>
-
 <p>Its that easy. Check out the <a href="/user-guide/">user guide</a> to learn more. Our
 <a href="/api/">API reference</a> contains a complete reference for all of Monolith's
 classes and methods.</p>
@@ -182,7 +162,7 @@ classes and methods.</p>
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -192,7 +172,7 @@ classes and methods.</p>
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
           <a href="https://github.com/LastTalon/Monolith/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
@@ -206,11 +186,16 @@ classes and methods.</p>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
       <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
 
 <!--
-MkDocs version : 1.0.4
-Build Date UTC : 2021-02-26 20:55:09
+MkDocs version : 1.1.2
+Build Date UTC : 2021-03-10 04:57:27.923101+00:00
 -->
