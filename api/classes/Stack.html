@@ -1,0 +1,800 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>API Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Monolith</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/AbstractList.html">AbstractList</a></li>
+  <li><a href="../classes/ArrayList.html">ArrayList</a></li>
+  <li><a href="../classes/ArrayStack.html">ArrayStack</a></li>
+  <li><a href="../classes/Collection.html">Collection</a></li>
+  <li><a href="../classes/Deque.html">Deque</a></li>
+  <li><a href="../classes/Enumerable.html">Enumerable</a></li>
+  <li><a href="../classes/LinkedDeque.html">LinkedDeque</a></li>
+  <li><a href="../classes/LinkedList.html">LinkedList</a></li>
+  <li><a href="../classes/LinkedQueue.html">LinkedQueue</a></li>
+  <li><a href="../classes/List.html">List</a></li>
+  <li><a href="../classes/Queue.html">Queue</a></li>
+  <li><strong>Stack</strong></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Monolith.html">Monolith</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Stack</code></h1>
+<p>An ordered, linear, last in first out <a href="../classes/Collection.html#">Collection</a> of items.</p>
+<p> Stacks have a distinct ordering of their elements and can be added to at the
+ back and removed from in the back. The combination of these ensures that
+ the last elements added are the first ones out of the Stack.</p>
+
+<p> The Stack interface provides a base set of operations for interacting
+ with any abstract Stack type. Abstract data types may provide addtional
+ specific operations based on the particular implemented type. Concrete
+ implementations, such as <a href="../classes/ArrayStack.html#">ArrayStacks</a>, ultimately determine
+ the properties of the concrete Stack such as time and space complexity for
+ any operations.</p>
+
+<p> The Stack interface provides certain optional methods in addition to those in
+ <a href="../classes/Collection.html#">Collection</a>. Some Stacks, such as immutable or type-restricted data types,
+ may not be able to provide full functionality for these methods. All Stacks
+ are guaranteed to provide a required set of behaviors without exception and,
+ unless otherwise noted, a method is required. All Stacks should attempt
+ to provide optional functionality, if they're able, regardless.</p>
+
+<p> <strong>Implements:</strong> <a href="../classes/Collection.html#">Collection</a>, <a href="../classes/Enumerable.html#">Enumerable</a></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Stack.new">Stack.new()</a></td>
+	<td class="summary">Creates a new Stack interface instance.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Add">Stack:Add(item)</a></td>
+	<td class="summary">Adds an item to the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:AddAll">Stack:AddAll(items)</a></td>
+	<td class="summary">Adds all provided items to the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Clear">Stack:Clear()</a></td>
+	<td class="summary">Removes everything from the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Contains">Stack:Contains(item)</a></td>
+	<td class="summary">Determines whether the Stack contains an item.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:ContainsAll">Stack:ContainsAll(items)</a></td>
+	<td class="summary">Determines whether the Stack contains all of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:ContainsAny">Stack:ContainsAny(items)</a></td>
+	<td class="summary">Determines whether the Stack contains any of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Count">Stack:Count()</a></td>
+	<td class="summary">Gets the number of items in the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Empty">Stack:Empty()</a></td>
+	<td class="summary">Determines whether the Stack has no elements.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Enumerator">Stack:Enumerator()</a></td>
+	<td class="summary">Creates an enumerator for the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Last">Stack:Last()</a></td>
+	<td class="summary">Gets the item at the end of the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Pop">Stack:Pop()</a></td>
+	<td class="summary">Gets an item from the end and removes that item from the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Push">Stack:Push(item)</a></td>
+	<td class="summary">Adds an item to the end of the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:Remove">Stack:Remove(item)</a></td>
+	<td class="summary">Removes the specified item from the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:RemoveAll">Stack:RemoveAll(items)</a></td>
+	<td class="summary">Removes all provided items from the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:RetainAll">Stack:RetainAll(items)</a></td>
+	<td class="summary">Removes all items except those provided from the Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:ToArray">Stack:ToArray()</a></td>
+	<td class="summary">Creates a new array indexed table of this Stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Stack:ToTable">Stack:ToTable()</a></td>
+	<td class="summary">Creates a new table of this Stack.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "Stack.new"></a>
+    <strong>Stack.new()</strong>
+    </dt>
+    <dd>
+    Creates a new Stack interface instance.
+ This should only be used when implementing a new Stack.
+
+    </ul>
+    </ul>
+    </ul>
+    <h3>Access:</h3>
+    <ul>
+         private
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new Stack interface
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Stack:Add"></a>
+    <strong>Stack:Add(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the Stack. </p>
+
+<p> This method is optional. All Stack implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Stack.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Stack changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:AddAll"></a>
+    <strong>Stack:AddAll(items)</strong>
+    </dt>
+    <dd>
+    Adds all provided items to the Stack.
+ Adds items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary, deterministic
+ order. The order is the same as the order of enumeration.</p>
+
+<p> This method is optional. All Stack implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Stack.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to add to this Stack
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Stack changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:Clear"></a>
+    <strong>Stack:Clear()</strong>
+    </dt>
+    <dd>
+    Removes everything from the Stack. </p>
+
+<p> This method is optional. All Stack implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Stack.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:Contains"></a>
+    <strong>Stack:Contains(item)</strong>
+    </dt>
+    <dd>
+    Determines whether the Stack contains an item.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to locate in the Stack
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the item is in the Stack, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:ContainsAll"></a>
+    <strong>Stack:ContainsAll(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Stack contains all of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this Stack
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all items are in the Stack, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:ContainsAny"></a>
+    <strong>Stack:ContainsAny(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Stack contains any of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this Stack
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any items are in the Stack, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:Count"></a>
+    <strong>Stack:Count()</strong>
+    </dt>
+    <dd>
+    Gets the number of items in the Stack.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the number of items
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:Empty"></a>
+    <strong>Stack:Empty()</strong>
+    </dt>
+    <dd>
+    Determines whether the Stack has no elements.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Stack empty, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:Enumerator"></a>
+    <strong>Stack:Enumerator()</strong>
+    </dt>
+    <dd>
+    Creates an enumerator for the Stack.
+ The enumerator can be used directly in a generic for loop similar to pairs
+ or ipairs.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Enumerable.html#">Enumerable</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        the enumerator generator</li>
+        <li>
+        the invariant state</li>
+        <li>
+        the control variable state</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:Last"></a>
+    <strong>Stack:Last()</strong>
+    </dt>
+    <dd>
+    Gets the item at the end of the Stack.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the last item in the Stack
+    </ol>
+
+    <h3>Raises:</h3>
+    if the Stack is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:Pop"></a>
+    <strong>Stack:Pop()</strong>
+    </dt>
+    <dd>
+    Gets an item from the end and removes that item from the Stack.
+ Shifts other elements to fill the gap left.</p>
+
+<p> This method is optional. All Stack implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Stack.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the item in the Stack
+    </ol>
+
+    <h3>Raises:</h3>
+    if the Stack is empty
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:Push"></a>
+    <strong>Stack:Push(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the end of the Stack. </p>
+
+<p> This method is optional. All Stack implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Stack.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Stack changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:Remove"></a>
+    <strong>Stack:Remove(item)</strong>
+    </dt>
+    <dd>
+    Removes the specified item from the Stack.
+ Removes only a single item. If there are multiple of the same item, it
+ removes only the first encountered.</p>
+
+<p> When an item is removed any others are shifted to fill the gap left at
+ the index of removal.</p>
+
+<p> This method is optional. All Stack implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Stack.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to remove from the Stack
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Stack changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:RemoveAll"></a>
+    <strong>Stack:RemoveAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all provided items from the Stack.
+ Removes each instance of a provided item only once for each time provided.
+ If there are multiple of the same item in this Queue, it removes only
+ the first encountered for each provided.</p>
+
+<p> This method is optional. All Stack implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Stack.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to remove from this Stack
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Stack changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:RetainAll"></a>
+    <strong>Stack:RetainAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all items except those provided from the Stack.
+ Retains only the items contained in the specified <a href="../classes/Collection.html#">Collection</a>. If there are
+ duplicates they are all kept.</p>
+
+<p> This method is optional. All Stack implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Stack.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to retain in this Stack
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Stack changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Stack:ToArray"></a>
+    <strong>Stack:ToArray()</strong>
+    </dt>
+    <dd>
+    Creates a new array indexed table of this Stack.
+ The order of the array is the same as the order of the Stack. The first
+ element of the Stack will get index 1 and so on.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the array indexed table
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Stack.html#Stack:ToTable">ToTable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "Stack:ToTable"></a>
+    <strong>Stack:ToTable()</strong>
+    </dt>
+    <dd>
+    Creates a new table of this Stack.
+ Stacks, being ordered and linear, need no indices that are not array indices,
+ so this provides a table with all the same array indices as <a href="../classes/Stack.html#Stack:ToArray">ToArray</a>.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the table
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Stack.html#Stack:ToArray">ToArray</a>
+    </ul>
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-03-10 05:08:02 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
