@@ -13,6 +13,10 @@ local Queue = require(script:WaitForChild("Queue"))
 local LinkedQueue = require(script:WaitForChild("LinkedQueue"))
 local AbstractList = require(script:WaitForChild("AbstractList"))
 local ArrayList = require(script:WaitForChild("ArrayList"))
+local Deque = require(script:WaitForChild("Deque"))
+local LinkedDeque = require(script:WaitForChild("LinkedDeque"))
+local Stack = require(script:WaitForChild("Stack"))
+local ArrayStack = require(script:WaitForChild("ArrayStack"))
 
 local Monolith = {}
 local instance
@@ -34,6 +38,16 @@ Monolith.Collection = Collection
 -- @see List
 Monolith.List = List
 
+--- The @{AbstractList} abstract class.
+--
+-- @see AbstractList
+Monolith.AbstractList = AbstractList
+
+--- The @{ArrayList} class.
+--
+-- @see ArrayList
+Monolith.ArrayList = ArrayList
+
 --- The @{LinkedList} class.
 --
 -- @see LinkedList
@@ -49,15 +63,25 @@ Monolith.Queue = Queue
 -- @see LinkedQueue
 Monolith.LinkedQueue = LinkedQueue
 
---- The @{AbstractList} abstract class.
+--- The @{Deque} interface.
 --
--- @see AbstractList
-Monolith.AbstractList = AbstractList
+-- @see Deque
+Monolith.Deque = Deque
 
---- The @{ArrayList} class.
+--- The @{LinkedDeque} class.
 --
--- @see ArrayList
-Monolith.ArrayList = ArrayList
+-- @see LinkedDeque
+Monolith.LinkedDeque = LinkedDeque
+
+--- The @{Stack} interface.
+--
+-- @see Stack
+Monolith.Stack = Stack
+
+--- The @{ArrayStack} class.
+--
+-- @see ArrayStack
+Monolith.ArrayStack = ArrayStack
 
 --- Creates the Monolith API singleton.
 -- This is called automatically and will only ever create a maximum of one
