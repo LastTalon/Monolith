@@ -1,7 +1,4 @@
---- Tests for the ArrayStack interface.
---
--- @version 0.1.0, 2020-12-27
--- @since 0.1
+--- Tests for the @{ArrayStack} interface.
 
 return function()
 	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
@@ -259,7 +256,7 @@ return function()
 					local count = stack:Count()
 					expect(count).to.equal(5)
 					while count > 0 do
-						stack:Shift()
+						stack:Pop()
 						local oldCount = count
 						count = stack:Count()
 						expect(count).to.equal(oldCount - 1)
@@ -301,7 +298,7 @@ return function()
 					local stack = ArrayStack.new({ 1, 2, 3, 4, 5 })
 					while stack:Count() > 0 do
 						expect(stack:Empty()).to.equal(false)
-						stack:Shift()
+						stack:Pop()
 					end
 					expect(stack:Empty()).to.equal(true)
 				end)
@@ -332,10 +329,12 @@ return function()
 
 				it("should create a table with the same elements and order", function()
 					local stack = ArrayStack.new({ 1, 2, 3, 4, 5 })
-					expect(#stack:ToArray()).to.equal(stack:Count())
-					for _, v in ipairs(stack:ToArray()) do
-						expect(v).to.equal(stack:Shift())
+					local array = stack:ToArray()
+					expect(#array).to.equal(stack:Count())
+					while stack:Count() > 0 do
+						expect(stack:Pop()).to.equal(table.remove(array))
 					end
+					expect(#array).to.equal(0)
 				end)
 
 				it("should provide only array indexable elements", function()
@@ -380,10 +379,7 @@ return function()
 				it("should add elements to the end", function()
 					local stack = ArrayStack.new({ 1, 2, 3, 4, 5 })
 					stack:Add(1)
-					while stack:Count() > 1 do
-						stack:Shift()
-					end
-					expect(stack:First()).to.equal(1)
+					expect(stack:Last()).to.equal(1)
 				end)
 
 				it("should return true (per Collection)", function()
@@ -431,24 +427,18 @@ return function()
 					local stack = ArrayStack.new({ 1, 2, 3, 4, 5 })
 					local add = ArrayStack.new({ 6, 7, 8, 9, 10 })
 					stack:AddAll(add)
-					while stack:Count() > add:Count() do
-						stack:Shift()
-					end
-					expect(stack:Shift()).to.equal(6)
-					expect(stack:Shift()).to.equal(7)
-					expect(stack:Shift()).to.equal(8)
-					expect(stack:Shift()).to.equal(9)
-					expect(stack:Shift()).to.equal(10)
+					expect(stack:Pop()).to.equal(10)
+					expect(stack:Pop()).to.equal(9)
+					expect(stack:Pop()).to.equal(8)
+					expect(stack:Pop()).to.equal(7)
+					expect(stack:Pop()).to.equal(6)
 				end)
 
 				it("should add a single element to the end", function()
 					local stack = ArrayStack.new({ 1, 2, 3, 4, 5 })
 					local add = ArrayStack.new({ 6 })
 					stack:AddAll(add)
-					while stack:Count() > 1 do
-						stack:Shift()
-					end
-					expect(stack:First()).to.equal(6)
+					expect(stack:Last()).to.equal(6)
 				end)
 
 				it("should return true when adding multiple elements", function()
