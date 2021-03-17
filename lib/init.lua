@@ -5,18 +5,18 @@
 -- @release 0.1.0
 -- @license MIT
 
-local Enumerable = require(script:WaitForChild("Enumerable"))
-local Collection = require(script:WaitForChild("Collection"))
-local List = require(script:WaitForChild("List"))
-local LinkedList = require(script:WaitForChild("LinkedList"))
-local Queue = require(script:WaitForChild("Queue"))
-local LinkedQueue = require(script:WaitForChild("LinkedQueue"))
-local AbstractList = require(script:WaitForChild("AbstractList"))
-local ArrayList = require(script:WaitForChild("ArrayList"))
-local Deque = require(script:WaitForChild("Deque"))
-local LinkedDeque = require(script:WaitForChild("LinkedDeque"))
-local Stack = require(script:WaitForChild("Stack"))
-local ArrayStack = require(script:WaitForChild("ArrayStack"))
+local Enumerable = require(script.Enumerable)
+local Collection = require(script.Collection)
+local List = require(script.List)
+local LinkedList = require(script.LinkedList)
+local Queue = require(script.Queue)
+local LinkedQueue = require(script.LinkedQueue)
+local AbstractList = require(script.AbstractList)
+local ArrayList = require(script.ArrayList)
+local Deque = require(script.Deque)
+local LinkedDeque = require(script.LinkedDeque)
+local Stack = require(script.Stack)
+local ArrayStack = require(script.ArrayStack)
 
 local Monolith = {}
 local instance
