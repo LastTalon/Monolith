@@ -14,11 +14,8 @@ return function()
 			local items = { 1, 2, 3, 4, 5 }
 			local stack = ArrayStack.new(items)
 			expect(stack:Count()).to.equal(#items)
-			local index = 1
 			while stack:Count() > 0 do
-				local item = stack:Shift()
-				expect(item).to.equal(items[index])
-				index = index + 1
+				expect(stack:Pop()).to.equal(table.remove(items))
 			end
 		end)
 
@@ -27,8 +24,8 @@ return function()
 			local stack = ArrayStack.new(items)
 			expect(stack:Count()).to.equal(items:Count())
 			while stack:Count() > 0 do
-				local item = stack:Shift()
-				local original = items:Shift()
+				local item = stack:Pop()
+				local original = items:Pop()
 				expect(item).to.equal(original)
 			end
 		end)
