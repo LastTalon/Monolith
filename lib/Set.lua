@@ -199,6 +199,10 @@ function Set:RetainAll()
 	error(string.format(ErrorOverride, "RetainAll"))
 end
 
+function Set:Overlaps()
+	error(string.format(ErrorOverride, "Overlaps"))
+end
+
 function Set:ProperSubsetOf()
 	error(string.format(ErrorOverride, "ProperSubsetOf"))
 end
