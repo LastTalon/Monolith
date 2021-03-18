@@ -199,4 +199,40 @@ function Set:RetainAll()
 	error(string.format(ErrorOverride, "RetainAll"))
 end
 
+function Set:ProperSubsetOf()
+	error(string.format(ErrorOverride, "ProperSubsetOf"))
+end
+
+function Set:ProperSupersetOf()
+	error(string.format(ErrorOverride, "ProperSupersetOf"))
+end
+
+function Set:SubsetOf()
+	error(string.format(ErrorOverride, "SubsetOf"))
+end
+
+function Set:SupersetOf()
+	error(string.format(ErrorOverride, "SupersetOf"))
+end
+
+function Set:SetEquals()
+	error(string.format(ErrorOverride, "SetEquals"))
+end
+
+function Set:Except()
+	error(string.format(ErrorOverride, "Except"))
+end
+
+function Set:Intersect()
+	error(string.format(ErrorOverride, "Intersect"))
+end
+
+function Set:SymmetricExcept()
+	error(string.format(ErrorOverride, "SymmetricExcept"))
+end
+
+function Set:Union()
+	error(string.format(ErrorOverride, "Union"))
+end
+
 return Set
