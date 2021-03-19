@@ -1,9 +1,9 @@
 local module = script.Parent
-local Stack = require(module:WaitForChild("Stack"))
+local Set = require(module:WaitForChild("Set"))
 
 local ErrorConstruct = "Cannot construct HashSet from type %s."
 
-local HashSet = Stack.new()
+local HashSet = Set.new()
 
 HashSet.__index = HashSet
 
