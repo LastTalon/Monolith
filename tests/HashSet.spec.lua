@@ -298,7 +298,7 @@ return function()
 					local index = 1
 					while set:Count() > 0 do
 						expect(set:Empty()).to.equal(false)
-						set:Remove(1)
+						set:Remove(index)
 						index = index + 1
 					end
 					expect(set:Empty()).to.equal(true)
