@@ -114,6 +114,12 @@ return function()
 	end)
 
 	describe("Set Interface", function()
+		it("should error when fromTable is not overridden", function()
+			expect(function()
+				Set.fromTable()
+			end).to.throw("Abstract method fromTable must be overridden in first concrete subclass. Called directly from Set.")
+		end)
+
 		it("should error when Except is not overridden", function()
 			local set = Set.new()
 			expect(function()

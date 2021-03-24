@@ -42,6 +42,18 @@ function Set.new()
 	return self
 end
 
+--- Creates a new Set from a set-formatted table.
+-- This constructor creates a new Set copy of the table using only its keys. A
+-- typical set-formatted table consists of keys that have the value `true`,
+-- although any non-nil value will result in a valid Set. The values associated
+-- with the keys in the table will not be preserved in the Set.
+--
+-- @return the new Set
+-- @static
+function Set.fromTable()
+	error(string.format(ErrorOverride, "fromTable"))
+end
+
 --- Creates an enumerator for the Set.
 -- The enumerator can be used directly in a generic for loop similar to pairs
 -- or ipairs.
