@@ -15,6 +15,8 @@ return function()
 	local LinkedDeque = require(module:WaitForChild("LinkedDeque"))
 	local Stack = require(module:WaitForChild("Stack"))
 	local ArrayStack = require(module:WaitForChild("ArrayStack"))
+	local Set = require(module:WaitForChild("Set"))
+	local HashSet = require(module:WaitForChild("HashSet"))
 
 	describe("Monolith", function()
 		it("should be able to be instantiated", function()
@@ -73,6 +75,14 @@ return function()
 
 		it("should expose the ArrayStack class", function()
 			expect(Monolith.ArrayStack).to.equal(ArrayStack)
+		end)
+
+		it("should expose the Set class", function()
+			expect(Monolith.Set).to.equal(Set)
+		end)
+
+		it("should expose the HashSet class", function()
+			expect(Monolith.HashSet).to.equal(HashSet)
 		end)
 	end)
 end
