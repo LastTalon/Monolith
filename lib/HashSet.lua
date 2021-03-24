@@ -1,3 +1,15 @@
+--- A hashmap @{Set} of items.
+-- A Set implmentation that stores items as keys using a table as a hashmap.
+-- This provides good addition, removal, and lookup characteristics.
+--
+-- Addition, deletion, and lookup of any element are all Θ(1) amortized.
+--
+-- HashSet implements all optional @{Set} and @{Collection} methods.
+--
+-- **Implements:** @{Set}, @{Collection}, @{Enumerable}
+--
+-- @classmod HashSet
+
 local module = script.Parent
 local Set = require(module:WaitForChild("Set"))
 
@@ -267,32 +279,96 @@ function HashSet:RetainAll(items)
 	return changed
 end
 
+--- Determines whether the HashSet elements overlaps a @{Collection}.
+--
+-- In HashSet this is identical to ContainsAny.
+--
+-- @param items the @{Collection} of items to locate in this HashSet
+-- @return true if they overlap, false otherwise
+-- @function Overlaps
+-- @from @{Set}
 HashSet.Overlaps = HashSet.ContainsAny
 
-function HashSet:ProperSubsetOf(set)
-	return self:SubsetOf(set) and HashSet.new(set):Count() > self:Count()
+--- Determines whether the HashSet is a strict subset of a @{Collection}.
+-- A proper or strict subset is one where every element in this set is
+-- contained in the other, and the other contains at least one additional
+-- element.
+--
+-- @param items the @{Collection} of items to check against
+-- @return true if the HashSet is a proper subset, false otherwise
+-- @from @{Set}
+function HashSet:ProperSubsetOf(items)
+	return self:SubsetOf(items) and HashSet.new(items):Count() > self:Count()
 end
 
-function HashSet:ProperSupersetOf(set)
-	return self:SupersetOf(set) and HashSet.new(set):Count() < self:Count()
+--- Determines whether the HashSet is a strict superset of a @{Collection}.
+-- A proper or strict superset is one where every element in the other is
+-- contained in this set, and this set contains at least one additional
+-- element.
+--
+-- @param items the @{Collection} of items to check against
+-- @return true if the HashSet is a proper superset, false otherwise
+-- @from @{Set}
+function HashSet:ProperSupersetOf(items)
+	return self:SupersetOf(items) and HashSet.new(items):Count() < self:Count()
 end
 
-function HashSet:SubsetOf(set)
-	return set:ContainsAll(self)
+--- Determines whether the HashSet is a subset of a @{Collection}.
+-- A subset is one where every element in this HashSet is contained in the other.
+--
+-- @param items the @{Collection} of items to check against
+-- @return true if the HashSet is a superset, false otherwise
+-- @from @{Set}
+function HashSet:SubsetOf(items)
+	return items:ContainsAll(self)
 end
 
+--- Determines whether the HashSet is a superset of a @{Collection}.
+-- A superset is one where every element in the other is contained in this set.
+--
+-- In HashSet this is identical to ContainsAll.
+--
+-- @param items the @{Collection} of items to check against
+-- @return true if the HashSet is a superset, false otherwise
+-- @function SupersetOf
+-- @from @{Set}
 HashSet.SupersetOf = HashSet.ContainsAll
 
-function HashSet:SetEquals(set)
-	return self:SubsetOf(set) and self:SupersetOf(set)
+--- Determines whether the HashSet contains the same elements as a @{Collection}.
+-- Determines only that the same exact Sets of elements are contained and does
+-- not care for duplicates or any other associated data.
+--
+-- @param items the @{Collection} of items to check against
+-- @return true if the Sets are equal, false otherwise
+-- @from @{Set}
+function HashSet:SetEquals(items)
+	return self:SubsetOf(items) and self:SupersetOf(items)
 end
 
+--- Transforms the HashSet to remove all elements from a @{Collection}.
+--
+-- In HashSet this is identical to RemoveAll.
+--
+-- @param items the @{Collection} of items to except
+-- @function Except
+-- @from @{Set}
 HashSet.Except = HashSet.RemoveAll
 
+--- Transforms the HashSet to keep only elements from a @{Collection}.
+--
+-- In HashSet this is identical to RetainAll.
+--
+-- @param items the @{Collection} of items to intersect
+-- @function Intersect
+-- @from @{Set}
 HashSet.Intersect = HashSet.RetainAll
 
-function HashSet:SymmetricExcept(set)
-	for _, value in HashSet.new(set):Enumerator() do
+--- Transforms the HashSet to keep only elements in it or a @{Collection}, not both.
+--
+-- @param items the @{Collection} of items to symmetric except
+-- @from @{Set}
+function HashSet:SymmetricExcept(items)
+	for _, value in HashSet.new(items):Enumerator() do
 		if self:Contains(value) then
 			self:Remove(value)
 		else
@@ -301,6 +377,13 @@ function HashSet:SymmetricExcept(set)
 	end
 end
 
+--- Transforms the HashSet to include all elements from a @{Collection}.
+--
+-- In HashSet this is identical to AddAll.
+--
+-- @param items the @{Collection} of items to union
+-- @function Union
+-- @from @{Set}
 HashSet.Union = HashSet.AddAll
 
 return HashSet
