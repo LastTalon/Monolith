@@ -50,6 +50,28 @@ function HashSet.new(collection)
 	return self
 end
 
+--- Creates a new HashSet from a set-formatted table.
+-- This constructor creates a new HashSet copy of the table using only its
+-- keys. A typical set-formatted table consists of keys that have the value
+-- `true`, although any non-nil value will result in a valid HashSet. The
+-- values associated with the keys in the table will not be preserved in the
+-- HashSet.
+--
+-- @return the new HashSet
+-- @static
+function Set.fromTable(table)
+	local typeTable = type(table)
+	if typeTable == "table" then
+		local self = HashSet.new()
+		for index in pairs(table) do
+			self:Add(index)
+		end
+		return self
+	else
+		error(string.format(ErrorConstruct, typeTable))
+	end
+end
+
 --- Creates an enumerator for the HashSet.
 -- The enumerator can be used directly in a generic for loop similar to pairs
 -- or ipairs.

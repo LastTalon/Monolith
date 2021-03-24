@@ -784,6 +784,95 @@ return function()
 
 	describe("HashSet Interface", function()
 		describe("Required Methods", function()
+			describe("fromTable", function()
+				it("should error if a table is not provided", function()
+					expect(function()
+						HashSet.fromTable(nil)
+					end).to.throw("Cannot construct HashSet from type nil.")
+					expect(function()
+						HashSet.fromTable(true)
+					end).to.throw("Cannot construct HashSet from type boolean.")
+					expect(function()
+						HashSet.fromTable(1)
+					end).to.throw("Cannot construct HashSet from type number.")
+					expect(function()
+						HashSet.fromTable("string")
+					end).to.throw("Cannot construct HashSet from type string.")
+					expect(function()
+						HashSet.fromTable(function()
+						end)
+					end).to.throw("Cannot construct HashSet from type function.")
+					expect(function()
+						HashSet.fromTable(Instance.new("Folder"))
+					end).to.throw("Cannot construct HashSet from type userdata.")
+					expect(function()
+						HashSet.fromTable(coroutine.create(function()
+						end))
+					end).to.throw("Cannot construct HashSet from type thread.")
+				end)
+
+				it("should create a Set from an empty table", function()
+					local table = {}
+					local set = HashSet.fromTable(table)
+					expect(set:Empty()).to.equal(true)
+				end)
+
+				it("should create a HashSet from a table with one element", function()
+					local table = {
+						first = true,
+					}
+					local set = HashSet.fromTable(table)
+					expect(set:Count()).to.equal(1)
+					expect(set:Contains("first")).to.equal(true)
+				end)
+
+				it("should create a HashSet from a table with many elements", function()
+					local table = {
+						first = true,
+						second = true,
+						third = true,
+						fourth = true,
+						fifth = true,
+					}
+					local set = HashSet.fromTable(table)
+					expect(set:Count()).to.equal(5)
+					expect(set:Contains("first")).to.equal(true)
+					expect(set:Contains("second")).to.equal(true)
+					expect(set:Contains("third")).to.equal(true)
+					expect(set:Contains("fourth")).to.equal(true)
+					expect(set:Contains("fifth")).to.equal(true)
+				end)
+
+				it("should create a HashSet from an improperly formatted table", function()
+					local table = {
+						first = true,
+						second = 1,
+						third = 0,
+						fourth = false,
+						fifth = "fifth",
+					}
+					local set = HashSet.fromTable(table)
+					expect(set:Count()).to.equal(5)
+					expect(set:Contains("first")).to.equal(true)
+					expect(set:Contains("second")).to.equal(true)
+					expect(set:Contains("third")).to.equal(true)
+					expect(set:Contains("fourth")).to.equal(true)
+					expect(set:Contains("fifth")).to.equal(true)
+				end)
+
+				it("should create a HashSet from a non-set table", function()
+					local table = {
+						"first",
+						"second",
+						"third",
+						"fourth",
+						"fifth",
+					}
+					local set = HashSet.fromTable(table)
+					expect(set:Empty()).to.equal(true)
+				end)
+			end)
+
 			describe("Overlaps", function()
 				it("should be the same as ContainsAny", function()
 					expect(HashSet.Overlaps).to.equal(HashSet.ContainsAny)
