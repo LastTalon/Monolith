@@ -869,7 +869,12 @@ return function()
 						"fifth",
 					}
 					local set = HashSet.fromTable(table)
-					expect(set:Empty()).to.equal(true)
+					expect(set:Count()).to.equal(5)
+					expect(set:Contains(1)).to.equal(true)
+					expect(set:Contains(2)).to.equal(true)
+					expect(set:Contains(3)).to.equal(true)
+					expect(set:Contains(4)).to.equal(true)
+					expect(set:Contains(5)).to.equal(true)
 				end)
 			end)
 

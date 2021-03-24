@@ -59,7 +59,7 @@ end
 --
 -- @return the new HashSet
 -- @static
-function Set.fromTable(table)
+function HashSet.fromTable(table)
 	local typeTable = type(table)
 	if typeTable == "table" then
 		local self = HashSet.new()
