@@ -17,6 +17,8 @@ local Deque = require(script.Deque)
 local LinkedDeque = require(script.LinkedDeque)
 local Stack = require(script.Stack)
 local ArrayStack = require(script.ArrayStack)
+local Set = require(script.Set)
+local HashSet = require(script.HashSet)
 
 local Monolith = {}
 local instance
@@ -82,6 +84,16 @@ Monolith.Stack = Stack
 --
 -- @see ArrayStack
 Monolith.ArrayStack = ArrayStack
+
+--- The @{Set} class.
+--
+-- @see Set
+Monolith.Set = Set
+
+--- The @{HashSet} class.
+--
+-- @see HashSet
+Monolith.HashSet = HashSet
 
 --- Creates the Monolith API singleton.
 -- This is called automatically and will only ever create a maximum of one
