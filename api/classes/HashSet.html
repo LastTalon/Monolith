@@ -1,0 +1,1072 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>API Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Monolith</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/AbstractList.html">AbstractList</a></li>
+  <li><a href="../classes/ArrayList.html">ArrayList</a></li>
+  <li><a href="../classes/ArrayStack.html">ArrayStack</a></li>
+  <li><a href="../classes/Collection.html">Collection</a></li>
+  <li><a href="../classes/Deque.html">Deque</a></li>
+  <li><a href="../classes/Enumerable.html">Enumerable</a></li>
+  <li><strong>HashSet</strong></li>
+  <li><a href="../classes/LinkedDeque.html">LinkedDeque</a></li>
+  <li><a href="../classes/LinkedList.html">LinkedList</a></li>
+  <li><a href="../classes/LinkedQueue.html">LinkedQueue</a></li>
+  <li><a href="../classes/List.html">List</a></li>
+  <li><a href="../classes/Queue.html">Queue</a></li>
+  <li><a href="../classes/Set.html">Set</a></li>
+  <li><a href="../classes/Stack.html">Stack</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Monolith.html">Monolith</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>HashSet</code></h1>
+<p>A hashmap <a href="../classes/Set.html#">Set</a> of items.</p>
+<p> A Set implmentation that stores items as keys using a table as a hashmap.
+ This provides good addition, removal, and lookup characteristics.</p>
+
+<p> Addition, deletion, and lookup of any element are all Θ(1) amortized.</p>
+
+<p> HashSet implements all optional <a href="../classes/Set.html#">Set</a> and <a href="../classes/Collection.html#">Collection</a> methods.</p>
+
+<p> <strong>Implements:</strong> <a href="../classes/Set.html#">Set</a>, <a href="../classes/Collection.html#">Collection</a>, <a href="../classes/Enumerable.html#">Enumerable</a></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#HashSet.fromTable">HashSet.fromTable(table)</a></td>
+	<td class="summary">Creates a new HashSet from a set-formatted table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet.new">HashSet.new(collection)</a></td>
+	<td class="summary">Creates a new HashSet.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Add">HashSet:Add(item)</a></td>
+	<td class="summary">Adds an item to the HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:AddAll">HashSet:AddAll(items)</a></td>
+	<td class="summary">Adds all provided items to the HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Clear">HashSet:Clear()</a></td>
+	<td class="summary">Removes everything from the HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Contains">HashSet:Contains(item)</a></td>
+	<td class="summary">Determines whether the HashSet contains an item.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:ContainsAll">HashSet:ContainsAll(items)</a></td>
+	<td class="summary">Determines whether the HashSet contains all of the items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:ContainsAny">HashSet:ContainsAny(items)</a></td>
+	<td class="summary">Determines whether the HashSet contains any of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Count">HashSet:Count()</a></td>
+	<td class="summary">Gets the number of items in the HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Empty">HashSet:Empty()</a></td>
+	<td class="summary">Determines whether the HashSet has no elements.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Enumerator">HashSet:Enumerator()</a></td>
+	<td class="summary">Creates an enumerator for the HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Except">HashSet:Except(items)</a></td>
+	<td class="summary">Transforms the HashSet to remove all elements from a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Intersect">HashSet:Intersect(items)</a></td>
+	<td class="summary">Transforms the HashSet to keep only elements from a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Overlaps">HashSet:Overlaps(items)</a></td>
+	<td class="summary">Determines whether the HashSet elements overlaps a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:ProperSubsetOf">HashSet:ProperSubsetOf(items)</a></td>
+	<td class="summary">Determines whether the HashSet is a strict subset of a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:ProperSupersetOf">HashSet:ProperSupersetOf(items)</a></td>
+	<td class="summary">Determines whether the HashSet is a strict superset of a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Remove">HashSet:Remove(item)</a></td>
+	<td class="summary">Removes the specified item from the HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:RemoveAll">HashSet:RemoveAll(items)</a></td>
+	<td class="summary">Removes all provided items from the HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:RetainAll">HashSet:RetainAll(items)</a></td>
+	<td class="summary">Removes all items except those provided from the HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:SetEquals">HashSet:SetEquals(items)</a></td>
+	<td class="summary">Determines whether the HashSet contains the same elements as a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:SubsetOf">HashSet:SubsetOf(items)</a></td>
+	<td class="summary">Determines whether the HashSet is a subset of a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:SupersetOf">HashSet:SupersetOf(items)</a></td>
+	<td class="summary">Determines whether the HashSet is a superset of a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:SymmetricExcept">HashSet:SymmetricExcept(items)</a></td>
+	<td class="summary">Transforms the HashSet to keep only elements in it or a <a href="../classes/Collection.html#">Collection</a>, not both.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:ToArray">HashSet:ToArray()</a></td>
+	<td class="summary">Creates a new array indexed table of this HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:ToTable">HashSet:ToTable()</a></td>
+	<td class="summary">Creates a new table of this HashSet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashSet:Union">HashSet:Union(items)</a></td>
+	<td class="summary">Transforms the HashSet to include all elements from a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "HashSet.fromTable"></a>
+    <strong>HashSet.fromTable(table)</strong>
+    </dt>
+    <dd>
+    Creates a new HashSet from a set-formatted table.
+ This constructor creates a new HashSet copy of the table using only its
+ keys. A typical set-formatted table consists of keys that have the value
+ <code>true</code>, although any non-nil value will result in a valid HashSet. The
+ values associated with the keys in the table will not be preserved in the
+ HashSet.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new HashSet
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet.new"></a>
+    <strong>HashSet.new(collection)</strong>
+    </dt>
+    <dd>
+    Creates a new HashSet.
+ Creates a HashSet copy of the provided <a href="../classes/Collection.html#">Collection</a> or array-indexed
+ table if one is provided, otherwise creates an empty HashSet.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">collection</span>
+         the <a href="../classes/Collection.html#">Collection</a> or table to copy
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new HashSet
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "HashSet:Add"></a>
+    <strong>HashSet:Add(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the HashSet. </p>
+
+<p> This method is optional. All HashSet implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashSet.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:AddAll"></a>
+    <strong>HashSet:AddAll(items)</strong>
+    </dt>
+    <dd>
+    Adds all provided items to the HashSet. </p>
+
+<p> This method is optional. All HashSet implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashSet.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to add to this HashSet
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Clear"></a>
+    <strong>HashSet:Clear()</strong>
+    </dt>
+    <dd>
+    Removes everything from the HashSet. </p>
+
+<p> This method is optional. All HashSet implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashSet.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Contains"></a>
+    <strong>HashSet:Contains(item)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet contains an item.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to locate in the HashSet
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the item is in the HashSet, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:ContainsAll"></a>
+    <strong>HashSet:ContainsAll(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet contains all of the items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this HashSet
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all items are in the HashSet, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:ContainsAny"></a>
+    <strong>HashSet:ContainsAny(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet contains any of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this HashSet
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any items are in the HashSet, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Count"></a>
+    <strong>HashSet:Count()</strong>
+    </dt>
+    <dd>
+    Gets the number of items in the HashSet.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the number of items
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Empty"></a>
+    <strong>HashSet:Empty()</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet has no elements.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet empty, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Enumerator"></a>
+    <strong>HashSet:Enumerator()</strong>
+    </dt>
+    <dd>
+    Creates an enumerator for the HashSet.
+ The enumerator can be used directly in a generic for loop similar to pairs
+ or ipairs.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Enumerable.html#">Enumerable</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        the enumerator generator</li>
+        <li>
+        the invariant state</li>
+        <li>
+        the control variable state</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Except"></a>
+    <strong>HashSet:Except(items)</strong>
+    </dt>
+    <dd>
+    Transforms the HashSet to remove all elements from a <a href="../classes/Collection.html#">Collection</a>. </p>
+
+<p> In HashSet this is identical to RemoveAll.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to except
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Intersect"></a>
+    <strong>HashSet:Intersect(items)</strong>
+    </dt>
+    <dd>
+    Transforms the HashSet to keep only elements from a <a href="../classes/Collection.html#">Collection</a>. </p>
+
+<p> In HashSet this is identical to RetainAll.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to intersect
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Overlaps"></a>
+    <strong>HashSet:Overlaps(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet elements overlaps a <a href="../classes/Collection.html#">Collection</a>. </p>
+
+<p> In HashSet this is identical to ContainsAny.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this HashSet
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if they overlap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:ProperSubsetOf"></a>
+    <strong>HashSet:ProperSubsetOf(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet is a strict subset of a <a href="../classes/Collection.html#">Collection</a>.
+ A proper or strict subset is one where every element in this set is
+ contained in the other, and the other contains at least one additional
+ element.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet is a proper subset, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:ProperSupersetOf"></a>
+    <strong>HashSet:ProperSupersetOf(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet is a strict superset of a <a href="../classes/Collection.html#">Collection</a>.
+ A proper or strict superset is one where every element in the other is
+ contained in this set, and this set contains at least one additional
+ element.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet is a proper superset, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Remove"></a>
+    <strong>HashSet:Remove(item)</strong>
+    </dt>
+    <dd>
+    Removes the specified item from the HashSet. </p>
+
+<p> This method is optional. All HashSet implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashSet.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to remove from the HashSet
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:RemoveAll"></a>
+    <strong>HashSet:RemoveAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all provided items from the HashSet.
+ Removes each instance of a provided item.</p>
+
+<p> This method is optional. All HashSet implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashSet.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to remove from this HashSet
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:RetainAll"></a>
+    <strong>HashSet:RetainAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all items except those provided from the HashSet.
+ Retains only the items contained in the specified <a href="../classes/Collection.html#">Collection</a>. If there are
+ duplicates they are all kept.</p>
+
+<p> This method is optional. All HashSet implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashSet.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the Collection of items to retain in this HashSet
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:SetEquals"></a>
+    <strong>HashSet:SetEquals(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet contains the same elements as a <a href="../classes/Collection.html#">Collection</a>.
+ Determines only that the same exact Sets of elements are contained and does
+ not care for duplicates or any other associated data.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Sets are equal, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:SubsetOf"></a>
+    <strong>HashSet:SubsetOf(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet is a subset of a <a href="../classes/Collection.html#">Collection</a>.
+ A subset is one where every element in this HashSet is contained in the other.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet is a superset, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:SupersetOf"></a>
+    <strong>HashSet:SupersetOf(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashSet is a superset of a <a href="../classes/Collection.html#">Collection</a>.
+ A superset is one where every element in the other is contained in this set.</p>
+
+<p> In HashSet this is identical to ContainsAll.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashSet is a superset, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:SymmetricExcept"></a>
+    <strong>HashSet:SymmetricExcept(items)</strong>
+    </dt>
+    <dd>
+    Transforms the HashSet to keep only elements in it or a <a href="../classes/Collection.html#">Collection</a>, not both.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to symmetric except
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:ToArray"></a>
+    <strong>HashSet:ToArray()</strong>
+    </dt>
+    <dd>
+    Creates a new array indexed table of this HashSet.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the array indexed table
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/HashSet.html#HashSet:ToTable">ToTable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:ToTable"></a>
+    <strong>HashSet:ToTable()</strong>
+    </dt>
+    <dd>
+    Creates a new table of this HashSet.
+ The indices of the table are the elements of the set. The only values in the
+ table are true if the element exists, or nil if it does not.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashSet:Union"></a>
+    <strong>HashSet:Union(items)</strong>
+    </dt>
+    <dd>
+    Transforms the HashSet to include all elements from a <a href="../classes/Collection.html#">Collection</a>. </p>
+
+<p> In HashSet this is identical to AddAll.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Set.html#">Set</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to union
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-03-25 01:16:59 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

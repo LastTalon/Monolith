@@ -1,0 +1,1063 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>API Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Monolith</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/AbstractList.html">AbstractList</a></li>
+  <li><a href="../classes/ArrayList.html">ArrayList</a></li>
+  <li><a href="../classes/ArrayStack.html">ArrayStack</a></li>
+  <li><a href="../classes/Collection.html">Collection</a></li>
+  <li><a href="../classes/Deque.html">Deque</a></li>
+  <li><a href="../classes/Enumerable.html">Enumerable</a></li>
+  <li><a href="../classes/HashSet.html">HashSet</a></li>
+  <li><a href="../classes/LinkedDeque.html">LinkedDeque</a></li>
+  <li><a href="../classes/LinkedList.html">LinkedList</a></li>
+  <li><a href="../classes/LinkedQueue.html">LinkedQueue</a></li>
+  <li><a href="../classes/List.html">List</a></li>
+  <li><a href="../classes/Queue.html">Queue</a></li>
+  <li><strong>Set</strong></li>
+  <li><a href="../classes/Stack.html">Stack</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Monolith.html">Monolith</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Set</code></h1>
+<p>An unordered <a href="../classes/Collection.html#">Collection</a> of unique items.</p>
+<p> Sets provide no particular ordering of their items, only either containing
+ or not containing elements. Any particular concrete Set implementation may
+ have an internal ordering, but this ordering does not affect the operation
+ of the Set.</p>
+
+<p> The Set interface provides a base set of operations for interacting
+ with any abstract Set type. Abstract data types may provide addtional
+ specific operations based on the particular implemented type. Concrete
+ implementations, such as <a href="../classes/HashSet.html#">HashSets</a> ultimately determine the
+ properties of the concrete Set such as time and space complexity for any
+ operations.</p>
+
+<p> The Set interface provides certain optional methods in addition to those in
+ <a href="../classes/Collection.html#">Collection</a>. Some Sets, such as immutable or type-restricted data types,
+ may not be able to provide full functionality for these methods. All Sets
+ are guaranteed to provide a required set of behaviors without exception and,
+ unless otherwise noted, a method is required. All Sets should attempt
+ to provide optional functionality, if they're able, regardless.</p>
+
+<p> <strong>Implements:</strong> <a href="../classes/Collection.html#">Collection</a>, <a href="../classes/Enumerable.html#">Enumerable</a></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Set.fromTable">Set.fromTable()</a></td>
+	<td class="summary">Creates a new Set from a set-formatted table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set.new">Set.new()</a></td>
+	<td class="summary">Creates a new Set interface instance.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Set:Add">Set:Add(item)</a></td>
+	<td class="summary">Adds an item to the Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:AddAll">Set:AddAll(items)</a></td>
+	<td class="summary">Adds all provided items to the Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Clear">Set:Clear()</a></td>
+	<td class="summary">Removes everything from the Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Contains">Set:Contains(item)</a></td>
+	<td class="summary">Determines whether the Set contains an item.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:ContainsAll">Set:ContainsAll(items)</a></td>
+	<td class="summary">Determines whether the Set contains all of the items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:ContainsAny">Set:ContainsAny(items)</a></td>
+	<td class="summary">Determines whether the Set contains any of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Count">Set:Count()</a></td>
+	<td class="summary">Gets the number of items in the Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Empty">Set:Empty()</a></td>
+	<td class="summary">Determines whether the Set has no elements.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Enumerator">Set:Enumerator()</a></td>
+	<td class="summary">Creates an enumerator for the Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Except">Set:Except(items)</a></td>
+	<td class="summary">Transforms the Set to remove all elements from a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Intersect">Set:Intersect(items)</a></td>
+	<td class="summary">Transforms the Set to keep only elements from a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Overlaps">Set:Overlaps(items)</a></td>
+	<td class="summary">Determines whether the Set elements overlaps a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:ProperSubsetOf">Set:ProperSubsetOf(items)</a></td>
+	<td class="summary">Determines whether the Set is a strict subset of a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:ProperSupersetOf">Set:ProperSupersetOf(items)</a></td>
+	<td class="summary">Determines whether the Set is a strict superset of a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Remove">Set:Remove(item)</a></td>
+	<td class="summary">Removes the specified item from the Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:RemoveAll">Set:RemoveAll(items)</a></td>
+	<td class="summary">Removes all provided items from the Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:RetainAll">Set:RetainAll(items)</a></td>
+	<td class="summary">Removes all items except those provided from the Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:SetEquals">Set:SetEquals(items)</a></td>
+	<td class="summary">Determines whether the Set contains the same elements as a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:SubsetOf">Set:SubsetOf(items)</a></td>
+	<td class="summary">Determines whether the Set is a subset of a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:SupersetOf">Set:SupersetOf(items)</a></td>
+	<td class="summary">Determines whether the Set is a superset of a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:SymmetricExcept">Set:SymmetricExcept(items)</a></td>
+	<td class="summary">Transforms the Set to keep only elements in it or a <a href="../classes/Collection.html#">Collection</a>, not both.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:ToArray">Set:ToArray()</a></td>
+	<td class="summary">Creates a new array indexed table of this Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:ToTable">Set:ToTable()</a></td>
+	<td class="summary">Creates a new table of this Set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Set:Union">Set:Union(items)</a></td>
+	<td class="summary">Transforms the Set to include all elements from a <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "Set.fromTable"></a>
+    <strong>Set.fromTable()</strong>
+    </dt>
+    <dd>
+    Creates a new Set from a set-formatted table.
+ This constructor creates a new Set copy of the table using only its keys. A
+ typical set-formatted table consists of keys that have the value <code>true</code>,
+ although any non-nil value will result in a valid Set. The values associated
+ with the keys in the table will not be preserved in the Set.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new Set
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set.new"></a>
+    <strong>Set.new()</strong>
+    </dt>
+    <dd>
+    Creates a new Set interface instance.
+ This should only be used when implementing a new Set.
+
+    </ul>
+    </ul>
+    </ul>
+    <h3>Access:</h3>
+    <ul>
+         private
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new Set interface
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Set:Add"></a>
+    <strong>Set:Add(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the Set. </p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:AddAll"></a>
+    <strong>Set:AddAll(items)</strong>
+    </dt>
+    <dd>
+    Adds all provided items to the Set. </p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to add to this Set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Clear"></a>
+    <strong>Set:Clear()</strong>
+    </dt>
+    <dd>
+    Removes everything from the Set. </p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Contains"></a>
+    <strong>Set:Contains(item)</strong>
+    </dt>
+    <dd>
+    Determines whether the Set contains an item.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to locate in the Set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the item is in the Set, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:ContainsAll"></a>
+    <strong>Set:ContainsAll(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Set contains all of the items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this Set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all items are in the Set, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:ContainsAny"></a>
+    <strong>Set:ContainsAny(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Set contains any of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this Set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any items are in the Set, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Count"></a>
+    <strong>Set:Count()</strong>
+    </dt>
+    <dd>
+    Gets the number of items in the Set.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the number of items
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Empty"></a>
+    <strong>Set:Empty()</strong>
+    </dt>
+    <dd>
+    Determines whether the Set has no elements.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set empty, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Enumerator"></a>
+    <strong>Set:Enumerator()</strong>
+    </dt>
+    <dd>
+    Creates an enumerator for the Set.
+ The enumerator can be used directly in a generic for loop similar to pairs
+ or ipairs.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Enumerable.html#">Enumerable</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        the enumerator generator</li>
+        <li>
+        the invariant state</li>
+        <li>
+        the control variable state</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Except"></a>
+    <strong>Set:Except(items)</strong>
+    </dt>
+    <dd>
+    Transforms the Set to remove all elements from a <a href="../classes/Collection.html#">Collection</a>. </p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to except
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Intersect"></a>
+    <strong>Set:Intersect(items)</strong>
+    </dt>
+    <dd>
+    Transforms the Set to keep only elements from a <a href="../classes/Collection.html#">Collection</a>. </p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to intersect
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Overlaps"></a>
+    <strong>Set:Overlaps(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Set elements overlaps a <a href="../classes/Collection.html#">Collection</a>.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this Set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if they overlap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:ProperSubsetOf"></a>
+    <strong>Set:ProperSubsetOf(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Set is a strict subset of a <a href="../classes/Collection.html#">Collection</a>.
+ A proper or strict subset is one where every element in this set is
+ contained in the other, and the other contains at least one additional
+ element.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set is a proper subset, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:ProperSupersetOf"></a>
+    <strong>Set:ProperSupersetOf(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Set is a strict superset of a <a href="../classes/Collection.html#">Collection</a>.
+ A proper or strict superset is one where every element in the other is
+ contained in this set, and this set contains at least one additional
+ element.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set is a proper superset, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Remove"></a>
+    <strong>Set:Remove(item)</strong>
+    </dt>
+    <dd>
+    Removes the specified item from the Set. </p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to remove from the Set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:RemoveAll"></a>
+    <strong>Set:RemoveAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all provided items from the Set.
+ Removes each instance of a provided item.</p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to remove from this Set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:RetainAll"></a>
+    <strong>Set:RetainAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all items except those provided from the Set.
+ Retains only the items contained in the specified <a href="../classes/Collection.html#">Collection</a>. If there are
+ duplicates they are all kept.</p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the Collection of items to retain in this Set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:SetEquals"></a>
+    <strong>Set:SetEquals(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Set contains the same elements as a <a href="../classes/Collection.html#">Collection</a>.
+ Determines only that the same exact Sets of elements are contained and does
+ not care for duplicates or any other associated data.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Sets are equal, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:SubsetOf"></a>
+    <strong>Set:SubsetOf(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Set is a subset of a <a href="../classes/Collection.html#">Collection</a>.
+ A subset is one where every element in this Set is contained in the other.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set is a superset, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:SupersetOf"></a>
+    <strong>Set:SupersetOf(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Set is a superset of a <a href="../classes/Collection.html#">Collection</a>.
+ A superset is one where every element in the other is contained in this set.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to check against
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Set is a superset, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:SymmetricExcept"></a>
+    <strong>Set:SymmetricExcept(items)</strong>
+    </dt>
+    <dd>
+    Transforms the Set to keep only elements in it or a <a href="../classes/Collection.html#">Collection</a>, not both. </p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to symmetric except
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:ToArray"></a>
+    <strong>Set:ToArray()</strong>
+    </dt>
+    <dd>
+    Creates a new array indexed table of this Set.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the array indexed table
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Set.html#Set:ToTable">ToTable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "Set:ToTable"></a>
+    <strong>Set:ToTable()</strong>
+    </dt>
+    <dd>
+    Creates a new table of this Set.
+ The indices of the table are the elements of the set. The only values in the
+ table are true if the element exists, or nil if it does not.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Set:Union"></a>
+    <strong>Set:Union(items)</strong>
+    </dt>
+    <dd>
+    Transforms the Set to include all elements from a <a href="../classes/Collection.html#">Collection</a>. </p>
+
+<p> This method is optional. All Set implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Set.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to union
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-03-25 01:16:59 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
