@@ -17,6 +17,8 @@ return function()
 	local ArrayStack = require(module:WaitForChild("ArrayStack"))
 	local Set = require(module:WaitForChild("Set"))
 	local HashSet = require(module:WaitForChild("HashSet"))
+	local Map = require(module:WaitForChild("Map"))
+	local HashMap = require(module:WaitForChild("HashMap"))
 
 	describe("Monolith", function()
 		it("should be able to be instantiated", function()
@@ -83,6 +85,14 @@ return function()
 
 		it("should expose the HashSet class", function()
 			expect(Monolith.HashSet).to.equal(HashSet)
+		end)
+
+		it("should expose the Map interface", function()
+			expect(Monolith.Map).to.equal(Map)
+		end)
+
+		it("should expose the HashMap class", function()
+			expect(Monolith.HashMap).to.equal(HashMap)
 		end)
 	end)
 end
