@@ -1,3 +1,5 @@
+---
+--
 -- **Implements:** @{Map}, @{Collection}, @{Enumerable}
 --
 -- @classmod HashMap
