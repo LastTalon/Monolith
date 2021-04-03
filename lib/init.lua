@@ -19,6 +19,8 @@ local Stack = require(script.Stack)
 local ArrayStack = require(script.ArrayStack)
 local Set = require(script.Set)
 local HashSet = require(script.HashSet)
+local Map = require(script.Map)
+local HashMap = require(script.HashMap)
 
 local Monolith = {}
 local instance
@@ -94,6 +96,16 @@ Monolith.Set = Set
 --
 -- @see HashSet
 Monolith.HashSet = HashSet
+
+--- The @{Map} class.
+--
+-- @see Map
+Monolith.Map = Map
+
+--- The @{HashSet} class.
+--
+-- @see HashMap
+Monolith.HashMap = HashMap
 
 --- Creates the Monolith API singleton.
 -- This is called automatically and will only ever create a maximum of one
