@@ -24,6 +24,10 @@ function Map.new()
 	return self
 end
 
+function Map.fromTable()
+	error(string.format(ErrorOverride, "fromTable"))
+end
+
 --- Creates an enumerator for the Map.
 -- The enumerator can be used directly in a generic for loop similar to pairs
 -- or ipairs.
@@ -215,6 +219,34 @@ end
 -- @from @{Collection}
 function Map:RetainAll()
 	error(string.format(ErrorOverride, "RetainAll"))
+end
+
+function Map.ContainsKey()
+	error(string.format(ErrorOverride, "ContainsKey"))
+end
+
+function Map.ContainsValue()
+	error(string.format(ErrorOverride, "ContainsValue"))
+end
+
+function Map.Keys()
+	error(string.format(ErrorOverride, "Keys"))
+end
+
+function Map.Values()
+	error(string.format(ErrorOverride, "Values"))
+end
+
+function Map.Pairs()
+	error(string.format(ErrorOverride, "Pairs"))
+end
+
+function Map.Get()
+	error(string.format(ErrorOverride, "Get"))
+end
+
+function Map.Set()
+	error(string.format(ErrorOverride, "Set"))
 end
 
 return Map
