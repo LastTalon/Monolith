@@ -221,31 +221,31 @@ function Map:RetainAll()
 	error(string.format(ErrorOverride, "RetainAll"))
 end
 
-function Map.ContainsKey()
+function Map:ContainsKey()
 	error(string.format(ErrorOverride, "ContainsKey"))
 end
 
-function Map.ContainsValue()
+function Map:ContainsValue()
 	error(string.format(ErrorOverride, "ContainsValue"))
 end
 
-function Map.Keys()
+function Map:Keys()
 	error(string.format(ErrorOverride, "Keys"))
 end
 
-function Map.Values()
+function Map:Values()
 	error(string.format(ErrorOverride, "Values"))
 end
 
-function Map.Pairs()
+function Map:Pairs()
 	error(string.format(ErrorOverride, "Pairs"))
 end
 
-function Map.Get()
+function Map:Get()
 	error(string.format(ErrorOverride, "Get"))
 end
 
-function Map.Set()
+function Map:Set()
 	error(string.format(ErrorOverride, "Set"))
 end
 
