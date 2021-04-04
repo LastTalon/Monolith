@@ -32,11 +32,11 @@ function HashMap.new(collection)
 			if type(collection.Enumerator) == "function" then
 				-- If there's an Enumerator, assume it acts as a collection
 				for index, value in collection:Enumerator() do
-					self:Set(index, value)
+					self:Add(index, value)
 				end
 			else -- Otherwise its just a table (we can't know otherwise)
-				for index, value in ipairs(collection) do
-					self:Set(index, value)
+				for _, value in ipairs(collection) do
+					self:Add(value)
 				end
 			end
 		else
@@ -88,8 +88,8 @@ end
 -- @return true if all items are in the Map, false otherwise
 -- @from @{Collection}
 function HashMap:ContainsAll(items)
-	for index in items:Enumerator() do
-		if not self:Contains(index) then
+	for _, value in items:Enumerator() do
+		if not self:Contains(value) then
 			return false -- As soon as one is not contained all cannot be
 		end
 	end
@@ -104,8 +104,8 @@ end
 -- @return true if any items are in the Map, false otherwise
 -- @from @{Collection}
 function HashMap:ContainsAny(items)
-	for index in items:Enumerator() do
-		if self:Contains(index) then
+	for _, value in items:Enumerator() do
+		if self:Contains(value) then
 			return true -- As soon as we find one we're good
 		end
 	end
@@ -334,12 +334,12 @@ function HashMap:Set(key, value)
 	local contained = self:Contains(key)
 	self.map[key] = value
 	if value == nil then
-		if not contained then
-			self.count = self.count + 1
+		if contained then
+			self.count = self.count - 1
 			return true
 		end
-	elseif contained then
-		self.count = self.count - 1
+	elseif not contained then
+		self.count = self.count + 1
 		return true
 	end
 	return false

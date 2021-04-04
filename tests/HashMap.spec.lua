@@ -75,7 +75,7 @@ return function()
 					count = count + 1
 					expect(i).to.be.a("number")
 					expect(v).to.be.a("boolean")
-					expect(v).to.equal(count)
+					expect(i).to.equal(count)
 				end
 
 				expect(count).to.equal(total)
@@ -119,7 +119,13 @@ return function()
 			describe("ContainsAll", function()
 				it("should not find any element when empty", function()
 					local map = HashMap.new()
-					local contained = HashMap.new({ 1, 2, 3, 4, 5 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
 					expect(map:ContainsAll(contained)).to.equal(false)
 				end)
 
@@ -131,31 +137,50 @@ return function()
 
 				it("should find all elements when the elements exist", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					local contained = HashMap.new({ 1, 2, 3, 4, 5 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
 					expect(map:ContainsAll(contained)).to.equal(true)
 				end)
 
 				it("should find a single element when it exists", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					local contained = HashMap.new({ 3 })
+					local contained = HashMap.fromTable({
+						third = 3,
+					})
 					expect(map:ContainsAll(contained)).to.equal(true)
 				end)
 
 				it("should not find all elements when one does not exist", function()
 					local map = HashMap.new({ 1, 2, 4, 5 })
-					local contained = HashMap.new({ 1, 2, 3, 4, 5 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
 					expect(map:ContainsAll(contained)).to.equal(false)
 				end)
 
 				it("should not find a single element when it does not exist", function()
 					local map = HashMap.new({ 1, 2, 4, 5 })
-					local contained = HashMap.new({ 3 })
+					local contained = HashMap.fromTable({
+						third = 3,
+					})
 					expect(map:ContainsAll(contained)).to.equal(false)
 				end)
 
 				it("should not find elements until they are added", function()
 					local map = HashMap.new()
-					local contained = HashMap.new({ 1, 2 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+					})
 					expect(map:ContainsAll(contained)).to.equal(false)
 					map:Add(1)
 					expect(map:ContainsAll(contained)).to.equal(false)
@@ -165,7 +190,13 @@ return function()
 
 				it("should no longer find all elements when they are removed", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					local contained = HashMap.new({ 1, 2, 3, 4, 5 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
 					expect(map:ContainsAll(contained)).to.equal(true)
 					map:Remove(1)
 					expect(map:ContainsAll(contained)).to.equal(false)
@@ -175,7 +206,13 @@ return function()
 			describe("ContainsAny", function()
 				it("should not find any element when empty", function()
 					local map = HashMap.new()
-					local contained = HashMap.new({ 1, 2, 3, 4, 5 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
 					expect(map:ContainsAny(contained)).to.equal(false)
 				end)
 
@@ -187,31 +224,50 @@ return function()
 
 				it("should find all elements when the elements exist", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					local contained = HashMap.new({ 1, 2, 3, 4, 5 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
 					expect(map:ContainsAny(contained)).to.equal(true)
 				end)
 
 				it("should find a single element when it exists", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					local contained = HashMap.new({ 3 })
+					local contained = HashMap.fromTable({
+						third = 3,
+					})
 					expect(map:ContainsAny(contained)).to.equal(true)
 				end)
 
 				it("should not find some elements when one does not exist", function()
 					local map = HashMap.new({ 1, 2, 4, 5 })
-					local contained = HashMap.new({ 1, 2, 3, 4, 5 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
 					expect(map:ContainsAny(contained)).to.equal(true)
 				end)
 
 				it("should not find a single element when it does not exist", function()
 					local map = HashMap.new({ 1, 2, 4, 5 })
-					local contained = HashMap.new({ 3 })
+					local contained = HashMap.fromTable({
+						third = 3,
+					})
 					expect(map:ContainsAny(contained)).to.equal(false)
 				end)
 
 				it("should not find elements until they are added", function()
 					local map = HashMap.new()
-					local contained = HashMap.new({ 1, 2 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+					})
 					expect(map:ContainsAny(contained)).to.equal(false)
 					map:Add(1)
 					expect(map:ContainsAny(contained)).to.equal(true)
@@ -219,7 +275,13 @@ return function()
 
 				it("should no longer find all elements when they are all removed", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					local contained = HashMap.new({ 1, 2, 3, 4, 5 })
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
 					expect(map:ContainsAny(contained)).to.equal(true)
 					map:Remove(1)
 					expect(map:ContainsAny(contained)).to.equal(true)
@@ -334,7 +396,7 @@ return function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(#map:ToArray()).to.equal(map:Count())
 					for _, v in ipairs(map:ToArray()) do
-						expect(map:Contains(v[2])).to.equal(true)
+						expect(map:Contains(v[1])).to.equal(true)
 					end
 				end)
 
@@ -422,65 +484,109 @@ return function()
 			describe("AddAll", function()
 				it("should add multiple elements when empty", function()
 					local map = HashMap.new()
-					local add = HashMap.new({ 1, 2, 3, 4, 5 })
+					local add = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
 					map:AddAll(add)
 					expect(map:Count()).to.equal(5)
 				end)
 
 				it("should add a single element when empty", function()
 					local map = HashMap.new()
-					local add = HashMap.new({ 1 })
+					local add = HashMap.fromTable({
+						first = 1,
+					})
 					map:AddAll(add)
 					expect(map:Count()).to.equal(1)
 				end)
 
 				it("should add multiple elements when not empty", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					local add = HashMap.new({ 6, 7, 8, 9, 0 })
+					local add = HashMap.fromTable({
+						first = 6,
+						second = 7,
+						third = 8,
+						fourth = 9,
+						fifth = 0,
+					})
 					map:AddAll(add)
 					expect(map:Count()).to.equal(10)
 				end)
 
 				it("should add a single element when not empty", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					local add = HashMap.new({ 6 })
+					local add = HashMap.fromTable({
+						first = 6,
+					})
 					map:AddAll(add)
 					expect(map:Count()).to.equal(6)
 				end)
 
 				it("should return true when adding multiple elements", function()
 					local map = HashMap.new()
-					local add = HashMap.new({ 6, 7, 8, 9, 10 })
+					local add = HashMap.fromTable({
+						first = 6,
+						second = 7,
+						third = 8,
+						fourth = 9,
+						fifth = 10,
+					})
 					expect(map:AddAll(add)).to.equal(true)
 				end)
 
 				it("should return true when adding a single element", function()
 					local map = HashMap.new()
-					local add = HashMap.new({ 6 })
+					local add = HashMap.fromTable({
+						first = 6,
+					})
 					expect(map:AddAll(add)).to.equal(true)
 				end)
 
 				it("should return false when not adding multiple elements", function()
 					local map = HashMap.new({ 6, 7, 8, 9, 10 })
-					local add = HashMap.new({ 6, 7, 8, 9, 10 })
+					local add = HashMap.fromTable({
+						first = 6,
+						second = 7,
+						third = 8,
+						fourth = 9,
+						fifth = 10,
+					})
 					expect(map:AddAll(add)).to.equal(false)
 				end)
 
 				it("should return false when not adding a single elements", function()
 					local map = HashMap.new({ 6, 7, 8, 9, 10 })
-					local add = HashMap.new({ 6 })
+					local add = HashMap.fromTable({
+						first = 6,
+					})
 					expect(map:AddAll(add)).to.equal(false)
 				end)
 
 				it("should return true when adding some elements, but not others", function()
 					local map = HashMap.new({ 6, 7, 8 })
-					local add = HashMap.new({ 6, 7, 8, 9, 10 })
+					local add = HashMap.fromTable({
+						first = 6,
+						second = 7,
+						third = 8,
+						fourth = 9,
+						fifth = 10,
+					})
 					expect(map:AddAll(add)).to.equal(true)
 				end)
 
 				it("should not add multiple duplicate elements", function()
 					local map = HashMap.new({ 1, 1, 1, 1, 1 })
-					local add = HashMap.new({ 1, 1, 1, 1, 1 })
+					local add = HashMap.fromTable({
+						first = 1,
+						second = 1,
+						third = 1,
+						fourth = 1,
+						fifth = 1,
+					})
 					expect(map:Count()).to.equal(1)
 					map:AddAll(add)
 					expect(map:Count()).to.equal(1)
@@ -488,7 +594,9 @@ return function()
 
 				it("should not add a single duplicate element", function()
 					local map = HashMap.new({ 1 })
-					local add = HashMap.new({ 1 })
+					local add = HashMap.fromTable({
+						first = 1,
+					})
 					map:AddAll(add)
 					expect(map:Count()).to.equal(1)
 				end)
@@ -831,7 +939,7 @@ return function()
 					}
 					local map = HashMap.fromTable(table)
 					expect(map:Count()).to.equal(1)
-					expect(map:Contains("first")).to.equal(true)
+					expect(map:Get("first")).to.equal(true)
 				end)
 
 				it("should create a HashMap from a table with many elements", function()
@@ -844,11 +952,11 @@ return function()
 					}
 					local map = HashMap.fromTable(table)
 					expect(map:Count()).to.equal(5)
-					expect(map:Contains("first")).to.equal(true)
-					expect(map:Contains("second")).to.equal(true)
-					expect(map:Contains("third")).to.equal(true)
-					expect(map:Contains("fourth")).to.equal(true)
-					expect(map:Contains("fifth")).to.equal(true)
+					expect(map:Get("first")).to.equal(true)
+					expect(map:Get("second")).to.equal(true)
+					expect(map:Get("third")).to.equal(true)
+					expect(map:Get("fourth")).to.equal(true)
+					expect(map:Get("fifth")).to.equal(true)
 				end)
 
 				it("should create a HashMap from a table with disparate elements", function()
@@ -861,11 +969,11 @@ return function()
 					}
 					local map = HashMap.fromTable(table)
 					expect(map:Count()).to.equal(5)
-					expect(map:Contains("first")).to.equal(true)
-					expect(map:Contains("second")).to.equal(1)
-					expect(map:Contains("third")).to.equal(0)
-					expect(map:Contains("fourth")).to.equal(false)
-					expect(map:Contains("fifth")).to.equal("fifth")
+					expect(map:Get("first")).to.equal(true)
+					expect(map:Get("second")).to.equal(1)
+					expect(map:Get("third")).to.equal(0)
+					expect(map:Get("fourth")).to.equal(false)
+					expect(map:Get("fifth")).to.equal("fifth")
 				end)
 
 				it("should create a HashMap from a non-map table", function()
@@ -878,11 +986,11 @@ return function()
 					}
 					local map = HashMap.fromTable(table)
 					expect(map:Count()).to.equal(5)
-					expect(map:Contains(1)).to.equal("first")
-					expect(map:Contains(2)).to.equal("second")
-					expect(map:Contains(3)).to.equal("third")
-					expect(map:Contains(4)).to.equal("fourth")
-					expect(map:Contains(5)).to.equal("fifth")
+					expect(map:Get(1)).to.equal("first")
+					expect(map:Get(2)).to.equal("second")
+					expect(map:Get(3)).to.equal("third")
+					expect(map:Get(4)).to.equal("fourth")
+					expect(map:Get(5)).to.equal("fifth")
 				end)
 			end)
 
@@ -931,9 +1039,9 @@ return function()
 						second = 2,
 						third = 3,
 					})
-					expect(map:ContainsValue(4)).to.equal(false)
+					expect(map:ContainsValue(3)).to.equal(true)
 					map:Set("third", nil)
-					expect(map:ContainsValue(4)).to.equal(true)
+					expect(map:ContainsValue(3)).to.equal(false)
 				end)
 			end)
 
@@ -1011,7 +1119,7 @@ return function()
 					expect(values:Contains(3)).to.equal(true)
 					values:Remove(1)
 					values:Remove(2)
-					values:Remove(5)
+					values:Remove(3)
 					expect(values:Count()).to.equal(2)
 					expect(values:Contains(1)).to.equal(true)
 					expect(values:Contains(2)).to.equal(true)
