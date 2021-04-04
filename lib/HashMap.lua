@@ -169,6 +169,7 @@ end
 -- functionality that can't be provided by this Map.
 --
 -- @param item the item to add
+-- @param value
 -- @return true if the Map changed as a result, false otherwise
 -- @from @{Collection}
 function HashMap:Add(item, value)
@@ -191,6 +192,7 @@ end
 -- functionality that can't be provided by this Map.
 --
 -- @param items the @{Collection} of items to add to this Map
+-- @param value
 -- @return true if the Map changed as a result, false otherwise
 -- @from @{Collection}
 function HashMap:AddAll(items, value)
