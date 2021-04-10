@@ -10,6 +10,9 @@ local HashSet = require(module:WaitForChild("HashSet"))
 local ArrayList = require(module:WaitForChild("ArrayList"))
 
 local ErrorConstruct = "Cannot construct HashMap from type %s."
+local ErrorCollection = "Cannot construct HashMap from non-Collection table."
+local ErrorArray = "Cannot construct HashMap from array containing any non-pair."
+local ErrorPairs = "Cannot construct HashMap from Collection containing any non-pair."
 
 local HashMap = Map.new()
 
@@ -54,6 +57,46 @@ function HashMap.fromTable(table)
 			self:Set(index, value)
 		end
 		return self
+	else
+		error(string.format(ErrorConstruct, typeTable))
+	end
+end
+
+function HashMap.fromArray(table)
+	local typeTable = type(table)
+	if typeTable == "table" then
+		local self = HashMap.new()
+		for _, pair in ipairs(table) do
+			typeTable = type(pair)
+			if typeTable == "table" and pair[1] ~= nil then
+				self:Set(pair[1], pair[2])
+			else
+				error(ErrorArray)
+			end
+		end
+		return self
+	else
+		error(string.format(ErrorConstruct, typeTable))
+	end
+end
+
+function HashMap.fromPairs(collection)
+	local typeTable = type(collection)
+	if typeTable == "table" then
+		if type(collection.Enumerator) == "function" then
+			local self = HashMap.new()
+			for _, pair in collection:Enumerator() do
+				typeTable = type(pair)
+				if typeTable == "table" and pair[1] ~= nil then
+					self:Set(pair[1], pair[2])
+				else
+					error(ErrorPairs)
+				end
+			end
+			return self
+		else
+			error(ErrorCollection)
+		end
 	else
 		error(string.format(ErrorConstruct, typeTable))
 	end

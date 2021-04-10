@@ -28,6 +28,14 @@ function Map.fromTable()
 	error(string.format(ErrorOverride, "fromTable"))
 end
 
+function Map.fromArray()
+	error(string.format(ErrorOverride, "fromArray"))
+end
+
+function Map.fromPairs()
+	error(string.format(ErrorOverride, "fromPairs"))
+end
+
 --- Creates an enumerator for the Map.
 -- The enumerator can be used directly in a generic for loop similar to pairs
 -- or ipairs.

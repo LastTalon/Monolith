@@ -120,6 +120,18 @@ return function()
 			end).to.throw("Abstract method fromTable must be overridden in first concrete subclass. Called directly from Map.")
 		end)
 
+		it("should error when fromArray is not overridden", function()
+			expect(function()
+				Map.fromArray()
+			end).to.throw("Abstract method fromArray must be overridden in first concrete subclass. Called directly from Map.")
+		end)
+
+		it("should error when fromPairs is not overridden", function()
+			expect(function()
+				Map.fromPairs()
+			end).to.throw("Abstract method fromPairs must be overridden in first concrete subclass. Called directly from Map.")
+		end)
+
 		it("should error when ContainsKey is not overridden", function()
 			expect(function()
 				Map.ContainsKey()

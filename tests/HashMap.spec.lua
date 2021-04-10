@@ -3,6 +3,7 @@
 return function()
 	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
 	local HashMap = require(module:WaitForChild("HashMap"))
+	local ArrayList = require(module:WaitForChild("ArrayList"))
 
 	describe("Constructor", function()
 		it("should create an empty HashMap", function()
@@ -991,6 +992,192 @@ return function()
 					expect(map:Get(3)).to.equal("third")
 					expect(map:Get(4)).to.equal("fourth")
 					expect(map:Get(5)).to.equal("fifth")
+				end)
+			end)
+
+			describe("fromArray", function()
+				it("should error if a table is not provided", function()
+					expect(function()
+						HashMap.fromArray(nil)
+					end).to.throw("Cannot construct HashMap from type nil.")
+					expect(function()
+						HashMap.fromArray(true)
+					end).to.throw("Cannot construct HashMap from type boolean.")
+					expect(function()
+						HashMap.fromArray(1)
+					end).to.throw("Cannot construct HashMap from type number.")
+					expect(function()
+						HashMap.fromArray("string")
+					end).to.throw("Cannot construct HashMap from type string.")
+					expect(function()
+						HashMap.fromArray(function()
+						end)
+					end).to.throw("Cannot construct HashMap from type function.")
+					expect(function()
+						HashMap.fromArray(Instance.new("Folder"))
+					end).to.throw("Cannot construct HashMap from type userdata.")
+					expect(function()
+						HashMap.fromArray(coroutine.create(function()
+						end))
+					end).to.throw("Cannot construct HashMap from type thread.")
+				end)
+
+				it("should create a HashMap from an empty array", function()
+					local table = {}
+					local map = HashMap.fromArray(table)
+					expect(map:Empty()).to.equal(true)
+				end)
+
+				it("should create a HashMap from an array with one pair", function()
+					local table = {
+						{ "first", true },
+					}
+					local map = HashMap.fromArray(table)
+					expect(map:Count()).to.equal(1)
+					expect(map:Get("first")).to.equal(true)
+				end)
+
+				it("should create a HashMap from an array with many pairs", function()
+					local table = {
+						{ "first", true },
+						{ "second", true },
+						{ "third", true },
+						{ "fourth", true },
+						{ "fifth", true },
+					}
+					local map = HashMap.fromArray(table)
+					expect(map:Count()).to.equal(5)
+					expect(map:Get("first")).to.equal(true)
+					expect(map:Get("second")).to.equal(true)
+					expect(map:Get("third")).to.equal(true)
+					expect(map:Get("fourth")).to.equal(true)
+					expect(map:Get("fifth")).to.equal(true)
+				end)
+
+				it("should create a HashMap from an array with pairs of disparate values", function()
+					local table = {
+						{ "first", true },
+						{ "second", 1 },
+						{ "third", 0 },
+						{ "fourth", false },
+						{ "fifth", "fifth" },
+					}
+					local map = HashMap.fromArray(table)
+					expect(map:Count()).to.equal(5)
+					expect(map:Get("first")).to.equal(true)
+					expect(map:Get("second")).to.equal(1)
+					expect(map:Get("third")).to.equal(0)
+					expect(map:Get("fourth")).to.equal(false)
+					expect(map:Get("fifth")).to.equal("fifth")
+				end)
+
+				it("should error if an array is a non-map array", function()
+					local table = {
+						"first",
+						"second",
+						"third",
+						"fourth",
+						"fifth",
+					}
+					expect(function()
+						HashMap.fromArray(table)
+					end).to.throw("Cannot construct HashMap from array containing any non-pair.")
+				end)
+			end)
+
+			describe("fromPairs", function()
+				it("should error if a table is not provided", function()
+					expect(function()
+						HashMap.fromPairs(nil)
+					end).to.throw("Cannot construct HashMap from type nil.")
+					expect(function()
+						HashMap.fromPairs(true)
+					end).to.throw("Cannot construct HashMap from type boolean.")
+					expect(function()
+						HashMap.fromPairs(1)
+					end).to.throw("Cannot construct HashMap from type number.")
+					expect(function()
+						HashMap.fromPairs("string")
+					end).to.throw("Cannot construct HashMap from type string.")
+					expect(function()
+						HashMap.fromPairs(function()
+						end)
+					end).to.throw("Cannot construct HashMap from type function.")
+					expect(function()
+						HashMap.fromPairs(Instance.new("Folder"))
+					end).to.throw("Cannot construct HashMap from type userdata.")
+					expect(function()
+						HashMap.fromPairs(coroutine.create(function()
+						end))
+					end).to.throw("Cannot construct HashMap from type thread.")
+				end)
+
+				it("should error if a Collection is not provided", function()
+					expect(function()
+						HashMap.fromPairs({})
+					end).to.throw("Cannot construct HashMap from non-Collection table.")
+				end)
+
+				it("should create a HashMap from an empty Collection", function()
+					local pairs = ArrayList.new({})
+					local map = HashMap.fromPairs(pairs)
+					expect(map:Empty()).to.equal(true)
+				end)
+
+				it("should create a HashMap from a Collection with one pair", function()
+					local pairs = ArrayList.new({
+						{ "first", true },
+					})
+					local map = HashMap.fromPairs(pairs)
+					expect(map:Count()).to.equal(1)
+					expect(map:Get("first")).to.equal(true)
+				end)
+
+				it("should create a HashMap from a Collection with many pairs", function()
+					local pairs = ArrayList.new({
+						{ "first", true },
+						{ "second", true },
+						{ "third", true },
+						{ "fourth", true },
+						{ "fifth", true },
+					})
+					local map = HashMap.fromPairs(pairs)
+					expect(map:Count()).to.equal(5)
+					expect(map:Get("first")).to.equal(true)
+					expect(map:Get("second")).to.equal(true)
+					expect(map:Get("third")).to.equal(true)
+					expect(map:Get("fourth")).to.equal(true)
+					expect(map:Get("fifth")).to.equal(true)
+				end)
+
+				it("should create a HashMap from a Collection with pairs of disparate values", function()
+					local pairs = ArrayList.new({
+						{ "first", true },
+						{ "second", 1 },
+						{ "third", 0 },
+						{ "fourth", false },
+						{ "fifth", "fifth" },
+					})
+					local map = HashMap.fromPairs(pairs)
+					expect(map:Count()).to.equal(5)
+					expect(map:Get("first")).to.equal(true)
+					expect(map:Get("second")).to.equal(1)
+					expect(map:Get("third")).to.equal(0)
+					expect(map:Get("fourth")).to.equal(false)
+					expect(map:Get("fifth")).to.equal("fifth")
+				end)
+
+				it("should error if a Collection is a non-map Collection", function()
+					local pairs = ArrayList.new({
+						"first",
+						"second",
+						"third",
+						"fourth",
+						"fifth",
+					})
+					expect(function()
+						HashMap.fromPairs(table)
+					end).to.throw("Cannot construct HashMap from Collection containing any non-pair.")
 				end)
 			end)
 
