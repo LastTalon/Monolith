@@ -1176,7 +1176,7 @@ return function()
 						"fifth",
 					})
 					expect(function()
-						HashMap.fromPairs(table)
+						HashMap.fromPairs(pairs)
 					end).to.throw("Cannot construct HashMap from Collection containing any non-pair.")
 				end)
 			end)
