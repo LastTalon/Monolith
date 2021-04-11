@@ -372,7 +372,7 @@ end
 -- @param key the key to locate in the HashMap
 -- @return true if the key is in the HashMap, false otherwise
 -- @from @{Map}
--- @function
+-- @function ContainsKey
 HashMap.ContainsKey = HashMap.Contains
 
 --- Determines whether the HashMap contains all of the provided keys.
@@ -384,7 +384,7 @@ HashMap.ContainsKey = HashMap.Contains
 -- @param keys the @{Collection} of keys to locate in this HashMap
 -- @return true if all keys are in the HashMap, false otherwise
 -- @from @{Map}
--- @function
+-- @function ContainsAllKeys
 HashMap.ContainsAllKeys = HashMap.ContainsAll
 
 --- Determines whether the HashMap contains any of the provided keys.
@@ -396,7 +396,7 @@ HashMap.ContainsAllKeys = HashMap.ContainsAll
 -- @param keys the @{Collection} of keys to locate in this HashMap
 -- @return true if any keys are in the HashMap, false otherwise
 -- @from @{Map}
--- @function
+-- @function ContainsAnyKeys
 HashMap.ContainsAnyKeys = HashMap.ContainsAny
 
 --- Determines whether the HashMap contains a value.
