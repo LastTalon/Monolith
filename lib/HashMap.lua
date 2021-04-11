@@ -90,11 +90,11 @@ end
 -- * if the table is not an array of key value pairs
 -- @static
 -- @from @{Map}
-function HashMap.fromArray(table)
-	local typeTable = type(table)
+function HashMap.fromArray(array)
+	local typeTable = type(array)
 	if typeTable == "table" then
 		local self = HashMap.new()
-		for _, pair in ipairs(table) do
+		for _, pair in ipairs(array) do
 			typeTable = type(pair)
 			if typeTable == "table" and pair[1] ~= nil then
 				self:Set(pair[1], pair[2])
