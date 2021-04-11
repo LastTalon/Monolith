@@ -1187,6 +1187,18 @@ return function()
 				end)
 			end)
 
+			describe("ContainsAllKeys", function()
+				it("should be the same as ContainsAll", function()
+					expect(HashMap.ContainsAllKeys).to.equal(HashMap.ContainsAll)
+				end)
+			end)
+
+			describe("ContainsAnyKeys", function()
+				it("should be the same as ContainsAll", function()
+					expect(HashMap.ContainsAnyKeys).to.equal(HashMap.ContainsAny)
+				end)
+			end)
+
 			describe("ContainsValue", function()
 				it("should not find a value when empty", function()
 					local map = HashMap.new()
@@ -1229,6 +1241,248 @@ return function()
 					expect(map:ContainsValue(3)).to.equal(true)
 					map:Set("third", nil)
 					expect(map:ContainsValue(3)).to.equal(false)
+				end)
+			end)
+
+			describe("ContainsAllValues", function()
+				it("should not find any value when empty", function()
+					local map = HashMap.new()
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					expect(map:ContainsAllValues(contained)).to.equal(false)
+				end)
+
+				it("should find all 0 values when the provided collection is empty", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.new()
+					expect(map:ContainsAllValues(contained)).to.equal(true)
+				end)
+
+				it("should find all values when the elements exist", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					expect(map:ContainsAllValues(contained)).to.equal(true)
+				end)
+
+				it("should find a single value when it exists", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						third = 3,
+					})
+					expect(map:ContainsAllValues(contained)).to.equal(true)
+				end)
+
+				it("should not find all values when one does not exist", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					expect(map:ContainsAllValues(contained)).to.equal(false)
+				end)
+
+				it("should not find a single value when it does not exist", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						third = 3,
+					})
+					expect(map:ContainsAllValues(contained)).to.equal(false)
+				end)
+
+				it("should not find values until they are added", function()
+					local map = HashMap.new()
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+					})
+					expect(map:ContainsAllValues(contained)).to.equal(false)
+					map:Add(1)
+					expect(map:ContainsAllValues(contained)).to.equal(false)
+					map:Add(2)
+					expect(map:ContainsAllValues(contained)).to.equal(true)
+				end)
+
+				it("should no longer find all values when they are removed", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					expect(map:ContainsAllValues(contained)).to.equal(true)
+					map:Remove(1)
+					expect(map:ContainsAllValues(contained)).to.equal(false)
+				end)
+			end)
+
+			describe("ContainsAnyValues", function()
+				it("should not find any value when empty", function()
+					local map = HashMap.new()
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					expect(map:ContainsAnyValues(contained)).to.equal(false)
+				end)
+
+				it("should not find anything when the provided collection is empty", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.new()
+					expect(map:ContainsAnyValues(contained)).to.equal(false)
+				end)
+
+				it("should find all values when the elements exist", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					expect(map:ContainsAnyValues(contained)).to.equal(true)
+				end)
+
+				it("should find a single value when it exists", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						third = 3,
+					})
+					expect(map:ContainsAnyValues(contained)).to.equal(true)
+				end)
+
+				it("should not find some values when one does not exist", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					expect(map:ContainsAnyValues(contained)).to.equal(true)
+				end)
+
+				it("should not find a single value when it does not exist", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						third = 3,
+					})
+					expect(map:ContainsAnyValues(contained)).to.equal(false)
+				end)
+
+				it("should not find values until they are added", function()
+					local map = HashMap.new()
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+					})
+					expect(map:ContainsAnyValues(contained)).to.equal(false)
+					map:Add(1)
+					expect(map:ContainsAnyValues(contained)).to.equal(true)
+				end)
+
+				it("should no longer find all values when they are all removed", function()
+					local map = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					local contained = HashMap.fromTable({
+						first = 1,
+						second = 2,
+						third = 3,
+						fourth = 4,
+						fifth = 5,
+					})
+					expect(map:ContainsAnyValues(contained)).to.equal(true)
+					map:Remove(1)
+					expect(map:ContainsAnyValues(contained)).to.equal(true)
+					map:Clear()
+					expect(map:ContainsAnyValues(contained)).to.equal(false)
 				end)
 			end)
 

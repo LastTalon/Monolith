@@ -233,8 +233,24 @@ function Map:ContainsKey()
 	error(string.format(ErrorOverride, "ContainsKey"))
 end
 
+function Map:ContainsAllKeys()
+	error(string.format(ErrorOverride, "ContainsAllKeys"))
+end
+
+function Map:ContainsAnyKeys()
+	error(string.format(ErrorOverride, "ContainsAnyKeys"))
+end
+
 function Map:ContainsValue()
 	error(string.format(ErrorOverride, "ContainsValue"))
+end
+
+function Map:ContainsAllValues()
+	error(string.format(ErrorOverride, "ContainsAllValues"))
+end
+
+function Map:ContainsAnyValues()
+	error(string.format(ErrorOverride, "ContainsAnyValues"))
 end
 
 function Map:Keys()

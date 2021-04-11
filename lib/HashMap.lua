@@ -336,6 +336,10 @@ end
 
 HashMap.ContainsKey = HashMap.Contains
 
+HashMap.ContainsAllKeys = HashMap.ContainsAll
+
+HashMap.ContainsAnyKeys = HashMap.ContainsAny
+
 function HashMap:ContainsValue(item)
 	for _, value in self:Enumerator() do
 		if value == item then
@@ -343,6 +347,24 @@ function HashMap:ContainsValue(item)
 		end
 	end
 	return false
+end
+
+function HashMap:ContainsAllValues(items)
+	for _, value in items:Enumerator() do
+		if not self:ContainsValue(value) then
+			return false -- As soon as one is not contained all cannot be
+		end
+	end
+	return true -- We're only sure all are contained when we're done
+end
+
+function HashMap:ContainsAnyValues(items)
+	for _, value in items:Enumerator() do
+		if self:ContainsValue(value) then
+			return true -- As soon as we find one we're good
+		end
+	end
+	return false -- We only know none are contained once we're done
 end
 
 function HashMap:Keys()
