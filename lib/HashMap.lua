@@ -404,9 +404,9 @@ HashMap.ContainsAnyKeys = HashMap.ContainsAny
 -- @param value the value to locate in the HashMap
 -- @return true if the value is in the HashMap, false otherwise
 -- @from @{Map}
-function HashMap:ContainsValue(item)
-	for _, value in self:Enumerator() do
-		if value == item then
+function HashMap:ContainsValue(value)
+	for _, item in self:Enumerator() do
+		if item == value then
 			return true
 		end
 	end
@@ -420,8 +420,8 @@ end
 -- @param values the @{Collection} of values to locate in this HashMap
 -- @return true if all values are in the HashMap, false otherwise
 -- @from @{Map}
-function HashMap:ContainsAllValues(items)
-	for _, value in items:Enumerator() do
+function HashMap:ContainsAllValues(values)
+	for _, value in values:Enumerator() do
 		if not self:ContainsValue(value) then
 			return false -- As soon as one is not contained all cannot be
 		end
@@ -436,8 +436,8 @@ end
 -- @param values the @{Collection} of values to locate in this HashMap
 -- @return true if any values are in the HashMap, false otherwise
 -- @from @{Map}
-function HashMap:ContainsAnyValues(items)
-	for _, value in items:Enumerator() do
+function HashMap:ContainsAnyValues(values)
+	for _, value in values:Enumerator() do
 		if self:ContainsValue(value) then
 			return true -- As soon as we find one we're good
 		end
