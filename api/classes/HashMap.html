@@ -1,0 +1,1215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>API Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Monolith</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/AbstractList.html">AbstractList</a></li>
+  <li><a href="../classes/ArrayList.html">ArrayList</a></li>
+  <li><a href="../classes/ArrayStack.html">ArrayStack</a></li>
+  <li><a href="../classes/Collection.html">Collection</a></li>
+  <li><a href="../classes/Deque.html">Deque</a></li>
+  <li><a href="../classes/Enumerable.html">Enumerable</a></li>
+  <li><strong>HashMap</strong></li>
+  <li><a href="../classes/HashSet.html">HashSet</a></li>
+  <li><a href="../classes/LinkedDeque.html">LinkedDeque</a></li>
+  <li><a href="../classes/LinkedList.html">LinkedList</a></li>
+  <li><a href="../classes/LinkedQueue.html">LinkedQueue</a></li>
+  <li><a href="../classes/List.html">List</a></li>
+  <li><a href="../classes/Map.html">Map</a></li>
+  <li><a href="../classes/Queue.html">Queue</a></li>
+  <li><a href="../classes/Set.html">Set</a></li>
+  <li><a href="../classes/Stack.html">Stack</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Monolith.html">Monolith</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>HashMap</code></h1>
+<p>A hashtable <a href="../classes/Map.html#">Map</a> of items.</p>
+<p> A Map implmentation that stores items as keys using a table as a hashtable.
+ This provides good addition, removal, and lookup characteristics.</p>
+
+<p> Addition, deletion, and lookup of any element are all Θ(1) amortized.</p>
+
+<p> HashMap implements all optional <a href="../classes/Map.html#">Map</a> and <a href="../classes/Collection.html#">Collection</a> methods.</p>
+
+<p> <strong>Implements:</strong> <a href="../classes/Map.html#">Map</a>, <a href="../classes/Collection.html#">Collection</a>, <a href="../classes/Enumerable.html#">Enumerable</a></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#HashMap.fromArray">HashMap.fromArray(array)</a></td>
+	<td class="summary">Creates a new HashMap from a map-formatted array.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap.fromPairs">HashMap.fromPairs(collection)</a></td>
+	<td class="summary">Creates a new HashMap from a map-formatted <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap.fromTable">HashMap.fromTable(table)</a></td>
+	<td class="summary">Creates a new HashMap from a map-formatted table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap.new">HashMap.new(collection)</a></td>
+	<td class="summary">Creates a new HashMap.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Add">HashMap:Add(item, value)</a></td>
+	<td class="summary">Adds an item to the HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:AddAll">HashMap:AddAll(items, value)</a></td>
+	<td class="summary">Adds all provided items to the HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Clear">HashMap:Clear()</a></td>
+	<td class="summary">Removes everything from the HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Contains">HashMap:Contains(item)</a></td>
+	<td class="summary">Determines whether the HashMap contains an item.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ContainsAll">HashMap:ContainsAll(items)</a></td>
+	<td class="summary">Determines whether the HashMap contains all of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ContainsAllKeys">HashMap:ContainsAllKeys(keys)</a></td>
+	<td class="summary">Determines whether the HashMap contains all of the provided keys.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ContainsAllValues">HashMap:ContainsAllValues(values)</a></td>
+	<td class="summary">Determines whether the HashMap contains all of the provided values.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ContainsAny">HashMap:ContainsAny(items)</a></td>
+	<td class="summary">Determines whether the HashMap contains any of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ContainsAnyKeys">HashMap:ContainsAnyKeys(keys)</a></td>
+	<td class="summary">Determines whether the HashMap contains any of the provided keys.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ContainsAnyValues">HashMap:ContainsAnyValues(values)</a></td>
+	<td class="summary">Determines whether the HashMap contains any of the provided values.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ContainsKey">HashMap:ContainsKey(key)</a></td>
+	<td class="summary">Determines whether the HashMap contains a key.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ContainsValue">HashMap:ContainsValue(value)</a></td>
+	<td class="summary">Determines whether the HashMap contains a value.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Count">HashMap:Count()</a></td>
+	<td class="summary">Gets the number of items in the HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Empty">HashMap:Empty()</a></td>
+	<td class="summary">Determines whether the HashMap contains no elements.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Enumerator">HashMap:Enumerator()</a></td>
+	<td class="summary">Creates an enumerator for the HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Get">HashMap:Get(key)</a></td>
+	<td class="summary">Gets the value of the specified key.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Keys">HashMap:Keys()</a></td>
+	<td class="summary">Creates a <a href="../classes/Collection.html#">Collection</a> of this HashMap's keys.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Pairs">HashMap:Pairs()</a></td>
+	<td class="summary">Creates a <a href="../classes/Collection.html#">Collection</a> of this HashMap's key value pairs.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Remove">HashMap:Remove(item)</a></td>
+	<td class="summary">Removes the specified item from the HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:RemoveAll">HashMap:RemoveAll(items)</a></td>
+	<td class="summary">Removes all provided items from the HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:RetainAll">HashMap:RetainAll(items)</a></td>
+	<td class="summary">Removes all items except those provided from the HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Set">HashMap:Set(key, value)</a></td>
+	<td class="summary">Sets the value of the specified key.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ToArray">HashMap:ToArray()</a></td>
+	<td class="summary">Creates a new array-indexed table of this HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:ToTable">HashMap:ToTable()</a></td>
+	<td class="summary">Creates a new table of this HashMap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#HashMap:Values">HashMap:Values()</a></td>
+	<td class="summary">Creates a <a href="../classes/Collection.html#">Collection</a> of this HashMap's values.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "HashMap.fromArray"></a>
+    <strong>HashMap.fromArray(array)</strong>
+    </dt>
+    <dd>
+    Creates a new HashMap from a map-formatted array.
+ This constructor creates a new HashMap copy of an array of key value pairs. A
+ typical map-formatted array consists of key value pairs in the indices of
+ array. Each key value pair should be a table with index 1 as the key of the
+ pair and index 2 as the value of the pair.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">array</span>
+         the map-formatted array to copy from
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new HashMap
+    </ol>
+
+    <h3>Raises:</h3>
+
+
+<ul>
+    <li>if a table is not provided</li>
+    <li>if the table is not an array of key value pairs</li>
+</ul>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap.fromPairs"></a>
+    <strong>HashMap.fromPairs(collection)</strong>
+    </dt>
+    <dd>
+    Creates a new HashMap from a map-formatted <a href="../classes/Collection.html#">Collection</a>.
+ This constructor creates a new HashMap copy of a Collection of key value
+ pairs. A typical map-formatted Collection consists of keys value pairs. Each
+ key value pair should be a table with index 1 as the key of the pair and
+ index 2 as the value of the pair.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">collection</span>
+         the map-formatted <a href="../classes/Collection.html#">Collection</a> to copy from
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new HashMap
+    </ol>
+
+    <h3>Raises:</h3>
+
+
+<ul>
+    <li>if a table is not provided</li>
+    <li>if a <a href="../classes/Collection.html#">Collection</a> is not provided</li>
+    <li>if the <a href="../classes/Collection.html#">Collection</a> doens't consist of key value pairs</li>
+</ul>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap.fromTable"></a>
+    <strong>HashMap.fromTable(table)</strong>
+    </dt>
+    <dd>
+    Creates a new HashMap from a map-formatted table.
+ This constructor creates a new HashMap copy of the table using its keys. A
+ typical map-formatted table consists of keys that have a non-nil value.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+         the map-formatted table to copy from
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new HashMap
+    </ol>
+
+    <h3>Raises:</h3>
+    if a table is not provided
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap.new"></a>
+    <strong>HashMap.new(collection)</strong>
+    </dt>
+    <dd>
+    Creates a new HashMap.
+ Creates a HashMap copy of the provided <a href="../classes/Collection.html#">Collection</a> or array-indexed
+ table if one is provided, otherwise creates an empty HashMap.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">collection</span>
+         the <a href="../classes/Collection.html#">Collection</a> or table to copy
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new HashMap
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "HashMap:Add"></a>
+    <strong>HashMap:Add(item, value)</strong>
+    </dt>
+    <dd>
+    Adds an item to the HashMap. </p>
+
+<p> This method is optional. All HashMap implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashMap.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+        <li><span class="parameter">value</span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashMap changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:AddAll"></a>
+    <strong>HashMap:AddAll(items, value)</strong>
+    </dt>
+    <dd>
+    Adds all provided items to the HashMap. </p>
+
+<p> This method is optional. All HashMap implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashMap.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to add to this HashMap
+        </li>
+        <li><span class="parameter">value</span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashMap changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Clear"></a>
+    <strong>HashMap:Clear()</strong>
+    </dt>
+    <dd>
+    Removes everything from the HashMap. </p>
+
+<p> This method is optional. All HashMap implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashMap.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Contains"></a>
+    <strong>HashMap:Contains(item)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains an item.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to locate in the HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the item is in the HashMap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ContainsAll"></a>
+    <strong>HashMap:ContainsAll(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains all of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all items are in the HashMap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ContainsAllKeys"></a>
+    <strong>HashMap:ContainsAllKeys(keys)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains all of the provided keys.
+ Checks for keys provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.</p>
+
+<p> This is effectively the same as <a href="../classes/HashMap.html#HashMap:ContainsAll">ContainsAll</a>.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">keys</span>
+         the <a href="../classes/Collection.html#">Collection</a> of keys to locate in this HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all keys are in the HashMap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ContainsAllValues"></a>
+    <strong>HashMap:ContainsAllValues(values)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains all of the provided values.
+ Checks for values provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">values</span>
+         the <a href="../classes/Collection.html#">Collection</a> of values to locate in this HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all values are in the HashMap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ContainsAny"></a>
+    <strong>HashMap:ContainsAny(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains any of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any items are in the HashMap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ContainsAnyKeys"></a>
+    <strong>HashMap:ContainsAnyKeys(keys)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains any of the provided keys.
+ Checks for keys provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.</p>
+
+<p> This is effectively the same as <a href="../classes/HashMap.html#HashMap:ContainsAny">ContainsAny</a>.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">keys</span>
+         the <a href="../classes/Collection.html#">Collection</a> of keys to locate in this HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any keys are in the HashMap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ContainsAnyValues"></a>
+    <strong>HashMap:ContainsAnyValues(values)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains any of the provided values.
+ Checks for values provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">values</span>
+         the <a href="../classes/Collection.html#">Collection</a> of values to locate in this HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any values are in the HashMap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ContainsKey"></a>
+    <strong>HashMap:ContainsKey(key)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains a key. </p>
+
+<p> This is effectively the same as <a href="../classes/HashMap.html#HashMap:Contains">Contains</a>.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         the key to locate in the HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the key is in the HashMap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ContainsValue"></a>
+    <strong>HashMap:ContainsValue(value)</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains a value.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+         the value to locate in the HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the value is in the HashMap, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Count"></a>
+    <strong>HashMap:Count()</strong>
+    </dt>
+    <dd>
+    Gets the number of items in the HashMap.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the number of items
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Empty"></a>
+    <strong>HashMap:Empty()</strong>
+    </dt>
+    <dd>
+    Determines whether the HashMap contains no elements.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashMap empty, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Enumerator"></a>
+    <strong>HashMap:Enumerator()</strong>
+    </dt>
+    <dd>
+    Creates an enumerator for the HashMap.
+ The enumerator can be used directly in a generic for loop similar to pairs
+ or ipairs.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Enumerable.html#">Enumerable</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        the enumerator generator</li>
+        <li>
+        the invariant state</li>
+        <li>
+        the control variable state</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Get"></a>
+    <strong>HashMap:Get(key)</strong>
+    </dt>
+    <dd>
+    Gets the value of the specified key.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         the key to get
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the value associated with the key
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Keys"></a>
+    <strong>HashMap:Keys()</strong>
+    </dt>
+    <dd>
+    Creates a <a href="../classes/Collection.html#">Collection</a> of this HashMap's keys.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the <a href="../classes/Collection.html#">Collection</a> of keys
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Pairs"></a>
+    <strong>HashMap:Pairs()</strong>
+    </dt>
+    <dd>
+    Creates a <a href="../classes/Collection.html#">Collection</a> of this HashMap's key value pairs.
+ Index 1 of each pair is the key and index 2 of each pair is the value.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the <a href="../classes/Collection.html#">Collection</a> of key value pairs
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Remove"></a>
+    <strong>HashMap:Remove(item)</strong>
+    </dt>
+    <dd>
+    Removes the specified item from the HashMap. </p>
+
+<p> This method is optional. All HashMap implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashMap.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to remove from the HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashMap changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:RemoveAll"></a>
+    <strong>HashMap:RemoveAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all provided items from the HashMap.
+ Removes each instance of a provided item.</p>
+
+<p> This method is optional. All HashMap implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashMap.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to remove from this HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashMap changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:RetainAll"></a>
+    <strong>HashMap:RetainAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all items except those provided from the HashMap.
+ Retains only the items contained in the specified <a href="../classes/Collection.html#">Collection</a>. If there are
+ duplicates they are all kept.</p>
+
+<p> This method is optional. All HashMap implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this HashMap.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to retain in this HashMap
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the HashMap changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Set"></a>
+    <strong>HashMap:Set(key, value)</strong>
+    </dt>
+    <dd>
+    Sets the value of the specified key.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         the key to set
+        </li>
+        <li><span class="parameter">value</span>
+         the value to set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the value of the key changed, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ToArray"></a>
+    <strong>HashMap:ToArray()</strong>
+    </dt>
+    <dd>
+    Creates a new array-indexed table of this HashMap.
+ The order of the array is the same as the order of the HashMap and uses the
+ same indexing.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the array indexed table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:ToTable"></a>
+    <strong>HashMap:ToTable()</strong>
+    </dt>
+    <dd>
+    Creates a new table of this HashMap.
+ Lists, being ordered and linear, use no indices that are not array indices,
+ so this provides a table with all the same array indices as <a href="../classes/HashMap.html#HashMap:ToArray">ToArray</a>.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "HashMap:Values"></a>
+    <strong>HashMap:Values()</strong>
+    </dt>
+    <dd>
+    Creates a <a href="../classes/Collection.html#">Collection</a> of this HashMap's values.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Map.html#">Map</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the <a href="../classes/Collection.html#">Collection</a> of values
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-04-11 21:43:16 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

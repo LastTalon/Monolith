@@ -1,0 +1,1146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>API Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Monolith</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/AbstractList.html">AbstractList</a></li>
+  <li><a href="../classes/ArrayList.html">ArrayList</a></li>
+  <li><a href="../classes/ArrayStack.html">ArrayStack</a></li>
+  <li><a href="../classes/Collection.html">Collection</a></li>
+  <li><a href="../classes/Deque.html">Deque</a></li>
+  <li><a href="../classes/Enumerable.html">Enumerable</a></li>
+  <li><a href="../classes/HashMap.html">HashMap</a></li>
+  <li><a href="../classes/HashSet.html">HashSet</a></li>
+  <li><a href="../classes/LinkedDeque.html">LinkedDeque</a></li>
+  <li><a href="../classes/LinkedList.html">LinkedList</a></li>
+  <li><a href="../classes/LinkedQueue.html">LinkedQueue</a></li>
+  <li><a href="../classes/List.html">List</a></li>
+  <li><strong>Map</strong></li>
+  <li><a href="../classes/Queue.html">Queue</a></li>
+  <li><a href="../classes/Set.html">Set</a></li>
+  <li><a href="../classes/Stack.html">Stack</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Monolith.html">Monolith</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Map</code></h1>
+<p>An unordered <a href="../classes/Collection.html#">Collection</a> of unique key value pairs.</p>
+<p> Maps provide no particular ordering of their items, containing keys that
+ are associated with a value. Any particular concrete Map implementation may
+ have an internal ordering, but this ordering does not affect the operation
+ of the Map.</p>
+
+<p> The Map interface provides a base set of operations for interacting
+ with any abstract Map type. Abstract data types may provide addtional
+ specific operations based on the particular implemented type. Concrete
+ implementations, such as <a href="../classes/HashMap.html#">HashMaps</a> ultimately determine the
+ properties of the concrete Map such as time and space complexity for any
+ operations.</p>
+
+<p> The Map interface provides certain optional methods in addition to those in
+ <a href="../classes/Collection.html#">Collection</a>. Some Maps, such as immutable or type-restricted data types,
+ may not be able to provide full functionality for these methods. All Maps
+ are guaranteed to provide a required set of behaviors without exception and,
+ unless otherwise noted, a method is required. All Maps should attempt
+ to provide optional functionality, if they're able, regardless.</p>
+
+<p> <strong>Implements:</strong> <a href="../classes/Collection.html#">Collection</a>, <a href="../classes/Enumerable.html#">Enumerable</a></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Map.fromArray">Map.fromArray(array)</a></td>
+	<td class="summary">Creates a new Map from a map-formatted array.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map.fromPairs">Map.fromPairs(collection)</a></td>
+	<td class="summary">Creates a new Map from a map-formatted <a href="../classes/Collection.html#">Collection</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map.fromTable">Map.fromTable(table)</a></td>
+	<td class="summary">Creates a new Map from a map-formatted table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map.new">Map.new()</a></td>
+	<td class="summary">Creates a new Map interface instance.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Map:Add">Map:Add(item)</a></td>
+	<td class="summary">Adds an item to the Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:AddAll">Map:AddAll(items)</a></td>
+	<td class="summary">Adds all provided items to the Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Clear">Map:Clear()</a></td>
+	<td class="summary">Removes everything from the Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Contains">Map:Contains(item)</a></td>
+	<td class="summary">Determines whether the Map contains an item.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ContainsAll">Map:ContainsAll(items)</a></td>
+	<td class="summary">Determines whether the Map contains all of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ContainsAllKeys">Map:ContainsAllKeys(keys)</a></td>
+	<td class="summary">Determines whether the Map contains all of the provided keys.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ContainsAllValues">Map:ContainsAllValues(values)</a></td>
+	<td class="summary">Determines whether the Map contains all of the provided values.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ContainsAny">Map:ContainsAny(items)</a></td>
+	<td class="summary">Determines whether the Map contains any of the provided items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ContainsAnyKeys">Map:ContainsAnyKeys(keys)</a></td>
+	<td class="summary">Determines whether the Map contains any of the provided keys.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ContainsAnyValues">Map:ContainsAnyValues(values)</a></td>
+	<td class="summary">Determines whether the Map contains any of the provided values.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ContainsKey">Map:ContainsKey(key)</a></td>
+	<td class="summary">Determines whether the Map contains a key.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ContainsValue">Map:ContainsValue(value)</a></td>
+	<td class="summary">Determines whether the Map contains a value.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Count">Map:Count()</a></td>
+	<td class="summary">Gets the number of items in the Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Empty">Map:Empty()</a></td>
+	<td class="summary">Determines whether the Map contains no elements.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Enumerator">Map:Enumerator()</a></td>
+	<td class="summary">Creates an enumerator for the Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Get">Map:Get(key)</a></td>
+	<td class="summary">Gets the value of the specified key.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Keys">Map:Keys()</a></td>
+	<td class="summary">Creates a <a href="../classes/Collection.html#">Collection</a> of this Map's keys.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Pairs">Map:Pairs()</a></td>
+	<td class="summary">Creates a <a href="../classes/Collection.html#">Collection</a> of this Map's key value pairs.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Remove">Map:Remove(item)</a></td>
+	<td class="summary">Removes the specified item from the Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:RemoveAll">Map:RemoveAll(items)</a></td>
+	<td class="summary">Removes all provided items from the Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:RetainAll">Map:RetainAll(items)</a></td>
+	<td class="summary">Removes all items except those provided from the Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Set">Map:Set(key, value)</a></td>
+	<td class="summary">Sets the value of the specified key.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ToArray">Map:ToArray()</a></td>
+	<td class="summary">Creates a new array-indexed table of this Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:ToTable">Map:ToTable()</a></td>
+	<td class="summary">Creates a new table of this Map.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Map:Values">Map:Values()</a></td>
+	<td class="summary">Creates a <a href="../classes/Collection.html#">Collection</a> of this Map's values.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "Map.fromArray"></a>
+    <strong>Map.fromArray(array)</strong>
+    </dt>
+    <dd>
+    Creates a new Map from a map-formatted array.
+ This constructor creates a new Map copy of an array of key value pairs. A
+ typical map-formatted array consists of key value pairs in the indices of
+ array. Each key value pair should be a table with index 1 as the key of the
+ pair and index 2 as the value of the pair.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">array</span>
+         the map-formatted array to copy from
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new Map
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map.fromPairs"></a>
+    <strong>Map.fromPairs(collection)</strong>
+    </dt>
+    <dd>
+    Creates a new Map from a map-formatted <a href="../classes/Collection.html#">Collection</a>.
+ This constructor creates a new Map copy of a Collection of key value pairs.
+ A typical map-formatted Collection consists of keys value pairs. Each key
+ value pair should be a table with index 1 as the key of the pair and index 2
+ as the value of the pair.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">collection</span>
+         the map-formatted <a href="../classes/Collection.html#">Collection</a> to copy from
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new Map
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map.fromTable"></a>
+    <strong>Map.fromTable(table)</strong>
+    </dt>
+    <dd>
+    Creates a new Map from a map-formatted table.
+ This constructor creates a new Map copy of the table using its keys. A
+ typical map-formatted table consists of keys that have a non-nil value.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+         the map-formatted table to copy from
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new Map
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map.new"></a>
+    <strong>Map.new()</strong>
+    </dt>
+    <dd>
+    Creates a new Map interface instance.
+ This should only be used when implementing a new Map.
+
+    </ul>
+    </ul>
+    </ul>
+    <h3>Access:</h3>
+    <ul>
+         private
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the new Map interface
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Map:Add"></a>
+    <strong>Map:Add(item)</strong>
+    </dt>
+    <dd>
+    Adds an item to the Map. </p>
+
+<p> This method is optional. All Map implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Map.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Map changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:AddAll"></a>
+    <strong>Map:AddAll(items)</strong>
+    </dt>
+    <dd>
+    Adds all provided items to the Map. </p>
+
+<p> This method is optional. All Map implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Map.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to add to this Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Map changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Clear"></a>
+    <strong>Map:Clear()</strong>
+    </dt>
+    <dd>
+    Removes everything from the Map. </p>
+
+<p> This method is optional. All Map implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Map.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Contains"></a>
+    <strong>Map:Contains(item)</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains an item.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to locate in the Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the item is in the Map, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ContainsAll"></a>
+    <strong>Map:ContainsAll(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains all of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all items are in the Map, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ContainsAllKeys"></a>
+    <strong>Map:ContainsAllKeys(keys)</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains all of the provided keys.
+ Checks for keys provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">keys</span>
+         the <a href="../classes/Collection.html#">Collection</a> of keys to locate in this Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all keys are in the Map, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ContainsAllValues"></a>
+    <strong>Map:ContainsAllValues(values)</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains all of the provided values.
+ Checks for values provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">values</span>
+         the <a href="../classes/Collection.html#">Collection</a> of values to locate in this Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if all values are in the Map, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ContainsAny"></a>
+    <strong>Map:ContainsAny(items)</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains any of the provided items.
+ Checks for items provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to locate in this Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any items are in the Map, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ContainsAnyKeys"></a>
+    <strong>Map:ContainsAnyKeys(keys)</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains any of the provided keys.
+ Checks for keys provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">keys</span>
+         the <a href="../classes/Collection.html#">Collection</a> of keys to locate in this Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any keys are in the Map, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ContainsAnyValues"></a>
+    <strong>Map:ContainsAnyValues(values)</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains any of the provided values.
+ Checks for values provided in another <a href="../classes/Collection.html#">Collection</a> in an arbitrary,
+ deterministic order. The order is the same as the order of enumeration.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">values</span>
+         the <a href="../classes/Collection.html#">Collection</a> of values to locate in this Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if any values are in the Map, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ContainsKey"></a>
+    <strong>Map:ContainsKey(key)</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains a key.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         the key to locate in the Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the key is in the Map, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ContainsValue"></a>
+    <strong>Map:ContainsValue(value)</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains a value.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+         the value to locate in the Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the value is in the Map, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Count"></a>
+    <strong>Map:Count()</strong>
+    </dt>
+    <dd>
+    Gets the number of items in the Map.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the number of items
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Empty"></a>
+    <strong>Map:Empty()</strong>
+    </dt>
+    <dd>
+    Determines whether the Map contains no elements.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Map empty, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Enumerator"></a>
+    <strong>Map:Enumerator()</strong>
+    </dt>
+    <dd>
+    Creates an enumerator for the Map.
+ The enumerator can be used directly in a generic for loop similar to pairs
+ or ipairs.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Enumerable.html#">Enumerable</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        the enumerator generator</li>
+        <li>
+        the invariant state</li>
+        <li>
+        the control variable state</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Get"></a>
+    <strong>Map:Get(key)</strong>
+    </dt>
+    <dd>
+    Gets the value of the specified key.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         the key to get
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the value associated with the key
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Keys"></a>
+    <strong>Map:Keys()</strong>
+    </dt>
+    <dd>
+    Creates a <a href="../classes/Collection.html#">Collection</a> of this Map's keys.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the <a href="../classes/Collection.html#">Collection</a> of keys
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Pairs"></a>
+    <strong>Map:Pairs()</strong>
+    </dt>
+    <dd>
+    Creates a <a href="../classes/Collection.html#">Collection</a> of this Map's key value pairs.
+ Index 1 of each pair is the key and index 2 of each pair is the value.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the <a href="../classes/Collection.html#">Collection</a> of key value pairs
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Remove"></a>
+    <strong>Map:Remove(item)</strong>
+    </dt>
+    <dd>
+    Removes the specified item from the Map. </p>
+
+<p> This method is optional. All Map implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Map.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         the item to remove from the Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Map changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:RemoveAll"></a>
+    <strong>Map:RemoveAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all provided items from the Map.
+ Removes each instance of a provided item.</p>
+
+<p> This method is optional. All Map implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Map.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to remove from this Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Map changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:RetainAll"></a>
+    <strong>Map:RetainAll(items)</strong>
+    </dt>
+    <dd>
+    Removes all items except those provided from the Map.
+ Retains only the items contained in the specified <a href="../classes/Collection.html#">Collection</a>. If there are
+ duplicates they are all kept.</p>
+
+<p> This method is optional. All Map implementations should attempt to
+ implement this method, but some may be unable to do so or may need to
+ impose additional conditions to do so.</p>
+
+<p> This method should always be overridden regardless of implementation. If
+ unimplemented, it should return an error specific to the optional
+ functionality that can't be provided by this Map.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+         the <a href="../classes/Collection.html#">Collection</a> of items to retain in this Map
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the Map changed as a result, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Set"></a>
+    <strong>Map:Set(key, value)</strong>
+    </dt>
+    <dd>
+    Sets the value of the specified key.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         the key to set
+        </li>
+        <li><span class="parameter">value</span>
+         the value to set
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the value of the key changed, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ToArray"></a>
+    <strong>Map:ToArray()</strong>
+    </dt>
+    <dd>
+    Creates a new array-indexed table of this Map.
+ Creates an array of key value pairs. Index 1 of each pair is the key and
+ index 2 of each pair is the value.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the array-indexed table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:ToTable"></a>
+    <strong>Map:ToTable()</strong>
+    </dt>
+    <dd>
+    Creates a new table of this Map.
+ The indices of the table are the keys of the Map. The only values of the
+ table are the associated values of each key.
+
+    <h3>Inherited from:</h3>
+    <ul>
+         <a href="../classes/Collection.html#">Collection</a>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Map:Values"></a>
+    <strong>Map:Values()</strong>
+    </dt>
+    <dd>
+    Creates a <a href="../classes/Collection.html#">Collection</a> of this Map's values.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        the <a href="../classes/Collection.html#">Collection</a> of values
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-04-11 21:43:16 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
