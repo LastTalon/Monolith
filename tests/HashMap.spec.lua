@@ -1,9 +1,9 @@
 --- Tests for the @{HashMap} class.
 
 return function()
-	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
-	local HashMap = require(module:WaitForChild("HashMap"))
-	local ArrayList = require(module:WaitForChild("ArrayList"))
+	local module = game:GetService("ReplicatedStorage").Monolith
+	local HashMap = require(module.HashMap)
+	local ArrayList = require(module.ArrayList)
 
 	describe("Constructor", function()
 		it("should create an empty HashMap", function()
@@ -32,7 +32,7 @@ return function()
 			end
 		end)
 
-		it("should error when attempting to create a map from a non-table", function()
+		it("should error when attempting to create a HashMap from a non-table", function()
 			expect(function()
 				HashMap.new(true)
 			end).to.throw("Cannot construct HashMap from type boolean.")
@@ -87,17 +87,17 @@ return function()
 	describe("Collection Interface", function()
 		describe("Required Methods", function()
 			describe("Contains", function()
-				it("should not find an element when empty", function()
+				it("should not find any element when empty", function()
 					local map = HashMap.new()
 					expect(map:Contains(0)).to.equal(false)
 				end)
 
-				it("should find an element when the element exists", function()
+				it("should find an element when that element exists", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(map:Contains(1)).to.equal(true)
 				end)
 
-				it("should not find an element when the element does not exist", function()
+				it("should not find an element when that element does not exist", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(map:Contains(0)).to.equal(false)
 				end)
@@ -130,13 +130,13 @@ return function()
 					expect(map:ContainsAll(contained)).to.equal(false)
 				end)
 
-				it("should find all 0 elements when the provided collection is empty", function()
+				it("should find all zero elements when the provided Collection is empty", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local contained = HashMap.new()
 					expect(map:ContainsAll(contained)).to.equal(true)
 				end)
 
-				it("should find all elements when the elements exist", function()
+				it("should find all elements when all of the elements exist", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local contained = HashMap.fromTable({
 						first = 1,
@@ -148,7 +148,7 @@ return function()
 					expect(map:ContainsAll(contained)).to.equal(true)
 				end)
 
-				it("should find a single element when it exists", function()
+				it("should find one element when it exists", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local contained = HashMap.fromTable({
 						third = 3,
@@ -168,7 +168,7 @@ return function()
 					expect(map:ContainsAll(contained)).to.equal(false)
 				end)
 
-				it("should not find a single element when it does not exist", function()
+				it("should not find one element when it does not exist", function()
 					local map = HashMap.new({ 1, 2, 4, 5 })
 					local contained = HashMap.fromTable({
 						third = 3,
@@ -176,7 +176,7 @@ return function()
 					expect(map:ContainsAll(contained)).to.equal(false)
 				end)
 
-				it("should not find elements until they are added", function()
+				it("should not find all elements until they are added", function()
 					local map = HashMap.new()
 					local contained = HashMap.fromTable({
 						first = 1,
@@ -217,7 +217,7 @@ return function()
 					expect(map:ContainsAny(contained)).to.equal(false)
 				end)
 
-				it("should not find anything when the provided collection is empty", function()
+				it("should not find any element when the provided Collection is empty", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local contained = HashMap.new()
 					expect(map:ContainsAny(contained)).to.equal(false)
@@ -235,7 +235,7 @@ return function()
 					expect(map:ContainsAny(contained)).to.equal(true)
 				end)
 
-				it("should find a single element when it exists", function()
+				it("should find one element when it exists", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local contained = HashMap.fromTable({
 						third = 3,
@@ -243,7 +243,7 @@ return function()
 					expect(map:ContainsAny(contained)).to.equal(true)
 				end)
 
-				it("should not find some elements when one does not exist", function()
+				it("should not find some elements when only one does not exist", function()
 					local map = HashMap.new({ 1, 2, 4, 5 })
 					local contained = HashMap.fromTable({
 						first = 1,
@@ -255,7 +255,7 @@ return function()
 					expect(map:ContainsAny(contained)).to.equal(true)
 				end)
 
-				it("should not find a single element when it does not exist", function()
+				it("should not find one element when it does not exist", function()
 					local map = HashMap.new({ 1, 2, 4, 5 })
 					local contained = HashMap.fromTable({
 						third = 3,
@@ -297,12 +297,12 @@ return function()
 					expect(map:Count()).to.equal(0)
 				end)
 
-				it("should count the number of elements in the map", function()
+				it("should count the number of elements in the HashMap", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(map:Count()).to.equal(5)
 				end)
 
-				it("should count new elements as they are added", function()
+				it("should count new elements when they are added", function()
 					local map = HashMap.new()
 					local total = 10
 					expect(map:Count()).to.equal(0)
@@ -341,7 +341,7 @@ return function()
 					expect(map:Empty()).to.equal(true)
 				end)
 
-				it("should not be empty with a single element", function()
+				it("should not be empty with one element", function()
 					local map = HashMap.new({ 1 })
 					expect(map:Empty()).to.equal(false)
 				end)
@@ -383,7 +383,7 @@ return function()
 					expect(map:ToArray()).to.be.a("table")
 				end)
 
-				it("should create a table of size Count", function()
+				it("should create a table of the same size", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(#map:ToArray()).to.equal(map:Count())
 				end)
@@ -393,7 +393,7 @@ return function()
 					expect(#map:ToArray()).to.equal(0)
 				end)
 
-				it("should create a table with the same elements", function()
+				it("should create a table with the same elements and order of enumeration", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(#map:ToArray()).to.equal(map:Count())
 					for _, v in ipairs(map:ToArray()) do
@@ -418,7 +418,7 @@ return function()
 					expect(map:ToTable()).to.be.a("table")
 				end)
 
-				it("should create a table of size Count", function()
+				it("should create a table of the same size", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(#map:ToTable()).to.equal(map:Count())
 				end)
@@ -496,7 +496,7 @@ return function()
 					expect(map:Count()).to.equal(5)
 				end)
 
-				it("should add a single element when empty", function()
+				it("should add one element when empty", function()
 					local map = HashMap.new()
 					local add = HashMap.fromTable({
 						first = 1,
@@ -518,7 +518,7 @@ return function()
 					expect(map:Count()).to.equal(10)
 				end)
 
-				it("should add a single element when not empty", function()
+				it("should add one element when not empty", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local add = HashMap.fromTable({
 						first = 6,
@@ -539,7 +539,7 @@ return function()
 					expect(map:AddAll(add)).to.equal(true)
 				end)
 
-				it("should return true when adding a single element", function()
+				it("should return true when adding one element", function()
 					local map = HashMap.new()
 					local add = HashMap.fromTable({
 						first = 6,
@@ -559,7 +559,7 @@ return function()
 					expect(map:AddAll(add)).to.equal(false)
 				end)
 
-				it("should return false when not adding a single elements", function()
+				it("should return false when not adding one element", function()
 					local map = HashMap.new({ 6, 7, 8, 9, 10 })
 					local add = HashMap.fromTable({
 						first = 6,
@@ -593,7 +593,7 @@ return function()
 					expect(map:Count()).to.equal(1)
 				end)
 
-				it("should not add a single duplicate element", function()
+				it("should not add one duplicate element", function()
 					local map = HashMap.new({ 1 })
 					local add = HashMap.fromTable({
 						first = 1,
@@ -604,7 +604,7 @@ return function()
 			end)
 
 			describe("Clear", function()
-				it("should be able to clear all elements", function()
+				it("should clear all elements", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(map:Empty()).to.equal(false)
 					map:Clear()
@@ -617,7 +617,7 @@ return function()
 					expect(map:Empty()).to.equal(true)
 				end)
 
-				it("should clear with a single element", function()
+				it("should clear with one element", function()
 					local map = HashMap.new({ 1 })
 					map:Clear()
 					expect(map:Empty()).to.equal(true)
@@ -643,24 +643,24 @@ return function()
 					expect(map:Remove(1)).to.equal(false)
 				end)
 
-				it("should remove with single element", function()
+				it("should remove one element", function()
 					local map = HashMap.new({ 1 })
 					map:Remove(1)
 					expect(map:Count()).to.equal(0)
 				end)
 
-				it("should return true when removing with a single element", function()
+				it("should return true when removing one element", function()
 					local map = HashMap.new({ 1 })
 					expect(map:Remove(1)).to.equal(true)
 				end)
 
-				it("should find and remove an element", function()
+				it("should remove an element from many", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					map:Remove(3)
 					expect(map:Count()).to.equal(4)
 				end)
 
-				it("should return true when finding and removing an element", function()
+				it("should return true when removing an element from many", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(map:Remove(3)).to.equal(true)
 				end)
@@ -692,40 +692,40 @@ return function()
 					expect(map:RemoveAll(remove)).to.equal(false)
 				end)
 
-				it("should remove with a single element", function()
+				it("should remove one element", function()
 					local map = HashMap.new({ 1 })
 					local remove = HashMap.new({ 1 })
 					map:RemoveAll(remove)
 					expect(map:Count()).to.equal(0)
 				end)
 
-				it("should return true when removing with a single element", function()
+				it("should return true when removing one element", function()
 					local map = HashMap.new({ 1 })
 					local remove = HashMap.new({ 1 })
 					expect(map:RemoveAll(remove)).to.equal(true)
 				end)
 
-				it("should remove when there are excess elements to remove", function()
+				it("should remove with excess elements", function()
 					local map = HashMap.new({ 1 })
 					local remove = HashMap.new({ 1, 2, 3, 4, 5 })
 					map:RemoveAll(remove)
 					expect(map:Count()).to.equal(0)
 				end)
 
-				it("should return true when removing with excess", function()
+				it("should return true when removing with excess elements", function()
 					local map = HashMap.new({ 1 })
 					local remove = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(map:RemoveAll(remove)).to.equal(true)
 				end)
 
-				it("should find and remove a single element", function()
+				it("should remove one element from many", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local remove = HashMap.new({ 1 })
 					map:RemoveAll(remove)
 					expect(map:Count()).to.equal(4)
 				end)
 
-				it("should return true when removing a single element", function()
+				it("should return true when removing one element from many", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local remove = HashMap.new({ 1 })
 					expect(map:RemoveAll(remove)).to.equal(true)
@@ -744,7 +744,7 @@ return function()
 					expect(map:RemoveAll(remove)).to.equal(false)
 				end)
 
-				it("should find and remove multiple elements", function()
+				it("should remove multiple elements", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local remove = HashMap.new({ 1, 2, 3, 4, 5 })
 					map:RemoveAll(remove)
@@ -773,74 +773,68 @@ return function()
 					expect(map:RetainAll(retain)).to.equal(false)
 				end)
 
-				it("should retain with a single element", function()
+				it("should retain one element", function()
 					local map = HashMap.new({ 1 })
 					local retain = HashMap.new({ 1 })
 					map:RetainAll(retain)
 					expect(map:Count()).to.equal(1)
 				end)
 
-				it("should return false when retaining with a single element", function()
+				it("should return false when retaining one element", function()
 					local map = HashMap.new({ 1 })
 					local retain = HashMap.new({ 1 })
 					expect(map:RetainAll(retain)).to.equal(false)
 				end)
 
-				it("should retain when there are excess elements to retain", function()
+				it("should retain with excess elements to retain", function()
 					local map = HashMap.new({ 1 })
 					local retain = HashMap.new({ 1, 2, 3, 4, 5 })
 					map:RetainAll(retain)
 					expect(map:Count()).to.equal(1)
 				end)
 
-				it("should return false when retaining with excess elements", function()
+				it("should return false when retaining with excess elements to retain", function()
 					local map = HashMap.new({ 1 })
 					local retain = HashMap.new({ 1, 2, 3, 4, 5 })
 					expect(map:RetainAll(retain)).to.equal(false)
 				end)
 
-				it(
-					"should retain no elements when retaining a single element which does not match a single element",
-					function()
-						local map = HashMap.new({ 1 })
-						local retain = HashMap.new({ 0 })
-						map:RetainAll(retain)
-						expect(map:Count()).to.equal(0)
-					end
-				)
+				it("should not retain one element that does not match", function()
+					local map = HashMap.new({ 1 })
+					local retain = HashMap.new({ 0 })
+					map:RetainAll(retain)
+					expect(map:Count()).to.equal(0)
+				end)
 
-				it(
-					"should return true when not retaining a single element which does not match a single element",
-					function()
-						local map = HashMap.new({ 1 })
-						local retain = HashMap.new({ 0 })
-						expect(map:RetainAll(retain)).to.equal(true)
-					end
-				)
+				it("should return true when not retaining one element that does not match", function()
+					local map = HashMap.new({ 1 })
+					local retain = HashMap.new({ 0 })
+					expect(map:RetainAll(retain)).to.equal(true)
+				end)
 
-				it("should retain a single element from many", function()
+				it("should retain one element from many", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local retain = HashMap.new({ 3 })
 					map:RetainAll(retain)
 					expect(map:Count()).to.equal(1)
 				end)
 
-				it("should return true when retaining a single element from many", function()
+				it("should return true when retaining one element from many", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local retain = HashMap.new({ 3 })
 					expect(map:RetainAll(retain)).to.equal(true)
 				end)
 
-				it("should retain no elements when a single element does not match", function()
+				it("should retain no elements when one element does not match", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local retain = HashMap.new({ 6 })
 					map:RetainAll(retain)
 					expect(map:Count()).to.equal(0)
 				end)
 
-				it("should return true when not retaining a single element which does not match", function()
+				it("should return true when not retaining one element", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					local retain = HashMap.new({ 3 })
+					local retain = HashMap.new({ 6 })
 					expect(map:RetainAll(retain)).to.equal(true)
 				end)
 
@@ -857,14 +851,14 @@ return function()
 					expect(map:RetainAll(retain)).to.equal(true)
 				end)
 
-				it("should retain multiple elements when attempting to retain excess", function()
+				it("should retain multiple elements when attempting to retain excess elements", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local retain = HashMap.new({ 0, 1, 3 })
 					map:RetainAll(retain)
 					expect(map:Count()).to.equal(2)
 				end)
 
-				it("should return true when attemping to retain with excess", function()
+				it("should return true when attemping to retain with excess elements", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
 					local retain = HashMap.new({ 0, 1, 3 })
 					expect(map:RetainAll(retain)).to.equal(true)
@@ -899,7 +893,7 @@ return function()
 		end)
 	end)
 
-	describe("HashMap Interface", function()
+	describe("Map Interface", function()
 		describe("Required Methods", function()
 			describe("fromTable", function()
 				it("should error if a table is not provided", function()
@@ -1194,7 +1188,7 @@ return function()
 			end)
 
 			describe("ContainsAnyKeys", function()
-				it("should be the same as ContainsAll", function()
+				it("should be the same as ContainsAny", function()
 					expect(HashMap.ContainsAnyKeys).to.equal(HashMap.ContainsAny)
 				end)
 			end)
@@ -1257,7 +1251,7 @@ return function()
 					expect(map:ContainsAllValues(contained)).to.equal(false)
 				end)
 
-				it("should find all 0 values when the provided collection is empty", function()
+				it("should find all zero values when the provided Collection is empty", function()
 					local map = HashMap.fromTable({
 						first = 1,
 						second = 2,
@@ -1269,7 +1263,7 @@ return function()
 					expect(map:ContainsAllValues(contained)).to.equal(true)
 				end)
 
-				it("should find all values when the elements exist", function()
+				it("should find all values when all of the elements exist", function()
 					local map = HashMap.fromTable({
 						first = 1,
 						second = 2,
@@ -1287,7 +1281,7 @@ return function()
 					expect(map:ContainsAllValues(contained)).to.equal(true)
 				end)
 
-				it("should find a single value when it exists", function()
+				it("should find one value when it exists", function()
 					local map = HashMap.fromTable({
 						first = 1,
 						second = 2,
@@ -1318,7 +1312,7 @@ return function()
 					expect(map:ContainsAllValues(contained)).to.equal(false)
 				end)
 
-				it("should not find a single value when it does not exist", function()
+				it("should not find one value when it does not exist", function()
 					local map = HashMap.fromTable({
 						first = 1,
 						second = 2,
@@ -1378,7 +1372,7 @@ return function()
 					expect(map:ContainsAnyValues(contained)).to.equal(false)
 				end)
 
-				it("should not find anything when the provided collection is empty", function()
+				it("should not find anything when the provided Collection is empty", function()
 					local map = HashMap.fromTable({
 						first = 1,
 						second = 2,
@@ -1408,7 +1402,7 @@ return function()
 					expect(map:ContainsAnyValues(contained)).to.equal(true)
 				end)
 
-				it("should find a single value when it exists", function()
+				it("should find one value when it exists", function()
 					local map = HashMap.fromTable({
 						first = 1,
 						second = 2,
@@ -1422,7 +1416,7 @@ return function()
 					expect(map:ContainsAnyValues(contained)).to.equal(true)
 				end)
 
-				it("should not find some values when one does not exist", function()
+				it("should find some values when only one does not exist", function()
 					local map = HashMap.fromTable({
 						first = 1,
 						second = 2,
@@ -1439,7 +1433,7 @@ return function()
 					expect(map:ContainsAnyValues(contained)).to.equal(true)
 				end)
 
-				it("should not find a single value when it does not exist", function()
+				it("should not find one value when it does not exist", function()
 					local map = HashMap.fromTable({
 						first = 1,
 						second = 2,
@@ -1493,7 +1487,7 @@ return function()
 					expect(keys:Empty()).to.equal(true)
 				end)
 
-				it("should provide a Set with the element with a single element", function()
+				it("should provide a Set with the element with one element", function()
 					local map = HashMap.new({ 1 })
 					local keys = map:Keys()
 					expect(keys:Count()).to.equal(1)
@@ -1519,7 +1513,7 @@ return function()
 					expect(values:Empty()).to.equal(true)
 				end)
 
-				it("should provide a Collection with the value with a single element", function()
+				it("should provide a Collection with the value with one element", function()
 					local map = HashMap.fromTable({
 						first = 1,
 					})
@@ -1574,7 +1568,7 @@ return function()
 					expect(pairs:Empty()).to.equal(true)
 				end)
 
-				it("should provide a Collection with the pair with a single element", function()
+				it("should provide a Collection with the pair with one element", function()
 					local map = HashMap.fromTable({
 						first = 1,
 					})
@@ -1676,7 +1670,7 @@ return function()
 					expect(map:Get("first")).to.equal(1)
 				end)
 
-				it("should set a new key with a single element", function()
+				it("should set a new key with one element", function()
 					local map = HashMap.fromTable({
 						first = 1,
 					})
@@ -1685,7 +1679,7 @@ return function()
 					expect(map:Get("second")).to.equal(2)
 				end)
 
-				it("should set an existing key with a single element", function()
+				it("should set an existing key with one element", function()
 					local map = HashMap.fromTable({
 						first = 1,
 					})
