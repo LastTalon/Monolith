@@ -1,8 +1,8 @@
---- Tests for the Set interface.
+--- Tests for the @{Set} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
-	local Set = require(module:WaitForChild("Set"))
+	local module = game:GetService("ReplicatedStorage").Monolith
+	local Set = require(module.Set)
 
 	describe("Constructor", function()
 		it("should be able to be instantiated", function()

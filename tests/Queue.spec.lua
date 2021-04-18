@@ -1,8 +1,8 @@
 --- Tests for the @{Queue} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
-	local Queue = require(module:WaitForChild("Queue"))
+	local module = game:GetService("ReplicatedStorage").Monolith
+	local Queue = require(module.Queue)
 
 	describe("Constructor", function()
 		it("should be able to be instantiated", function()

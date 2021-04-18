@@ -1,11 +1,8 @@
---- Tests for the Stack interface.
---
--- @version 0.1.0, 2020-12-265
--- @since 0.1
+--- Tests for the @{Stack} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
-	local Stack = require(module:WaitForChild("Stack"))
+	local module = game:GetService("ReplicatedStorage").Monolith
+	local Stack = require(module.Stack)
 
 	describe("Constructor", function()
 		it("should be able to be instantiated", function()

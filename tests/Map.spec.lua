@@ -1,8 +1,8 @@
---- Tests for the Map interface.
+--- Tests for the @{Map} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
-	local Map = require(module:WaitForChild("Map"))
+	local module = game:GetService("ReplicatedStorage").Monolith
+	local Map = require(module.Map)
 
 	describe("Constructor", function()
 		it("should be able to be instantiated", function()

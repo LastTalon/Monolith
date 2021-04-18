@@ -1,11 +1,8 @@
---- Tests for the Deque interface.
---
--- @version 0.1.0, 2020-12-22
--- @since 0.1
+--- Tests for the @{Deque} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage"):WaitForChild("Monolith")
-	local Deque = require(module:WaitForChild("Deque"))
+	local module = game:GetService("ReplicatedStorage").Monolith
+	local Deque = require(module.Deque)
 
 	describe("Constructor", function()
 		it("should be able to be instantiated", function()
