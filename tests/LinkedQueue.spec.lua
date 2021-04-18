@@ -330,7 +330,7 @@ return function()
 				it("should create a table with the same elements and order of enumeration", function()
 					local queue = LinkedQueue.new({ 1, 2, 3, 4, 5 })
 					local array = queue:ToArray()
-					expect(array).to.equal(queue:Count())
+					expect(#array).to.equal(queue:Count())
 					for _, v in ipairs(array) do
 						expect(v).to.equal(queue:Shift())
 					end

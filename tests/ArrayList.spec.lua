@@ -683,7 +683,7 @@ return function()
 					expect(list:Count()).to.equal(1)
 				end)
 
-				it("should not retain one element which does not match", function()
+				it("should return false when retaining with excess elements to retain", function()
 					local list = ArrayList.new({ 1 })
 					local retain = ArrayList.new({ 1, 2, 3, 4, 5 })
 					expect(list:RetainAll(retain)).to.equal(false)
