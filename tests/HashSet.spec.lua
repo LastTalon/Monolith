@@ -330,8 +330,9 @@ return function()
 
 				it("should create a table with the same elements and order of enumeration", function()
 					local set = HashSet.new({ 1, 2, 3, 4, 5 })
-					expect(#set:ToArray()).to.equal(set:Count())
-					for _, v in ipairs(set:ToArray()) do
+					local array = set:ToArray()
+					expect(#array).to.equal(set:Count())
+					for _, v in ipairs(array) do
 						expect(set:Contains(v)).to.equal(true)
 					end
 				end)

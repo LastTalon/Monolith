@@ -326,8 +326,9 @@ return function()
 
 				it("should create a table with the same elements and order of enumeration", function()
 					local list = ArrayList.new({ 1, 2, 3, 4, 5 })
-					expect(#list:ToArray()).to.equal(list:Count())
-					for i, v in ipairs(list:ToArray()) do
+					local array = list:ToArray()
+					expect(#array).to.equal(list:Count())
+					for i, v in ipairs(array) do
 						expect(v).to.equal(list:Get(i))
 					end
 				end)

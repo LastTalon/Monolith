@@ -329,8 +329,9 @@ return function()
 
 				it("should create a table with the same elements and order of enumeration", function()
 					local deque = LinkedDeque.new({ 1, 2, 3, 4, 5 })
-					expect(#deque:ToArray()).to.equal(deque:Count())
-					for _, v in ipairs(deque:ToArray()) do
+					local array = deque:ToArray()
+					expect(#array).to.equal(deque:Count())
+					for _, v in ipairs(array) do
 						expect(v).to.equal(deque:Shift())
 					end
 				end)

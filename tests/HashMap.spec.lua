@@ -395,8 +395,9 @@ return function()
 
 				it("should create a table with the same elements and order of enumeration", function()
 					local map = HashMap.new({ 1, 2, 3, 4, 5 })
-					expect(#map:ToArray()).to.equal(map:Count())
-					for _, v in ipairs(map:ToArray()) do
+					local array = map:ToArray()
+					expect(#array).to.equal(map:Count())
+					for _, v in ipairs(array) do
 						expect(map:Contains(v[1])).to.equal(true)
 					end
 				end)
