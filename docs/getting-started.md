@@ -16,13 +16,13 @@ you started quickly.
 
 When using the filesystem the first step is to download Monolith.
 
-The [latest release](https://github.com/LastTalon/Monolith/releases) can be
-downloaded via [GitHub](https://github.com/LastTalon/Monolith).
+The [latest release](https://github.com/IsoLogicGames/Monolith/releases) can be
+downloaded via [GitHub](https://github.com/IsoLogicGames/Monolith).
 Alternatively, if you'd like the latest developement changes or wish to
 contribute you can clone or create a submodule of the repository with git.
 
 ```
-git clone https://github.com/LastTalon/Monolith.git
+git clone https://github.com/IsoLogicGames/Monolith.git
 ```
 
 #### Rojo
@@ -56,7 +56,7 @@ A more basic `.project.json` can also be used to sync Monolith.
 #### Lemur
 
 Monolith is fully compatibile with [Lemur](https://github.com/LPGhatguy/lemur).
-Monolith uses Lemur for testing and this [testing script](https://github.com/LastTalon/Monolith/blob/master/tests/Lemur.server.lua)
+Monolith uses Lemur for testing and this [testing script](https://github.com/IsoLogicGames/Monolith/blob/master/tests/Lemur.server.lua)
 can be used as an example.
 
 Lemur and Monolith can both be loaded from a Lua script:

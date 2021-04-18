@@ -2,11 +2,17 @@
 	<h1>Monolith</h1>
 </div>
 <div align="center">
-	<a href="https://github.com/LastTalon/Monolith/actions">
-		<img src="https://github.com/LastTalon/Monolith/workflows/CI/badge.svg" alt="CI Status">
+	<a href="https://github.com/IsoLogicGames/Monolith/actions/workflows/ci.yaml">
+		<img src="https://github.com/IsoLogicGames/Monolith/actions/workflows/ci.yaml/badge.svg" alt="CI Status">
 	</a>
-	<a href="https://coveralls.io/github/LastTalon/Monolith?branch=master">
-		<img src="https://coveralls.io/repos/github/LastTalon/Monolith/badge.svg?branch=master" alt="Coverage Status">
+	<a href="https://coveralls.io/github/IsoLogicGames/Monolith?branch=master">
+		<img src="https://coveralls.io/repos/github/IsoLogicGames/Monolith/badge.svg?branch=master" alt="Coverage Status">
+	</a>
+	<a href="https://isologicgames.github.io/Monolith/">
+		<img src="https://img.shields.io/badge/docs-website-informational" alt="Documentation">
+	</a>
+	<a href="https://isologicgames.github.io/Monolith/api/">
+		<img src="https://img.shields.io/badge/docs-api-informational" alt="API Reference">
 	</a>
 </div>
 <br>

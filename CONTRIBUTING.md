@@ -2,7 +2,7 @@
 Contributions to Monolith are always welcome!
 
 We welcome bug reports, suggestions, and code contributions. We want Monolith
-to be a tool everyone feels they can use and be a part of.
+to be a library everyone feels they can use and be a part of.
 
 ## Code of Conduct
 Monolith and those participating in any of its spaces are governed by its
@@ -12,7 +12,7 @@ to uphold this code. Report any unacceptable behavior to
 
 ## Reporting Bugs
 If you found a bug, please let us know about it by submitting a GitHub
-[issue](https://github.com/LastTalon/Monolith/issues).
+[issue](https://github.com/IsoLogicGames/Monolith/issues).
 
 Be sure to:
 * Check that an issue hasn't already been submitted about it. If you find one,
@@ -27,13 +27,13 @@ Be sure to:
 Thank you!
 * Open a pull request against the `master` branch
 * Clearly describe the problem and solution in the pull request
-* Include any relevant [issue](https://github.com/LastTalon/Monolith/issues)
+* Include any relevant [issue](https://github.com/IsoLogicGames/Monolith/issues)
 	number
 * Be sure to check our [style guide](#style-guide)
 
 ### Did you intend to add a new feature or change an existing one?
 Great!
-* Create an [issue](https://github.com/LastTalon/Monolith/issues) suggesting
+* Create an [issue](https://github.com/IsoLogicGames/Monolith/issues) suggesting
 	the feature. We love when people contribute, but we hate for their effort
 	to be wasted. Discussing the issue ahead of time can ensure the code you
 	write will be accpeted.
