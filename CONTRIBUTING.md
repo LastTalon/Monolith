@@ -36,7 +36,7 @@ Great!
 * Create an [issue](https://github.com/IsoLogicGames/Monolith/issues) suggesting
 	the feature. We love when people contribute, but we hate for their effort
 	to be wasted. Discussing the issue ahead of time can ensure the code you
-	write will be accpeted.
+	write will be accepted.
 * Fork the project, check our [style guide](#style-guide), and start writing
 * Consider opening a draft pull request against `master` right away. This is
 	the best way to discuss the code as you write it.
@@ -45,19 +45,19 @@ Great!
 
 ### Did you already write a new feature or change an existing one?
 We'd love to see it! We're happy you want to contribute, but please be patient
-and understanding with us.
+and understanding.
 * Follow the the instructions outlined in the
 	[previous section](#did-you-intend-to-add-a-new-feature-or-change-an-existing-one).
 	There may be additional work to do.
 * Please await feedback on your suggestion and pull request. If you notice any
 	immediate issues you can resolve before we address them (such as
 	[style issues](#style-guide)) you can continue working on the feature.
-* Next one of two things will happen
+* Next, one of two things will happen
 	* We will notify you you that your feature is accepted and approve your
 		pull request
 	* We will let you know we can't add the feature (we're sorry). It may need
 		to be changed first, or may be incompatible with other design goals.
-* In the future, please start by opening discussion about the suggestion
+* In the future, begin by opening discussion about the suggestion
 
 ### Did you fix something purely cosmetic in the codebase?
 We appreciate your enthusiasm, however cosmetic code patches are unlikely to be
@@ -69,29 +69,19 @@ benefit of the change.
 If you're contributing, please follow our style guide. It maintains the quality
 of our code and helps us work together.
 
+We use [StyLua](https://github.com/JohnnyMorganz/StyLua) v0.5.0 for our
+formatting. All pull requests are automatically checked for correct formatting.
+If your code doesn't match this format you'll be asked to update it to match.
+
 ### Commit Messages
 * Use the present tense
 * Use the imperative mood
-* Reference issues and pull requests
+* Reference issues and pull requests if appropriate
 * Capitalize the subject line and each sentence in the body
 * Avoid ending the subject line with punctuation
 * Avoid exceeding 72 lines
 
 ### Lua
-* Use spaces around operators
-	* `a + b` rather than `a+b`
-* Use spaces after commas (newlines are fine, too)
-	* `{1, 2, 3}` rather than `{1,2,3}`
-* Avoid spaces inside brackets(parentheses, square brackets, curly braces,
-	etc.)
-	* `(a + b)` rather than `( a + b )`
-	* `function(a, b)` rather than `function( a, b )`
-	* `a[b]` rather than `a[ b ]`
-* Avoid spaces between names or the function keyword and associated brackets
-	(such as when calling functions, or indexing tables)
-	* `function a(b)` rather than `function a (b)`
-	* `function(a)` rather than `function (a)`
-	* `a[b]` rather than `a [b]`
 * Include a blank line between functions
 * Use parentheses to improve clarity
 * Indent using tabs, align using spaces
@@ -101,7 +91,7 @@ of our code and helps us work together.
 * Begin names with a capital letter (pascal case) for names that are intended
 	to be global or public
 * Begin names with a lower case letter (dromedary case) for names that are
-	intended to be local or private
+	intended to be local, static, or private
 * Capitalize initialisms and acronyms, except when they are the first word of a
 	name that would start with a lower case letter
 	* `getID` rather than `getId`
@@ -110,10 +100,12 @@ of our code and helps us work together.
 * Document your changes
 
 ## Documentation
-Contributing to our documentation is a huge help. Unfortunately there isn't
-much to our documentation at the moment. We roughly follow
-[LuaDoc](https://keplerproject.github.io/luadoc/) in the source, but we're
-still deciding how to proceed, so we have no generated documentation.
+Contributing to our documentation is a huge help. We use [LuaDoc](https://keplerproject.github.io/luadoc/)
+in the source for our [API reference](https://isologicgames.github.io/Monolith/api/)
+and markdown in the `docs` directory for our [general documentation](https://isologicgames.github.io/Monolith/).
+
+Our documentation is generated and deployed automatically using [LDoc](https://github.com/lunarmodules/LDoc)
+and [mkdocs](https://github.com/mkdocs/mkdocs).
 
 Documentation changes can be submitted the same as any
 [code change](#submitting-changes).
@@ -134,15 +126,3 @@ pull request.
 
 ### Versioning
 Monolith uses [semantic versioning](https://semver.org/).
-* Version tags should be prepended with a `v`
-	* `v0.5.12`
-* The major version should increment when changes break backward compatibility
-	* `v0.5.12` -> `v1.0.0`
-* The minor version should increment when features are added
-	* `v0.5.12` -> `v0.6.0`
-* The patch version should increment when only bug fixes are added
-	* `v0.5.12` -> `v0.5.13`
-* A pre-release version may be included by appending a hyphen followed by
-	dot-separated identifiers
-	* `v0.5.12` -> `v0.6.0-alpha.1`
-	* `v0.5.12` -> `v1.0.0-rc.1`

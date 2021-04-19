@@ -21,32 +21,31 @@
 *[Lemur](https://github.com/LPGhatguy/lemur)* and
 *[Roblox](https://www.roblox.com/)*.
 
-Monolith provides data structures and abstract data types to collect and manage
-data.
-* Create collections of data like Sets, Lists, Maps, Stacks, Multisets, and
-	Arrays
-* Enumerate collections of data easily using for loops
-* Build, transform, and convert data between types to operate efficiently
-* Focus on the important parts of your code rather than the plumbing
+Data structures and abstract data types make managing data simple.
+* Use standard collections such as Lists, Maps, Sets, and Stacks
+* Enumerate data using loops
+* Easily build and transform data
+* Stop focusing on the plumbing
 
 ## Installation
-Monolith uses [Rojo](https://rojo.space/) as a bridge between the filesystem
-and Roblox Studio. If you want to contribute or use Monolith for development,
-install both to get started. The project contains a `default.project.json` that
-can be used by Rojo to generate or sync with a Roblox save file.
+To install Monolith, use a tool such as [Rojo](https://rojo.space/) to sync
+Monolith with your project. Monolith is contained within the `lib` directory
+of this project.
 
-Once the module has been included, simply require the module or individual
-classes from within it. Requiring the module provides an interface to all
-data types and data structures.
+A good place to begin is our [getting started guide](https://isologicgames.github.io/Monolith/getting-started/#installation).
 
 ## Documentation
-The only documentation is currently in the source. This will be changing soon.
+Check the Monolith [documentation](https://isologicgames.github.io/Monolith/)
+website. Our user guide is coming soon.
+
+Monolith has a fully documented [API](https://isologicgames.github.io/Monolith/api/)
+as well.
 
 ## Contributing
 Contributions are welcome, please make a pull request!
 
-Be sure to set up [Rojo](https://rojo.space/) to get started. Check out our
-[contribution guide](CONTRIBUTING.md) for further information.
+Be sure to set up [Rojo](https://rojo.space/) to [get started](https://isologicgames.github.io/Monolith/getting-started/#installation).
+Check out our [contribution guide](CONTRIBUTING.md) for further information.
 
 Please read our [code of conduct](CODE_OF_CONDUCT.md) when getting involved.
 
