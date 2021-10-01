@@ -15,3 +15,6 @@
 # Lua packages
 /lemur*
 /ldoc*
+
+# Wally
+wally.lock
