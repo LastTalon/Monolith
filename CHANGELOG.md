@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog][kac], and this project adheres to
 
 ## [Unreleased]
 
+### Changed
+
+- Updated TestEZ to be a Wally developer dependency. Its no longer a repository
+  submodule.
+
 ## [0.1.1] - 2021-10-01
 
 ### Added
