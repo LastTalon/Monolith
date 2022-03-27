@@ -1,0 +1,21 @@
+{
+  "name": "Monolith Test",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Packages": {
+        "$className": "Folder",
+        "Monolith": {
+          "$path": "lib"
+        },
+        "Tests": {
+          "$path": "tests"
+        }
+      },
+      "DevPackages": {
+        "$path": "DevPackages"
+      }
+    }
+  }
+}
