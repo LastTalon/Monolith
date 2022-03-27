@@ -1,7 +1,7 @@
 --- Tests for the @{List} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local List = require(module.List)
 
 	describe("Constructor", function()

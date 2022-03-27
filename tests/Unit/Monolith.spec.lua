@@ -1,7 +1,7 @@
 --- Tests for the @{Monolith} API.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local Monolith = require(module)
 	local Enumerable = require(module.Enumerable)
 	local Collection = require(module.Collection)

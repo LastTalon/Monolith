@@ -1,7 +1,7 @@
 --- Tests for the @{Collection} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local Collection = require(module.Collection)
 
 	describe("Constructor", function()
