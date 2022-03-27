@@ -12,8 +12,13 @@ The format is based on [Keep a Changelog][kac], and this project adheres to
 
 ### Changed
 
+- Monolith may now use Luau features
 - Updated TestEZ to be a Wally developer dependency. Its no longer a repository
   submodule.
+
+### Removed
+
+- Monolith no longer supports usage through Lemur
 
 ## [0.1.1] - 2021-10-01
 
