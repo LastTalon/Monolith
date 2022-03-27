@@ -20,13 +20,10 @@ local TestEZ = require(ReplicatedStorage:WaitForChild("Tests"):WaitForChild("Tes
 -- unsuccessful, an error message if the tests were not completed
 local function Tests(roots)
 	print()
-	local completed, result = xpcall(
-		function()
-			local results = TestEZ.TestBootstrap:run(roots)
-			return results.failureCount == 0
-		end,
-		debug.traceback
-	)
+	local completed, result = xpcall(function()
+		local results = TestEZ.TestBootstrap:run(roots)
+		return results.failureCount == 0
+	end, debug.traceback)
 	print()
 	return completed, result
 end

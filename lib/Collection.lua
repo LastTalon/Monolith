@@ -24,7 +24,8 @@
 local module = script.Parent
 local Enumerable = require(module:WaitForChild("Enumerable"))
 
-local ErrorOverride = "Abstract method %s must be overridden in first concrete subclass. Called directly from Collection."
+local ErrorOverride =
+	"Abstract method %s must be overridden in first concrete subclass. Called directly from Collection."
 
 local Collection = Enumerable.new()
 

@@ -17,7 +17,8 @@
 local module = script.Parent
 local List = require(module:WaitForChild("List"))
 
-local ErrorOverride = "Abstract method %s must be overridden in first concrete subclass. Called directly from AbstractList."
+local ErrorOverride =
+	"Abstract method %s must be overridden in first concrete subclass. Called directly from AbstractList."
 
 local AbstractList = List.new()
 

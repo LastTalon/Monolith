@@ -62,7 +62,9 @@ return function()
 				local list = AbstractList.new()
 				expect(function()
 					list.Enumerator()
-				end).to.throw("Abstract method Enumerator must be overridden in first concrete subclass. Called directly from AbstractList.")
+				end).to.throw(
+					"Abstract method Enumerator must be overridden in first concrete subclass. Called directly from AbstractList."
+				)
 			end)
 		end)
 	end)
@@ -352,7 +354,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Add()
-					end).to.throw("Abstract method Add must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Add must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -468,7 +472,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Remove()
-					end).to.throw("Abstract method Remove must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Remove must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -734,7 +740,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.First()
-					end).to.throw("Abstract method First must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method First must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -743,7 +751,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Get()
-					end).to.throw("Abstract method Get must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Get must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -752,7 +762,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.IndexOf()
-					end).to.throw("Abstract method IndexOf must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method IndexOf must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -761,7 +773,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Last()
-					end).to.throw("Abstract method Last must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Last must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -770,7 +784,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.LastIndexOf()
-					end).to.throw("Abstract method LastIndexOf must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method LastIndexOf must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -779,7 +795,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Sub()
-					end).to.throw("Abstract method Sub must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Sub must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 		end)
@@ -790,7 +808,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Delete()
-					end).to.throw("Abstract method Delete must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Delete must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -799,7 +819,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Insert()
-					end).to.throw("Abstract method Insert must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Insert must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -808,7 +830,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.InsertAll()
-					end).to.throw("Abstract method InsertAll must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method InsertAll must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -817,7 +841,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Pop()
-					end).to.throw("Abstract method Pop must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Pop must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -826,7 +852,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Push()
-					end).to.throw("Abstract method Push must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Push must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -835,7 +863,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Set()
-					end).to.throw("Abstract method Set must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Set must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -844,7 +874,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Shift()
-					end).to.throw("Abstract method Shift must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Shift must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 
@@ -853,7 +885,9 @@ return function()
 					local list = AbstractList.new()
 					expect(function()
 						list.Unshift()
-					end).to.throw("Abstract method Unshift must be overridden in first concrete subclass. Called directly from AbstractList.")
+					end).to.throw(
+						"Abstract method Unshift must be overridden in first concrete subclass. Called directly from AbstractList."
+					)
 				end)
 			end)
 		end)

@@ -40,15 +40,13 @@ return function()
 				HashSet.new("string")
 			end).to.throw("Cannot construct HashSet from type string.")
 			expect(function()
-				HashSet.new(function()
-				end)
+				HashSet.new(function() end)
 			end).to.throw("Cannot construct HashSet from type function.")
 			expect(function()
 				HashSet.new(Instance.new("Folder"))
 			end).to.throw("Cannot construct HashSet from type userdata.")
 			expect(function()
-				HashSet.new(coroutine.create(function()
-				end))
+				HashSet.new(coroutine.create(function() end))
 			end).to.throw("Cannot construct HashSet from type thread.")
 		end)
 	end)
@@ -794,15 +792,13 @@ return function()
 						HashSet.fromTable("string")
 					end).to.throw("Cannot construct HashSet from type string.")
 					expect(function()
-						HashSet.fromTable(function()
-						end)
+						HashSet.fromTable(function() end)
 					end).to.throw("Cannot construct HashSet from type function.")
 					expect(function()
 						HashSet.fromTable(Instance.new("Folder"))
 					end).to.throw("Cannot construct HashSet from type userdata.")
 					expect(function()
-						HashSet.fromTable(coroutine.create(function()
-						end))
+						HashSet.fromTable(coroutine.create(function() end))
 					end).to.throw("Cannot construct HashSet from type thread.")
 				end)
 
@@ -934,14 +930,11 @@ return function()
 					expect(set:ProperSubsetOf(other)).to.equal(false)
 				end)
 
-				it(
-					"should be false with multiple elements and the other contains exactly the same elements",
-					function()
-						local set = HashSet.new({ 1, 2, 3 })
-						local other = HashSet.new({ 1, 2, 3 })
-						expect(set:ProperSubsetOf(other)).to.equal(false)
-					end
-				)
+				it("should be false with multiple elements and the other contains exactly the same elements", function()
+					local set = HashSet.new({ 1, 2, 3 })
+					local other = HashSet.new({ 1, 2, 3 })
+					expect(set:ProperSubsetOf(other)).to.equal(false)
+				end)
 
 				it(
 					"should be false with multiple elements and the other contains more, but different, elements",
@@ -1020,14 +1013,11 @@ return function()
 					expect(set:ProperSupersetOf(other)).to.equal(true)
 				end)
 
-				it(
-					"should be false with multiple elements and the other contains one different element",
-					function()
-						local set = HashSet.new({ 1, 2, 3, 4, 5 })
-						local other = HashSet.new({ 6 })
-						expect(set:ProperSupersetOf(other)).to.equal(false)
-					end
-				)
+				it("should be false with multiple elements and the other contains one different element", function()
+					local set = HashSet.new({ 1, 2, 3, 4, 5 })
+					local other = HashSet.new({ 6 })
+					expect(set:ProperSupersetOf(other)).to.equal(false)
+				end)
 
 				it("should be true with multiple elements and the other contains one contained element", function()
 					local set = HashSet.new({ 1, 2, 3, 4, 5 })
@@ -1035,14 +1025,11 @@ return function()
 					expect(set:ProperSupersetOf(other)).to.equal(true)
 				end)
 
-				it(
-					"should be false with multiple elements and the other contains exactly the same elements",
-					function()
-						local set = HashSet.new({ 1, 2, 3, 4, 5 })
-						local other = HashSet.new({ 1, 2, 3, 4, 5 })
-						expect(set:ProperSupersetOf(other)).to.equal(false)
-					end
-				)
+				it("should be false with multiple elements and the other contains exactly the same elements", function()
+					local set = HashSet.new({ 1, 2, 3, 4, 5 })
+					local other = HashSet.new({ 1, 2, 3, 4, 5 })
+					expect(set:ProperSupersetOf(other)).to.equal(false)
+				end)
 
 				it("should be false with multiple elements and the other contains different elements", function()
 					local set = HashSet.new({ 1, 2, 3, 4, 5 })
@@ -1050,14 +1037,11 @@ return function()
 					expect(set:ProperSupersetOf(other)).to.equal(false)
 				end)
 
-				it(
-					"should be true with multiple elements and the other contains some of the same elements",
-					function()
-						local set = HashSet.new({ 1, 2, 3, 4, 5 })
-						local other = HashSet.new({ 1, 2, 3 })
-						expect(set:ProperSupersetOf(other)).to.equal(true)
-					end
-				)
+				it("should be true with multiple elements and the other contains some of the same elements", function()
+					local set = HashSet.new({ 1, 2, 3, 4, 5 })
+					local other = HashSet.new({ 1, 2, 3 })
+					expect(set:ProperSupersetOf(other)).to.equal(true)
+				end)
 
 				it("should be false with multiple elements and the other contains more elements", function()
 					local set = HashSet.new({ 1, 2, 3, 4, 5 })
@@ -1130,14 +1114,11 @@ return function()
 					expect(set:SubsetOf(other)).to.equal(false)
 				end)
 
-				it(
-					"should be true with multiple elements and the other contains exactly the same elements",
-					function()
-						local set = HashSet.new({ 1, 2, 3 })
-						local other = HashSet.new({ 1, 2, 3 })
-						expect(set:SubsetOf(other)).to.equal(true)
-					end
-				)
+				it("should be true with multiple elements and the other contains exactly the same elements", function()
+					local set = HashSet.new({ 1, 2, 3 })
+					local other = HashSet.new({ 1, 2, 3 })
+					expect(set:SubsetOf(other)).to.equal(true)
+				end)
 
 				it(
 					"should be false with multiple elements and the other contains more, but different, elements",
@@ -1216,14 +1197,11 @@ return function()
 					expect(set:SupersetOf(other)).to.equal(true)
 				end)
 
-				it(
-					"should be false with multiple elements and the other contains one different element",
-					function()
-						local set = HashSet.new({ 1, 2, 3, 4, 5 })
-						local other = HashSet.new({ 6 })
-						expect(set:SupersetOf(other)).to.equal(false)
-					end
-				)
+				it("should be false with multiple elements and the other contains one different element", function()
+					local set = HashSet.new({ 1, 2, 3, 4, 5 })
+					local other = HashSet.new({ 6 })
+					expect(set:SupersetOf(other)).to.equal(false)
+				end)
 
 				it("should be true with multiple elements and the other contains one contained element", function()
 					local set = HashSet.new({ 1, 2, 3, 4, 5 })
@@ -1231,14 +1209,11 @@ return function()
 					expect(set:SupersetOf(other)).to.equal(true)
 				end)
 
-				it(
-					"should be true with multiple elements and the other contains exactly the same elements",
-					function()
-						local set = HashSet.new({ 1, 2, 3, 4, 5 })
-						local other = HashSet.new({ 1, 2, 3, 4, 5 })
-						expect(set:SupersetOf(other)).to.equal(true)
-					end
-				)
+				it("should be true with multiple elements and the other contains exactly the same elements", function()
+					local set = HashSet.new({ 1, 2, 3, 4, 5 })
+					local other = HashSet.new({ 1, 2, 3, 4, 5 })
+					expect(set:SupersetOf(other)).to.equal(true)
+				end)
 
 				it("should be false with multiple elements and the other contains different elements", function()
 					local set = HashSet.new({ 1, 2, 3, 4, 5 })
@@ -1246,14 +1221,11 @@ return function()
 					expect(set:SupersetOf(other)).to.equal(false)
 				end)
 
-				it(
-					"should be true with multiple elements and the other contains some of the same elements",
-					function()
-						local set = HashSet.new({ 1, 2, 3, 4, 5 })
-						local other = HashSet.new({ 1, 2, 3 })
-						expect(set:SupersetOf(other)).to.equal(true)
-					end
-				)
+				it("should be true with multiple elements and the other contains some of the same elements", function()
+					local set = HashSet.new({ 1, 2, 3, 4, 5 })
+					local other = HashSet.new({ 1, 2, 3 })
+					expect(set:SupersetOf(other)).to.equal(true)
+				end)
 
 				it("should be false with multiple elements and the other contains more elements", function()
 					local set = HashSet.new({ 1, 2, 3, 4, 5 })
