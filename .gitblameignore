@@ -1,2 +1,5 @@
 # Migrate code style with StyLua
 15021bb000ed8cb3f9cf8325f05250b88d4e8ca4
+
+# Format code with StyLua v0.12.5
+3e0872c92d13dcb79687a6361de66ace39dbb126
