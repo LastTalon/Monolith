@@ -18,3 +18,5 @@
 
 # Wally
 wally.lock
+/Packages
+/DevPackages
