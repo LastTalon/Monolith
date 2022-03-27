@@ -54,9 +54,8 @@ Great!
 ### Did you fix something purely cosmetic in the codebase?
 
 We appreciate your enthusiasm, however cosmetic code patches are unlikely to be
-approved. We do care about code quality (please check our [style
-guide](#style-guide)), but the cost of reviewing it typically outweighs the
-benefit of the change.
+approved. We do care about code quality (please check our [style guide]), but
+the cost of reviewing it typically outweighs the benefit of the change.
 
 ## Style Guide
 
