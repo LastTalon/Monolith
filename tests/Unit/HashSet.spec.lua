@@ -1,7 +1,7 @@
 --- Tests for the @{HashSet} class.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local HashSet = require(module.HashSet)
 
 	describe("Constructor", function()

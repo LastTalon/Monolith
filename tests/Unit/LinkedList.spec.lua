@@ -1,7 +1,7 @@
 --- Tests for the @{LinkedList} class.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local LinkedList = require(module.LinkedList)
 
 	describe("Constructor", function()

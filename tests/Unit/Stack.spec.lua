@@ -1,7 +1,7 @@
 --- Tests for the @{Stack} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local Stack = require(module.Stack)
 
 	describe("Constructor", function()
