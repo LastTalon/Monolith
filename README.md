@@ -32,7 +32,7 @@ Monolith can be installed with [Wally] by including it as a dependency in your
 `wally.toml` file.
 
 ```toml
-Monolith = "lasttalon/monolith@0.1.1"
+Monolith = "lasttalon/monolith@0.2.0"
 ```
 
 You can then sync or build your project with a tool such as [Rojo]. Monolith can
