@@ -1,7 +1,7 @@
 --- Tests for the @{LinkedQueue} class.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local LinkedQueue = require(module.LinkedQueue)
 
 	describe("Constructor", function()

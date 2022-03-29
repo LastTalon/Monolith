@@ -1,7 +1,7 @@
 --- Tests for the @{Deque} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local Deque = require(module.Deque)
 
 	describe("Constructor", function()

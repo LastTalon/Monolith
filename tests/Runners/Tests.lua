@@ -9,7 +9,7 @@
 -- @see TestEZ
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local TestEZ = require(ReplicatedStorage:WaitForChild("Tests"):WaitForChild("TestEZ"))
+local TestEZ = require(ReplicatedStorage.DevPackages.TestEZ)
 
 --- The testing function.
 -- Accepts a list of roots, runs tests on them, then reports on test status.

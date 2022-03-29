@@ -1,7 +1,7 @@
 --- Tests for the @{AbstractList} abstract class.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local AbstractList = require(module.AbstractList)
 	local ArrayList = require(module.ArrayList)
 
