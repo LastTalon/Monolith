@@ -1,7 +1,7 @@
 --- Tests for the @{LinkedDeque} class.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local LinkedDeque = require(module.LinkedDeque)
 
 	describe("Constructor", function()

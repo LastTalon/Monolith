@@ -6,10 +6,10 @@
 -- @license MIT
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Tests = require(ReplicatedStorage:WaitForChild("Tests"):WaitForChild("Tests"))
+local Tests = require(ReplicatedStorage.Packages.Tests.Runners.Tests)
 
 --- The locations containing tests.
-local Roots = { ReplicatedStorage.Tests }
+local Roots = { ReplicatedStorage.Packages.Tests }
 
 local completed, result = Tests(Roots)
 

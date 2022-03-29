@@ -1,7 +1,7 @@
 --- Tests for the @{Set} interface.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local Set = require(module.Set)
 
 	describe("Constructor", function()

@@ -1,7 +1,7 @@
 --- Tests for the @{ArrayStack} class.
 
 return function()
-	local module = game:GetService("ReplicatedStorage").Monolith
+	local module = game:GetService("ReplicatedStorage").Packages.Monolith
 	local ArrayStack = require(module.ArrayStack)
 
 	describe("Constructor", function()
