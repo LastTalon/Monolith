@@ -10,10 +10,13 @@ The format is based on [Keep a Changelog][kac], and this project adheres to
 
 ## [Unreleased]
 
+### [0.2.0] - 2022-03-29
+
 ### Changed
 
 - Updated TestEZ to be a Wally developer dependency. Its no longer a repository
   submodule.
+- Updated project files to properly include the library
 
 ## [0.1.1] - 2021-10-01
 
@@ -82,6 +85,7 @@ The format is based on [Keep a Changelog][kac], and this project adheres to
   - A hash table Map implementation
   - Implements all optional Map methods
 
-[unreleased]: https://github.com/LastTalon/Monolith/compare/v0.1.1...HEAD
+[unreleased]: https://github.com/LastTalon/Monolith/compare/v0.2.0...HEAD
+[0.1.1]: https://github.com/LastTalon/Monolith/releases/tag/v0.2.0
 [0.1.1]: https://github.com/LastTalon/Monolith/releases/tag/v0.1.1
 [0.1.0]: https://github.com/LastTalon/Monolith/releases/tag/v0.1.0
