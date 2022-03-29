@@ -1,6 +1,6 @@
 [package]
 name = "lasttalon/monolith"
-description = "A Lua collections library."
+description = "A Luau collections library."
 version = "0.1.1"
 license = "MIT"
 authors = ["LastTalon"]
